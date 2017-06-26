@@ -1,3 +1,26 @@
+/*----------------------------------------------------------------------------
+ *
+ * VARIABLES (CSS Custom Properties) 
+ * https://caniuse.com/#feat=css-variables
+ *
+ * To keep the list of dependencies on this project small, I’m eschewing a css
+ * pre- or post-processor and instead taking advantage of the newer features
+ * that CSS offers natively for setting and using variables.
+ *
+ * CSS variables have broad support in current browsers, with a few exceptions.
+ * Notable exceptions are Opera Mini and IE 11 which lack support utterly, and 
+ * Edge 15 which does not support CSS variables in animations or pseudo-elements.
+ * Should this project go into production, a CSS post-processor could be used in 
+ * the future to provide support for older and/or less-capable browsers.
+ *
+ * - Abby
+ *
+ *---------------------------------------------------------------------------*/
+
+
+
+
+
 .center-page-title {
     margin: 0px auto;
     width: 100vw;
