@@ -373,3 +373,33 @@ $.each(group_info, function(key, obj) {
  	group_div.appendChild(group_count);
  	group_div.appendChild(group_button);
 });
+
+// TODO: learn more abuot this asynchronous request option
+// $.when($.ajax("/page1.php"), $.ajax("/page2.php"))
+//   .then(myFunc, myFailure);
+
+// EXAMPLE OF A SEARCH URL 
+// http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject191TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(lasers%20AND%20chemistry)&wt=json&json.wrf=?&indent=true
+
+
+function searchSolrTitles() {
+    var rawUserInput = document.getElementById("searchInput").value;
+    var cleanUserInput = rawUserInput.split(' ').join(' AND ');
+
+    $([110,185,191,258,300,302,323]).each(function() {
+      var groupID = this;
+      var testURL = "http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleSets/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true";
+      $.getJSON("http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleSets/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {  
+        var Parent = document.getElementById('test_solr');
+        for (var i = 0; i < result.response.docs.length; i++) {
+          var thisResult = "<b>" + result.response.docs[i].title + "</b><br>" + result.response.docs[i].publisher
+          + ",  " + result.response.docs[i].pub_year + "<br>";
+          var NewDiv = document.createElement("DIV");
+          NewDiv.innerHTML = thisResult;
+          Parent.appendChild(NewDiv);
+        }
+      });
+    });
+}
+
+

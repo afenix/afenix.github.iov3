@@ -82,12 +82,25 @@
 			</div>
 		</div>
 		
-		<div class="col-md-10">
-			<div class="search-box">
-			  <h3 id="table-title">Search for Retained Titles</h3>
-				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for titles..">
+		<div class="container">
+			<div class="col-md-12">
+				<h3 id="table-title">Search for Retained Titles</h3>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+				    <div class="input-group">
+				      <input type="text" class="form-control" id="searchInput"  placeholder="Search for keyword in title...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-secondary" onclick="searchSolrTitles()" type="button"> <span class="glyphicon glyphicon-search"></span></button>
+				      </span>
+				    </div>
+				  </div>
+				</div>
 			</div>
 		</div>
+
+		<div id=test_solr></div>
+			
 
 		<div class="col-md-12 table-titles"> 
 		  <div class="table-responsive">          
