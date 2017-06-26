@@ -1,2 +1,1 @@
-# afenix.github.io
-WIP - North American Shared Print Retention Story Map
+North American Shared Print Retention Story Map website
