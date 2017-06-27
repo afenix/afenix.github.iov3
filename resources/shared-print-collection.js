@@ -335,10 +335,6 @@ $.each(group_info, function(key, obj) {
     	} else {
 	    	group_button.style.backgroundColor = value;
     	}
-    	group_div.style.position = 'relative';
-		group_div.style.display = 'inline-block';
-		group_button.style.display = 'inline-block';
-	    group_button.style.margin = '0px 35px 25px 0px';
 	    group_div.style.color = '#666666';
 	});
 
@@ -374,33 +370,35 @@ $.each(group_info, function(key, obj) {
  	group_div.appendChild(group_button);
 });
 
-
-function parseTitleResults(data, groupID) {
-    var parsedData = {};
+function parseTitleResults(data, groupID,parsedData) { 
     for (var i = 0; i < data.response.docs.length; i++) {
         var worldcat_oclc_nbr = data.response.docs[i].worldcat_oclc_nbr;
-        parsedData[worldcat_oclc_nbr] = {};
-        parsedData[worldcat_oclc_nbr]["title"] = data.response.docs[i].title;
-        parsedData[worldcat_oclc_nbr]["author"] = data.response.docs[i].author;
-        parsedData[worldcat_oclc_nbr]["publisher"] = data.response.docs[i].publisher;
-        parsedData[worldcat_oclc_nbr]["pub_year"] = data.response.docs[i].pub_year;
-        parsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;
-        parsedData[worldcat_oclc_nbr]["groups"] = [];
-        parsedData[worldcat_oclc_nbr]["groups"].push(groupID);
+        if (parsedData.hasOwnProperty(worldcat_oclc_nbr)) {
+            parsedData[worldcat_oclc_nbr]["groups"].push(groupID);
+        } else {
+            parsedData[worldcat_oclc_nbr] = {};
+            parsedData[worldcat_oclc_nbr]["title"] = data.response.docs[i].title;
+            parsedData[worldcat_oclc_nbr]["author"] = data.response.docs[i].author;
+            parsedData[worldcat_oclc_nbr]["publisher"] = data.response.docs[i].publisher;
+            parsedData[worldcat_oclc_nbr]["pub_year"] = data.response.docs[i].pub_year;
+            parsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;
+            parsedData[worldcat_oclc_nbr]["groups"] = [];
+            parsedData[worldcat_oclc_nbr]["groups"].push(groupID);
+        }
     };
     return parsedData;
 }
 
 function searchSolrTitles() {
+    var parsedData = {};
     var rawUserInput = document.getElementById("searchInput").value;
     var cleanUserInput = rawUserInput.split(' ').join(' AND ');
     $([185,191,258,300,302,323]).each(function() {
-      var groupID = this;
+      var groupID = this.valueOf();
       $.getJSON("http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {  
-        var Parent = document.getElementById('solr_result');
         var row = "";
+        var finalParsedData = parseTitleResults(result,groupID, parsedData);
         for (var i = 0; i < result.response.docs.length; i++) {
-            var parsedData = parseTitleResults(result,groupID);
             row+="<tr><td>"+ result.response.docs[i].title + "</td><td>" + result.response.docs[i].author + "</td><td>" + result.response.docs[i].pub_year + "</td></tr>";
         };
         $("#solr_results").html(row);    
