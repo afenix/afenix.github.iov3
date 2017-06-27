@@ -402,10 +402,11 @@ function searchSolrTitles() {
     $([185,191,258,300,302,323]).each(function() {
       var groupID = this.valueOf();
       $.getJSON("http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {  
-        var row = "";
         var finalParsedData = parseTitleResults(result,groupID, parsedData);
-        for (var i = 0; i < result.response.docs.length; i++) {
-            row+="<tr><td>"+ result.response.docs[i].title + "</td><td>" + result.response.docs[i].author + "</td><td>" + result.response.docs[i].pub_year + "</td></tr>";
+        var dataLength = Object.keys(finalParsedData).length;
+        var row = "";
+        for (var key in finalParsedData) {
+            row+="<tr><td>"+ finalParsedData[key].title + ", " + finalParsedData[key].edition + "</td><td>" + finalParsedData[key].author + "</td><td>" + finalParsedData[key].pub_year + "</td><td>" + finalParsedData[key].opac_url + "</td><td>";
         };
         $("#solr_results").html(row);    
       });
