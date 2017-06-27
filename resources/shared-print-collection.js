@@ -335,11 +335,6 @@ $.each(group_info, function(key, obj) {
     	} else {
 	    	group_button.style.backgroundColor = value;
     	}
-    	group_div.style.position = 'relative';
-		group_div.style.display = 'inline-block';
-		group_button.style.display = 'inline-block';
-	    group_button.style.margin = '0px 35px 25px 0px';
-	    group_div.style.color = '#666666';
 	});
 
     group_div.addEventListener('click', function() {
