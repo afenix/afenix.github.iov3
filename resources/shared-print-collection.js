@@ -434,6 +434,7 @@ $.each(group_info, function(key, obj) {
 //     });
 // }
 function parseData(data, groupID) {
+function parseTitleResults(data, groupID) {
     var parsedData = {};
     for (var i = 0; i < data.response.docs.length; i++) {
         var worldcat_nbr = data.response.docs[i].worldcat_oclc_nbr;
@@ -458,7 +459,7 @@ function searchSolrTitles() {
         var Parent = document.getElementById('solr_result');
         var row = "";
         for (var i = 0; i < result.response.docs.length; i++) {
-            var parseMe = parseData(result,groupID);
+            var parsedData = parseTitleResults(result,groupID);
             row+="<tr><td>"+ result.response.docs[i].title + "</td><td>" + result.response.docs[i].author + "</td><td>" + result.response.docs[i].pub_year + "</td></tr>";
         };
         $("#solr_results").html(row);    
