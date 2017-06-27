@@ -374,66 +374,7 @@ $.each(group_info, function(key, obj) {
  	group_div.appendChild(group_button);
 });
 
-// TODO: learn more abuot this asynchronous request option
-// $.when($.ajax("/page1.php"), $.ajax("/page2.php"))
-//   .then(myFunc, myFailure);
 
-// EXAMPLE OF A SEARCH URL 
-// http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject191TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(lasers%20AND%20chemistry)&wt=json&json.wrf=?&indent=true
-// function SendAjax(groupUrl, data, callback) {
-//     // var def = $.Deferred();
-//     return $.ajax({
-//         url: groupUrl,
-//         type: "GET",
-//         contentType: "application/json; charset=utf-8",
-//         data: "{}",
-//         dataType: "json",
-//         success: function() {
-//             parseData();
-//             def.resolve();
-//         },
-//         error: function (result) {
-//             alert("Error");
-//         }
-//     });
-//     return def.promise();
-// }
-
-// var ajax1 = SendAjax(...);
-// var ajax2 = SendAjax(...);
-// var ajax3 = SendAjax(...);
-
-// $.when(ajax1, ajax2, ajax3).done(function() {
-//     //do stuff
-// });
-
-// function searchSolrTitles() {    
-//     var rawUserInput = document.getElementById("searchInput").value;
-//     var cleanUserInput = rawUserInput.split(' ').join(' AND ');
-//     $([110,185,191,258,300,302,323]).each(function() {
-//         var groupID = this;
-//         var groupSearchURL = "http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:true&fq=title:(" + cleanUserInput + ")&wt=json";
-//         $.ajax({
-//             url: groupSearchURL,
-//             type: "GET",
-//             contentType: "application/json; charset=utf-8",
-//             data: "{}",
-//             dataType: "json",
-//             success: function (result) {
-//                 var row = "";
-//                 for (var i = 0; i < result.response.docs.length; i++) {
-//                     row+="<tr><td>"+ result.response.docs[i].title + ",  " + result.response.docs[i].author + ",  " + result.response.docs[i].pub_year + "<br></td></tr>";
-//                 };
-//                 $("#solr_results").html(row);    
-//             },
-//             error: function (result) {
-//                 console.log("Error=");
-//                 console.log(result);
-//             }
-//         });
-//     });
-// }
-function parseData(data, groupID) {
 function parseTitleResults(data, groupID) {
     var parsedData = {};
     for (var i = 0; i < data.response.docs.length; i++) {
