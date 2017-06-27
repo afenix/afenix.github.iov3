@@ -378,12 +378,18 @@ function parseTitleResults(data, groupID,parsedData) {
         } else {
             parsedData[worldcat_oclc_nbr] = {};
             parsedData[worldcat_oclc_nbr]["title"] = data.response.docs[i].title;
+            parsedData[worldcat_oclc_nbr]["edition"] = data.response.docs[i].edition;
             parsedData[worldcat_oclc_nbr]["author"] = data.response.docs[i].author;
             parsedData[worldcat_oclc_nbr]["publisher"] = data.response.docs[i].publisher;
             parsedData[worldcat_oclc_nbr]["pub_year"] = data.response.docs[i].pub_year;
             parsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;
             parsedData[worldcat_oclc_nbr]["groups"] = [];
             parsedData[worldcat_oclc_nbr]["groups"].push(groupID);
+            if (data.response.docs[i].edition == null) {
+                parsedData[worldcat_oclc_nbr]["edition"] = "";
+            } else {
+                parsedData[worldcat_oclc_nbr]["edition"] = data.response.docs[i].edition;
+            }
         }
     };
     return parsedData;
