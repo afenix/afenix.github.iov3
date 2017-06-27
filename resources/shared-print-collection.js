@@ -384,7 +384,7 @@ function parseTitleResults(data, groupID) {
         parsedData[worldcat_oclc_nbr]["author"] = data.response.docs[i].author;
         parsedData[worldcat_oclc_nbr]["publisher"] = data.response.docs[i].publisher;
         parsedData[worldcat_oclc_nbr]["pub_year"] = data.response.docs[i].pub_year;
-        sparsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;
+        parsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;
         parsedData[worldcat_oclc_nbr]["groups"] = [];
         parsedData[worldcat_oclc_nbr]["groups"].push(groupID);
     };
