@@ -141,7 +141,7 @@ var onLoadFlyIn = [{
     "title": "starting-point",
     "camera": {
         center: [-91.230469, 34.510218],
-        zoom: 1.5,
+        zoom: 1.75,
         bearing: 5,
         pitch: 45
      }
@@ -380,7 +380,74 @@ $.each(group_info, function(key, obj) {
 
 // EXAMPLE OF A SEARCH URL 
 // http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject191TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(lasers%20AND%20chemistry)&wt=json&json.wrf=?&indent=true
+// function SendAjax(groupUrl, data, callback) {
+//     // var def = $.Deferred();
+//     return $.ajax({
+//         url: groupUrl,
+//         type: "GET",
+//         contentType: "application/json; charset=utf-8",
+//         data: "{}",
+//         dataType: "json",
+//         success: function() {
+//             parseData();
+//             def.resolve();
+//         },
+//         error: function (result) {
+//             alert("Error");
+//         }
+//     });
+//     return def.promise();
+// }
 
+// var ajax1 = SendAjax(...);
+// var ajax2 = SendAjax(...);
+// var ajax3 = SendAjax(...);
+
+// $.when(ajax1, ajax2, ajax3).done(function() {
+//     //do stuff
+// });
+
+// function searchSolrTitles() {    
+//     var rawUserInput = document.getElementById("searchInput").value;
+//     var cleanUserInput = rawUserInput.split(' ').join(' AND ');
+//     $([110,185,191,258,300,302,323]).each(function() {
+//         var groupID = this;
+//         var groupSearchURL = "http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:true&fq=title:(" + cleanUserInput + ")&wt=json";
+//         $.ajax({
+//             url: groupSearchURL,
+//             type: "GET",
+//             contentType: "application/json; charset=utf-8",
+//             data: "{}",
+//             dataType: "json",
+//             success: function (result) {
+//                 var row = "";
+//                 for (var i = 0; i < result.response.docs.length; i++) {
+//                     row+="<tr><td>"+ result.response.docs[i].title + ",  " + result.response.docs[i].author + ",  " + result.response.docs[i].pub_year + "<br></td></tr>";
+//                 };
+//                 $("#solr_results").html(row);    
+//             },
+//             error: function (result) {
+//                 console.log("Error=");
+//                 console.log(result);
+//             }
+//         });
+//     });
+// }
+function parseData(data, groupID) {
+    var parsedData = {};
+    for (var i = 0; i < data.response.docs.length; i++) {
+        var worldcat_nbr = data.response.docs[i].worldcat_oclc_nbr;
+console.log('worldcat_nbr');console.log(worldcat_nbr);
+        parsedData[worldcat_nbr]["title"] = data.response.docs[i].title;
+        parsedData[worldcat_nbr]["author"] = data.response.docs[i].author;
+        parsedData[worldcat_nbr]["publisher"] = data.response.docs[i].publisher;
+        parsedData[worldcat_nbr]["pub_year"] = data.response.docs[i].pub_year;
+        parsedData[worldcat_nbr]["groups"] = [];
+        parsedData[worldcat_nbr]["groups"].push(groupID);
+
+    };
+alert(parsedData);
+}
 
 function searchSolrTitles() {
     var rawUserInput = document.getElementById("searchInput").value;
