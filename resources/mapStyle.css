@@ -1,3 +1,5 @@
+@import url('vendor/normalize.css');
+
 /*----------------------------------------------------------------------------
  *
  * VARIABLES (CSS Custom Properties) 
@@ -16,92 +18,119 @@
  * - Abby
  *
  *---------------------------------------------------------------------------*/
+ 
+ :root {
+	 --green: 	44,150,62;
+	 --blue: 	0,141,207;
+	 --purple: 	96,72,148;
+	 --pink: 	188,14,131;
+	 --orange: 	245,127,41;
+	 --dark:		0,0,0;
+	 --light:	255,255,255;
+ }
+ 
 
 
+/*----------------------------------------------------------------------------
+ *
+ * LAYOUT
+ * 
+ * Inspired by: https://cloudfour.com/thinks/breaking-out-with-viewport-units-and-calc/
+ * 
+ * The “measure” is the length of a line of text. Ideal line length is usually 
+ * 45-75 characters. Using BEM naming conventions, .container--measure is a container 
+ * which respects the ideal length of a line of text.
+ *
+ *---------------------------------------------------------------------------*/
 
-
-
-.center-page-title {
-    margin: 0px auto;
-    width: 100vw;
-    display: inline-block;
-    // padding: 10px 0px 55px 25px;
-    // border-bottom: 1px solid #CAD2D3;
-    background-color: #86978E;
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
 }
 
-.worldcat-logo {
-	max-width:8%; 
-	max-height:8%; 
-  position: absolute;
-  left: 10px;
-  top: 10px;
+/* Generic Layout Blocks */
+
+.container {
+	width: 100%;
+	margin: 6rem 0;
+}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;	
 }
 
-h2.page-title { 
-	font-family: 'Titillium Web', sans-serif;
-  color: #277AB3;
-  color: white;
-  text-align: center;
-  margin-top: 10px !important;
-  font-weight: 800;
+.container--measure {
+	max-width: 55rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container--measure__bleed { // breaks elements out of container--measure, if necessary
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+}
+
+/* Layout Areas */
+
+.header-brand {
+	padding: 1rem 2rem;
+}
+
+.header-brand__logo {
+	width: 150px;
+}
+
+.main__header {
+	text-align:center;
+	padding: 20vh 0;
+	background: rgba(var(--dark), .1);
+}
+
+
+/*----------------------------------------------------------------------------
+ *
+ * TYPOGRAPHY
+ *
+ *---------------------------------------------------------------------------*/
+ 
+html {
+	font-size: 100%;
+	font-family: "proxima-nova", sans-serif; // 100 (thin), 300 (light), 400 (normal), and 700 (bold) weights available
+}
+
+body {
+	line-height: 1.4;
+}
+
+.main__header__title {
+	font-weight: 100;
+	font-size: 5rem;
+	max-width: 55rem;
+	margin: auto;
+	color: rgb(var(--green));
 }
 
 .intro-text-container {
-    margin: 10px 15px 15px 15px;
-    padding: 0px 10px;
+	font-size: 1.25rem;
 }
 
-.intro-text {
-    font-family: 'Dosis', sans-serif; 
-    color: #666666;
-    background-color: #fff;
-    line-height: 25px;
-    font-size: 17.5px;
-    font-weight: 500;
+p:first-child {
+	margin-top:0;
+}
+ 
+ /*----------------------------------------------------------------------------
+ *
+ * MODULE: MAP
+ *
+ *---------------------------------------------------------------------------*/
+ 
+.map-wrap {
+	position: relative;
 }
 
-.total-container {
-    text-align: center;
-    background-color: #86978E;
-    border: 3px solid white;
-    height: 80px;
-    margin-top: 5px;
-}
-
-.total-container h2 {
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.total-container p {
-    font-family: 'Dosis', sans-serif; 
-    color:#FFFFFF;
-    text-transform: uppercase;
-    font-weight: 400;
-    margin: 10px 0px 3px 0px;
-}
-
-.holdings-header { 
-  padding:0px;
-  margin: 0px 0px 10px 0px;
-  font-family: 'Dosis', sans-serif; 
-  color:#FFFFFF;
-}
-
-h2.button-margin {
-    margin: 10px;
-    font-family: 'Dosis', sans-serif; 
-    text-transform: uppercase;
-    font-weight: 900;
-}
-
-button {
-    margin:0 auto;
-    display:inline-block;
-}
-
-#map { 
+.map { 
     width: 100vw;
     position: relative;
     margin-left: -50vw;
@@ -109,45 +138,17 @@ button {
     left: 50%;
 }
 
-.descriptive-text-container {
-    margin: 35px 15px 5px 23px;
-    padding: 0px 10px 5px 10px;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    height: 130px;
-}
-
-.descriptive-text {
-    font-family: 'Dosis', sans-serif; 
-    font-weight: light;
-    color: #666666;
-    background-color: #fff;
-    font-size: 90%;
-}
-
-h4#location-title {
-    font-family: 'Dosis', sans-serif; 
-    margin-top: 10px;
-    margin-bottom: 5px !important;
-    font-weight: 700;
-}
-
-p#location-description {
-  font-family: 'Dosis', sans-serif; 
-  font-size: 16px;
-  font-weight: 400;
-}
+/* Begin Titles Legend */
 
 .titles-legend {
   background-color: #fff;
   border-radius: 3px;
-  top: 145px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  font: 12px/20px 'Lato', sans-serif;
+  top: 2rem;
+  left: 2rem;
+  box-shadow: 0 1px 2px rgba(var(--dark), .1);
+  font: 12px/20px;
   padding: 10px;
   position: absolute;
-  left: 15px;
   z-index: 1;
   text-align: left;
   overflow: hidden;
@@ -163,7 +164,7 @@ p#location-description {
   display: inline-block;
 }
 
-#circle1 {
+.circle1 {
   background-color: #666666;
   height: 5px;
   width: 5px;
@@ -171,7 +172,7 @@ p#location-description {
   margin-left: 9px;
 }
 
-#circle2 {
+.circle2 {
   background-color: #666666;
   height: 7px;
   width: 7px;
@@ -179,7 +180,7 @@ p#location-description {
   margin-left: 8px;
 }
 
-#circle3 {
+.circle3 {
   background-color: #666666;
   height: 10px;
   width: 10px;
@@ -187,7 +188,7 @@ p#location-description {
   margin-left: 7px;
 }
 
-#circle4 {
+.circle4 {
   background-color: #666666;
   height: 13px;
   width: 13px;
@@ -195,7 +196,7 @@ p#location-description {
   margin-left: 5.7px;
 }
 
-#circle5 {
+.circle5 {
   background-color: #666666;
   height: 25px;
   width: 25px;
@@ -208,29 +209,42 @@ p#location-description {
   align-items: center;
 }
 
+/* End Titles Legend */
+ 
+/*----------------------------------------------------------------------------
+ *
+ * MODULE: MAP CONTROLS / GROUP LEGEND
+ *
+ *---------------------------------------------------------------------------*/
+
 .group-legend {
-    font: 14px/20px 'Lato', sans-serif;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    padding-top: 15px;
-    padding-left: 30px;
-    height: 80px;
-    // border-bottom: 1px solid #666666;
-    color: #ffffff;
+	padding:0;
+	border: none;
+}
+
+.group-legend__intro {
+	font-size: 1.25rem;
+}
+
+#group-legend-elements {
+	margin: 2rem -.5rem 0;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .group_div {
-  font-size: 125%;
-  cursor: pointer; 
-}
-
-.group-legend {
-  margin-bottom: 35px;
+	font-size: 125%;
+	cursor: pointer;
+	margin: .5rem;
+	padding: 1rem 1rem 0;
+	background: rgba(var(--dark), .05);
+	flex: 1 0 6rem;
 }
 
 .group-legend button {
-  width: 68px;
+	border: none;
+	-webkit-appearance: none;
+	width: 100%;	
 }
 
 #group-legend-title {
@@ -244,16 +258,90 @@ h6.group_count {
 
 .mapboxgl-popup {
   max-width: 400px;
-  font: 14px/20px 'Lato', sans-serif;
+  font: 14px/20px;
   color: #666666;
 }
-
-
-// Table & Search Features 
-.table-titles {
-  font: 14px/20px 'Lato', sans-serif;
-  margin-top: 20px;
+ 
+ /*----------------------------------------------------------------------------
+ *
+ * MODULE: TOTALS
+ *
+ *---------------------------------------------------------------------------*/
+ 
+.totals {
+	text-align:center;
+	background: rgba(var(--dark), .1);
 }
+
+.totals-wrap {
+	margin: 0 -.5rem;
+	padding: 6rem 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.total-container {
+	margin: .5rem;
+	padding: 1rem;
+	background: rgba(var(--green), .75);
+	flex: 1 0 6rem;
+    text-align: center;
+}
+
+.total-container h2 {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 100;
+    font-size: 3rem;
+}
+
+.total-container p {
+    color:#FFFFFF;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 10px 0px 3px 0px;
+    letter-spacing: .05em;
+}
+
+.holdings-header { 
+  padding:0px;
+  margin: 0px 0px 10px 0px;
+  color:#FFFFFF;
+}
+ 
+ /*----------------------------------------------------------------------------
+ *
+ *  ORIGINAL STYLES BELOW (ONLY FONTS MODIFIED SO FAR)
+ *
+ *---------------------------------------------------------------------------*/
+
+
+h2.button-margin {
+    margin: 10px; 
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+button {
+    margin:0 auto;
+    display:inline-block;
+}
+
+.descriptive-text {
+    font-weight: light;
+    color: #666666;
+    background-color: #fff;
+    font-size: 90%;
+}
+
+h4#location-title {
+    margin-top: 10px;
+    margin-bottom: 5px !important;
+    font-weight: 700;
+}
+
+
+// Table & Search Features
 
 .search-box {
   margin: 35px 0px 15px 15px;
@@ -261,16 +349,16 @@ h6.group_count {
 
 h3#table-title {
   float:left;
-  font: 18px/20px 'Lato', sans-serif;
+  font: 18px/20px;
   color: #666666;
 }
 
 
 #myInput {
-    font: 14px/20px 'Lato', sans-serif;
+    font: 14px/20px;
     color: #666666;
     float: left;
-    font: 14px/20px 'Lato', sans-serif;
+    font: 14px/20px;
     margin: 8px 0px 10px 15px;
     background-image: url('/css/searchicon.png'); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
@@ -281,10 +369,6 @@ h3#table-title {
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
     display: inline-block;
-}
-
-.align-us {
-
 }
 
 td {
@@ -299,7 +383,7 @@ td {
 }
 
 #east {
-  font: 10px/14px 'Lato', sans-serif;
+  font: 10px/14px;
   margin: 25px 20px 5px 0px;
   background-color: #FB9A99;
   padding: 3px 5px;
@@ -310,7 +394,7 @@ td {
 }
 
 #wrlc {
-  font: 10px/14px 'Lato', sans-serif;
+  font: 10px/14px;
   margin: 5px 20px 5px 0px;
   background-color: #6A3D9A;
   padding: 3px 5px;
@@ -321,7 +405,7 @@ td {
 }
 
 #mi-spi {
-  font: 10px/14px 'Lato', sans-serif;
+  font: 10px/14px;
   margin: 25px 20px 5px 0px;
   background-color: #FF4847;
   padding: 3px 5px;
@@ -332,7 +416,7 @@ td {
 }
 
 #viva {
-  font: 10px/14px 'Lato', sans-serif;
+  font: 10px/14px;
   margin: 5px 20px 5px 0px;
   background-color: #CAB2D6;
   padding: 3px 5px;
@@ -343,7 +427,7 @@ td {
 }
 
 #ci-cci {
-  font: 10px/14px 'Lato', sans-serif;
+  font: 10px/14px;
   margin: 25px 20px 5px 0px;
   background-color: #6A3D9A;
   padding: 3px 5px;
@@ -354,7 +438,7 @@ td {
 }
 
 #ali {
-  font: 10px/14px 'Lato', sans-serif;
+  font: 10px/14px;
   margin: 5px 20px 5px 0px;
   background-color: #A6CEE3;
   padding: 3px 5px;
@@ -365,7 +449,7 @@ td {
 }
 
 #coppul {
-  font: 10px/14px 'Lato', sans-serif;
+  font: 10px/14px;
   margin: 25px 20px 5px 0px;
   background-color: #33A02C;
   padding: 3px 5px;
@@ -376,7 +460,7 @@ td {
 }
 
 #tug {
-  font: 10px/14px 'Lato', sans-serif;
+  font: 10px/14px;
   margin: 5px 20px 5px 0px;
   background-color: #FF7F00;
   padding: 3px 5px;

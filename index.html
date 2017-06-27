@@ -3,81 +3,84 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-
 	  	<title>North American Shared Print Collection</title>
+		<!-- Typekit - Update with Argentic Typekit ID -->
+		<script src="https://use.typekit.net/cre5hwe.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		
 	  	<link rel="stylesheet" type="text/css" href="../resources/mapStyle.css">
-	  	<link href="https://fonts.googleapis.com/css?family=Lato|Titillium+Web:600|Dosis:400,700,800" rel="stylesheet">
-	  	<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
-	
-		  
-		  <!--[if lt IE 9]>
-		    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-		  <![endif]-->
+	  	<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />		  
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
 	</head>
 
 	<body>
-		<div class="center-page-title">
-			<img class='worldcat-logo' src="../resources/WorldCat_Logo.png" alt="WorldCat Logo">
-			<h2 class='page-title'>North American Shared Retention Commitments</h2>	
-		</div>
+		<header class="header-brand">
+			<img class="header-brand__logo" src="../resources/WorldCat_Logo.png" alt="WorldCat Logo">
+		</header>
 		
-		<div class='intro-text-container'>
-		  <div class='intro-text'>
-		    <span>Eleven Group Projects now exist in North America with membership of over 145 academic institutions spanning fourteen U.S. states and five Canadian provinces.  
-		    	Through a collaborative process of shared print strategies these institutions have been able to retain print collections of <strong>19.7 million</strong> title-holdings, with <strong>7.6 million</strong> of those 
-		    	titles retained being distinct editions.</span>
-		  </div>
-		</div>
-
-		<div id='map'></div>
-
-		<div class='titles-legend'>
-		    <h5>Titles Retained</h5>
-		    <div><span id='circle1'></span><= 20k</div>   
-		    <div><span id='circle2'></span></div>
-		    <div><span id='circle3'></span></div>
-		    <div><span id='circle4'></span></div>
-		    <div class='align-us'><span id='circle5'></span> > 500k</div>
-		</div>
-
-		<div class='group-legend'>
-	        <fieldset>
-	            <label id="group-legend-title">Click on a Library Group Name to zoom in on that group, or the "Overview" button to see all groups:</label>
-	            <div id="group-legend-elements">
-	            </div>
-	        </fieldset>
-		</div>
-
-		<div class='descriptive-text-container' style="display:none;">
-		  <div class='descriptive-text'>
-		    <h4 id='location-title'></h4>
-		    <p id='location-description'></p>
-		    <small>Text credit: <a target='_blank' href='#'>a.fenix</a></small>
-		  </div>
-		</div>
-
-		<div class="container-fluid">
-			<div class="row">
-				<!-- <div class="banner" style="margin-top:5px"> -->
-					<div class="col-md-3 total-container"> 
-						<p>Shared Print Programs:</p>
+		<section class="main">
+			<header class="main__header">
+				<h1 class='main__header__title'>North American Shared Retention Commitments</h1>
+			</header>		
+			<div class="container container--measure intro-text-container" id="intro">
+				<p>Eleven Group Projects now exist in North America with membership of over 145 academic institutions spanning fourteen U.S. states and five Canadian provinces.</p>
+				<p>Through a collaborative process of shared print strategies these institutions have been able to retain print collections of <strong>19.7 million</strong> title-holdings, with <strong>7.6 million</strong> of those 
+			titles retained being distinct editions.</p>
+			</div>
+			
+			<div class='container map-wrap'>
+				<div class='titles-legend'>
+					<h5>Titles Retained</h5>
+					<div><span class='circle1'></span><= 20k</div>   
+					<div><span class='circle2'></span></div>
+					<div><span class='circle3'></span></div>
+					<div><span class='circle4'></span></div>
+					<div class='align-us'><span class='circle5'></span> > 500k</div>
+				</div>
+				<div class="map" id="map"></div>
+			</div>
+			
+			<div class="container container--measure">
+				<fieldset class="group-legend">
+					<p class="group-legend__intro">Click on a Library Group Name to zoom in on that group, or the “Overview” button to see all groups.</p>
+					<div id="group-legend-elements"></div>
+				</fieldset>
+				<div class='descriptive-text-container' style="display:none;">
+					<div class='descriptive-text'>
+						<h4 id='location-title'></h4>
+						<p id='location-description'></p>
+						<small>Text credit: <a target='_blank' href='#'>a.fenix</a></small>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<div class="totals">
+			<div class="container container--measure">
+				<div class="totals-wrap">
+					<div class="total-container"> 
+						<p>Shared Print Programs</p>
 						<h2 class='holdings-header'>11</h2>
 					</div>
-					<div class="col-md-3 total-container">
-						<p>Participating Institutions:</p>
+					<div class="total-container">
+						<p>Participating Institutions</p>
 						<h2 class='holdings-header'>143</h2>
 					</div>
-					<div class="col-md-3 total-container"> 
-						<p>Total title-holdings retained:</p>
+					<div class="total-container"> 
+						<p>Total title-holdings retained</p>
 						<h2 class='holdings-header'>19.7M</h2>
 					</div>
-					<div class="col-md-3 total-container">
-						<p>Distinct holdings retained:</p>
+					<div class="total-container">
+						<p>Distinct holdings retained</p>
 						<h2 class='holdings-header'>7.6M</h2>	
 					</div>
-				<!-- </div> -->
-			</div>
+				</div>
+			</div>				
 		</div>
+		
+		<div class="container container--measure search-wrap">
 		
 		<div class="col-md-10">
 			<div class="search-box">
@@ -85,46 +88,50 @@
 				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for titles..">
 			</div>
 		</div>
-
-		<div class="col-md-12 table-titles"> 
-		  <div class="table-responsive">          
-		  <table class="table">
-		    <thead>
-		      <tr>
-		        <th>Title</th>
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr class="align-us">
-		        <td>The early government gazettes. -/[Victoria : Archives of British Columbia Historical Association, 1943] 
-		        	<div class='spacer'>
-				        <span id="east">EAST : 10</span>
-				        <span id="wrlc">WRLC : 3</span>	        		
-		        	</div>
-		        </td>
-		      </tr>
-		       <tr>
-		        <td>CIS US serial set index. --/pt.3 v.1
-		        	<div class='spacer'>
-				        <span id="east">EAST : 2</span>
-				        <span id="mi-spi">MI-SPI : 8</span>	 
-				        <span id="tug">TUG : 1</span>
-				        <span id="viva">VIVA : 6</span>	        		
-		        	</div>
-		        </td>
-		      </tr>
-		       <tr>
-		        <td>An enemy of the state : the life of Murray N. Rothbard / Justin Raimondo/Amherst, NY : Prometheus Books, 2000
-					<div class='spacer'>
-				        <span id="ali">ALI : 3</span>	
-				        <span id="ci-cci">CI-CCI : 10</span>
-				        <span id="coppul">COPPUL : 1</span>	             		
-		        	</div>
-		        </td>
-		      </tr>
-		    </tbody>
-		  </table>
-		  </div>
+		
+		</div>
+		
+		<div class="container container--measure titles-wrap">
+			<div class="table-titles"> 
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Title</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr class="align-us">
+							<td>The early government gazettes. -/[Victoria : Archives of British Columbia Historical Association, 1943] 
+								<div class='spacer'>
+									<span id="east">EAST : 10</span>
+									<span id="wrlc">WRLC : 3</span>	        		
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>CIS US serial set index. --/pt.3 v.1
+								<div class='spacer'>
+									<span id="east">EAST : 2</span>
+									<span id="mi-spi">MI-SPI : 8</span>	 
+									<span id="tug">TUG : 1</span>
+									<span id="viva">VIVA : 6</span>	        		
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>An enemy of the state : the life of Murray N. Rothbard / Justin Raimondo/Amherst, NY : Prometheus Books, 2000
+								<div class='spacer'>
+									<span id="ali">ALI : 3</span>	
+									<span id="ci-cci">CI-CCI : 10</span>
+									<span id="coppul">COPPUL : 1</span>	             		
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 
 		<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
