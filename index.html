@@ -80,15 +80,22 @@
 			</div>				
 		</div>
 		
-		<div class="container container--measure search-wrap">
-		
-		<div class="col-md-10">
-			<div class="search-box">
-			  <h3 id="table-title">Search for Retained Titles</h3>
-				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for titles..">
+
+		<div class="container container--measure search-wrap">	
+
+			<div class="col-md-10">
+				<h3 id="table-title">Search for Retained Titles</h3>
 			</div>
-		</div>
-		
+			<div class="row">
+				<div class="col-lg-6">
+				    <div class="input-group">
+				      <input type="text" class="form-control" id="searchInput"  placeholder="Search for keyword in title...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-secondary" onclick="searchSolrTitles()" type="button"> <span class="glyphicon glyphicon-search"></span></button>
+				      </span>
+				    </div>
+				 </div>
+			</div>
 		</div>
 		
 		<div class="container container--measure titles-wrap">
@@ -132,7 +139,30 @@
 					</table>
 				</div>
 			</div>
-		</div>
+
+			<div class="col-md-12 table-titles"> 
+			  <div class="table-responsive">          
+				  <table class="table">
+				    <thead>
+				      <tr>
+				        <th>Title</th>
+				        <th>Publisher</th>
+				        <th>Publication Date</th>
+				      </tr>
+				    </thead>
+				    <tbody id="solr_results">
+				      <tr class="align-us">
+				        <td id=solr_result>
+				        	<div class='spacer'>
+						        <span id="east">EAST : 10</span>
+						        <span id="wrlc">WRLC : 3</span>	        		
+				        	</div>
+				        </td>
+				      </tr>
+				    </tbody>
+				  </table>
+			  </div>
+			</div>
 
 		<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
 	  	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
