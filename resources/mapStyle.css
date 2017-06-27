@@ -1,3 +1,4 @@
+@import url('vendor/fontsdotcom/fonts.css');
 @import url('vendor/normalize.css');
 
 /*----------------------------------------------------------------------------
@@ -13,7 +14,8 @@
  * Notable exceptions are Opera Mini and IE 11 which lack support utterly, and 
  * Edge 15 which does not support CSS variables in animations or pseudo-elements.
  * Should this project go into production, a CSS post-processor could be used in 
- * the future to provide support for older and/or less-capable browsers.
+ * the future to provide support for older and/or less-capable browsers or you 
+ * *could* just replace the variables with their values.
  *
  * - Abby
  *
@@ -27,7 +29,11 @@
 	 --orange: 	245,127,41;
 	 --dark:		0,0,0;
 	 --light:	255,255,255;
+	 --font-family: "Avenir Next W01", sans-serif;
  }
+ 
+ /* Colors pulled from WorldCat Logo. */
+ /* Font weights include 100, 200, 300, 400, 500, 600, 700 */
  
 
 
@@ -97,7 +103,10 @@ body {
  
 html {
 	font-size: 100%;
-	font-family: "proxima-nova", sans-serif; // 100 (thin), 300 (light), 400 (normal), and 700 (bold) weights available
+	font-family: var(--font-family);
+	text-rendering: optimizelegibility; /* Can cause problems in some versions of Android */
+  	-moz-osx-font-smoothing: grayscale;
+  	-webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -110,6 +119,7 @@ body {
 	max-width: 55rem;
 	margin: auto;
 	color: rgb(var(--green));
+	letter-spacing: -.03em;
 }
 
 .intro-text-container {
@@ -118,6 +128,10 @@ body {
 
 p:first-child {
 	margin-top:0;
+}
+
+strong {
+	font-weight: 700;
 }
  
  /*----------------------------------------------------------------------------
