@@ -21,21 +21,20 @@
  *
  *---------------------------------------------------------------------------*/
  
+ /* Color variables pulled from WorldCat Logo. */
+ 
  :root {
+	 --brand: 	44,150,62; /* same as green */
 	 --green: 	44,150,62;
 	 --blue: 	0,141,207;
 	 --purple: 	96,72,148;
 	 --pink: 	188,14,131;
 	 --orange: 	245,127,41;
 	 --dark:		0,0,0;
+	 --text:		44,44,44;
 	 --light:	255,255,255;
 	 --font-family: "Avenir Next W01", sans-serif;
  }
- 
- /* Colors pulled from WorldCat Logo. */
- /* Font weights include 100, 200, 300, 400, 500, 600, 700 */
- 
-
 
 /*----------------------------------------------------------------------------
  *
@@ -59,8 +58,9 @@ body {
 
 .container {
 	width: 100%;
-	margin: 6rem 0;
+	margin: 6rem auto;
 }
+
 .container:after {
   content: "";
   display: table;
@@ -73,33 +73,27 @@ body {
 	margin-right: auto;
 }
 
-.container--measure__bleed { // breaks elements out of container--measure, if necessary
-	margin-left: calc(-50vw + 50%);
-	margin-right: calc(-50vw + 50%);
-}
-
-/* Layout Areas */
-
-.header-brand {
-	padding: 1rem 2rem;
-}
-
-.header-brand__logo {
-	width: 150px;
-}
-
-.main__header {
-	text-align:center;
-	padding: 20vh 0;
-	background: rgba(var(--dark), .1);
-}
-
 
 /*----------------------------------------------------------------------------
  *
  * TYPOGRAPHY
  *
  *---------------------------------------------------------------------------*/
+ 
+ /*
+	 Font sizes based on major third (1.25) http://www.modularscale.com/?1&em&1.25
+	 Font weights include 100, 200, 300, 400, 500, 600, 700
+
+*/
+
+:root {	 
+ 	--base: 		1rem;
+	--alpha:		4.768rem; /* largest */
+	--beta:		3.052rem;
+	--gamma:		1.953rem;
+	--delta:		1.25rem;
+	--epsilon:	.8rem;
+}
  
 html {
 	font-size: 100%;
@@ -111,27 +105,99 @@ html {
 
 body {
 	line-height: 1.4;
+	background: rgb(var(--light));
+	color: rgb(var(--text));
 }
 
-.main__header__title {
-	font-weight: 100;
-	font-size: 5rem;
-	max-width: 55rem;
-	margin: auto;
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
+.h1 {
 	color: rgb(var(--green));
+	font-weight: 100;
+	font-size: var(--alpha);
 	letter-spacing: -.03em;
 }
 
+.h2 {
+	color: rgba(var(--dark), .7);
+	font-weight: 600;
+	font-size: var(--beta);
+}
+
+.h3 {
+	color: rgba(var(--dark), .7);
+	font-weight: 600;
+	font-size: var(--gamma);
+}
+
+.h4 {
+	color: rgba(var(--dark), .7);
+	font-weight: 600;
+	font-size: var(--delta);
+}
+
+.h5 {
+	color: rgba(var(--dark), .7);
+	font-size: var(--base);
+	text-transform: uppercase;
+	letter-spacing: .02em;
+	font-weight: 700;
+}
+
 .intro-text-container {
-	font-size: 1.25rem;
+	font-size: var(--delta);
 }
 
 p:first-child {
 	margin-top:0;
 }
 
+p:last-child {
+	margin-bottom:0;
+}
+
 strong {
 	font-weight: 700;
+	color: rgba(var(--dark), .7);
+}
+ 
+ /*----------------------------------------------------------------------------
+ *
+ * MISC
+ *
+ *---------------------------------------------------------------------------*/
+ 
+ .button {
+	border: none;
+	-webkit-appearance: none;
+ }
+ 
+ /*----------------------------------------------------------------------------
+ *
+ * MODULE: HEADER
+ *
+ *---------------------------------------------------------------------------*/
+
+.header-brand {
+	padding: 1rem 2rem;
+}
+
+.header-brand__logo {
+	width: 150px;
+	height: auto;
+}
+
+.main__header {
+	text-align:center;
+	padding: 20vh 0;
+	background: rgba(var(--dark), .1);
+}
+
+.main__header__title {
+	max-width: 55rem;
+	margin: auto;
 }
  
  /*----------------------------------------------------------------------------
@@ -140,11 +206,11 @@ strong {
  *
  *---------------------------------------------------------------------------*/
  
-.map-wrap {
+.map {
 	position: relative;
 }
 
-.map { 
+.map__wrap { 
     width: 100vw;
     position: relative;
     margin-left: -50vw;
@@ -154,26 +220,27 @@ strong {
 
 /* Begin Titles Legend */
 
-.titles-legend {
-  background-color: #fff;
-  border-radius: 3px;
-  top: 2rem;
-  left: 2rem;
-  box-shadow: 0 1px 2px rgba(var(--dark), .1);
-  font: 12px/20px;
-  padding: 10px;
-  position: absolute;
-  z-index: 1;
-  text-align: left;
-  overflow: hidden;
-  opacity: 0.9;
+.map__legend {
+	background-color: #fff;
+	border-radius: 3px;
+	top: 2rem;
+	left: 2rem;
+	box-shadow: 0 1px 2px rgba(var(--dark), .1);
+	font: 12px/20px;
+	padding: 10px;
+	position: absolute;
+	z-index: 1;
+	text-align: left;
+	overflow: hidden;
+	opacity: 0.9;
 }
 
-.titles-legend h5 {
-  margin: 0 0 10px;
+.map__legend__header {
+	font-size: var(--epsilon);
+	margin: 0 0 .5em;
 }
 
-.titles-legend div span {
+.map__legend div span {
   border-radius: 50%;
   display: inline-block;
 }
@@ -232,25 +299,34 @@ strong {
  *---------------------------------------------------------------------------*/
 
 .group-legend {
+	margin-top: -6rem;
 	padding:0;
 	border: none;
 }
 
+.group-legend__hint {
+	font-weight: 500;
+	padding: 1rem;
+	margin: 0 calc(-50vw + 50%) .5rem;
+	text-align: center;
+	background: rgba(var(--dark), .15);
+}
+
 .group-legend__intro {
-	font-size: 1.25rem;
+	font-size: var(--delta);
 }
 
 #group-legend-elements {
-	margin: 2rem -.5rem 0;
+	margin: .5rem -.5rem 0;
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .group_div {
-	font-size: 125%;
+	font-size: var(--delta);
 	cursor: pointer;
 	margin: .5rem;
-	padding: 1rem 1rem 0;
+	padding: 1rem;
 	background: rgba(var(--dark), .05);
 	flex: 1 0 6rem;
 }
@@ -260,11 +336,6 @@ strong {
 	-webkit-appearance: none;
 	width: 100%;	
 }
-
-#group-legend-title {
-  color: #666666;
-  padding-bottom: 10px;
-} 
 
 h6.group_count {
   margin: 5px 0px 5px 0px; 
@@ -306,7 +377,7 @@ h6.group_count {
     text-transform: uppercase;
     letter-spacing: .1em;
     font-weight: 100;
-    font-size: 3rem;
+    font-size: var(--beta);
 }
 
 .total-container p {
@@ -325,28 +396,103 @@ h6.group_count {
  
  /*----------------------------------------------------------------------------
  *
+ * MODULE: SEARCH
+ *
+ *---------------------------------------------------------------------------*/
+ 
+ .search__input-group {
+	 display: flex;
+	 margin: 1rem 0 3rem;
+ }
+ 
+ .search__input {
+	flex: 1 1 62.8%;
+	padding: 1rem;
+	font-size: var(--base);
+	background: rgba(var(--dark),.05);
+	border: none;
+ }
+ 
+ .search__button {
+	flex: 1 1 auto;
+	padding: 1rem;
+	font-size: var(--base);
+	text-transform: uppercase;
+	letter-spacing: .01em;
+	font-weight: 700;
+	background: rgba(var(--dark),.3);
+	color: rgb(var(--light));
+ }
+ 
+ /* Begin Search Result Groups */
+  
+.search__groups {
+	list-style: none;
+	margin: .5rem 0 0;
+	padding: 0;
+}
+ 
+.search__groups__item {
+	list-style: none;
+	margin: 0;
+	font: var(--epsilon);
+	display: inline-block;
+	background-color: rgba(var(--dark),.3);
+	padding: .25rem .5rem;
+	color: rgb(var(--light));
+	border-radius: .5rem;
+	font-weight: 600;
+}
+ 
+ /* End Search Result Groups */
+ 
+ /* Begin Table Styles */
+ 
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	text-align: left;
+	line-height: 1.2;
+	padding: 1rem;
+}
+ 
+thead th {
+	font-size: var(--epsilon);
+	text-transform: uppercase;
+	letter-spacing: .01em;
+	font-weight: 700;
+	color: rgba(var(--dark),.7);
+	vertical-align: bottom;
+}
+
+tbody td {
+	background: rgba(var(--dark),.05);
+	vertical-align: top;
+}
+
+.table__title {
+	width: 60%;	
+}
+
+.table__publisher {
+	width: 25%;	
+}
+
+.table__pub-date {
+	width: 15%;	
+	text-align: right;
+}
+ 
+ /* End Table Styles */
+ 
+ /*----------------------------------------------------------------------------
+ *
  *  ORIGINAL STYLES BELOW (ONLY FONTS MODIFIED SO FAR)
  *
  *---------------------------------------------------------------------------*/
-
-
-h2.button-margin {
-    margin: 10px; 
-    text-transform: uppercase;
-    font-weight: 900;
-}
-
-button {
-    margin:0 auto;
-    display:inline-block;
-}
-
-.descriptive-text {
-    font-weight: light;
-    color: #666666;
-    background-color: #fff;
-    font-size: 90%;
-}
 
 h4#location-title {
     margin-top: 10px;
@@ -355,17 +501,7 @@ h4#location-title {
 }
 
 
-// Table & Search Features
-
-.search-box {
-  margin: 35px 0px 15px 15px;
-}
-
-h3#table-title {
-  float:left;
-  font: 18px/20px;
-  color: #666666;
-}
+/* Table & Search Features */
 
 
 #myInput {
@@ -383,17 +519,6 @@ h3#table-title {
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
     display: inline-block;
-}
-
-td {
-    vertical-align:middle;
-    // height:100px;
-    width:100%;
-}
-
-.spacer {
-  margin: 10px 0px 10px 0px;
-
 }
 
 #east {
