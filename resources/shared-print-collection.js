@@ -437,17 +437,17 @@ function parseData(data, groupID) {
 function parseTitleResults(data, groupID) {
     var parsedData = {};
     for (var i = 0; i < data.response.docs.length; i++) {
-        var worldcat_nbr = data.response.docs[i].worldcat_oclc_nbr;
-console.log('worldcat_nbr');console.log(worldcat_nbr);
-        parsedData[worldcat_nbr]["title"] = data.response.docs[i].title;
-        parsedData[worldcat_nbr]["author"] = data.response.docs[i].author;
-        parsedData[worldcat_nbr]["publisher"] = data.response.docs[i].publisher;
-        parsedData[worldcat_nbr]["pub_year"] = data.response.docs[i].pub_year;
-        parsedData[worldcat_nbr]["groups"] = [];
-        parsedData[worldcat_nbr]["groups"].push(groupID);
-
+        var worldcat_oclc_nbr = data.response.docs[i].worldcat_oclc_nbr;
+        parsedData[worldcat_oclc_nbr] = {};
+        parsedData[worldcat_oclc_nbr]["title"] = data.response.docs[i].title;
+        parsedData[worldcat_oclc_nbr]["author"] = data.response.docs[i].author;
+        parsedData[worldcat_oclc_nbr]["publisher"] = data.response.docs[i].publisher;
+        parsedData[worldcat_oclc_nbr]["pub_year"] = data.response.docs[i].pub_year;
+        sparsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;
+        parsedData[worldcat_oclc_nbr]["groups"] = [];
+        parsedData[worldcat_oclc_nbr]["groups"].push(groupID);
     };
-// alert(parsedData);
+    return parsedData;
 }
 
 function searchSolrTitles() {
