@@ -446,7 +446,7 @@ console.log('worldcat_nbr');console.log(worldcat_nbr);
         parsedData[worldcat_nbr]["groups"].push(groupID);
 
     };
-alert(parsedData);
+// alert(parsedData);
 }
 
 function searchSolrTitles() {
