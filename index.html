@@ -3,9 +3,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-	  	<title>North American Shared Print Collection</title>
+	  	<title>North American Shared Print Initiative</title>
 		<!-- Note: Fonts from Fonts.com -->		
-	  	<link rel="stylesheet" type="text/css" href="../resources/mapStyle.css">
+	  	<link rel="stylesheet" type="text/css" href="resources/mapStyle.css">
 	  	<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />		  
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -14,17 +14,23 @@
 
 	<body>
 		<header class="header-brand">
-			<img class="header-brand__logo" src="../resources/WorldCat_Logo.png" alt="WorldCat Logo">
+			<img class="header-brand__logo" src="resources/WorldCat_Logo.png" alt="WorldCat Logo" width="160" height="30" />
 		</header>
 		
 		<section class="main">
 			<header class="main__header">
-				<h1 class='h1 main__header__title'>North American Shared Retention Commitments</h1>
+				<h1 class='h1 main__header__title'>North&nbsp;American Shared&nbsp;Print Initiative <span class="h1__subhead">Facilitated by Sustainable Collection Services, a part of OCLC</span></h1>
 			</header>		
 			<div class="container container--measure intro-text-container" id="intro">
-				<p>Eleven Group Projects now exist in North America with membership of over 145 academic institutions spanning fourteen U.S. states and five Canadian provinces.</p>
-				<p>Through a collaborative process of shared print strategies these institutions have been able to retain print collections of <strong>19.7 million</strong> title-holdings, with <strong>7.6 million</strong> of those 
-			titles retained being distinct editions.</p>
+				<p>In 2012, Sustainable Collection Services and the Michican Shared Print Initiative undertook one of the first shared print monographs projects in the US.</p>
+				<p>Since then, ten other groups have quietly continued this important work with the help of SCS (part of OCLC since 2015) and the GreenGlass Model Builder.</p>
+				<p>The results speak for themselves:
+				   over <strong>145 academic institutions</strong> spanning <strong>fourteen U.S. states</strong> and
+				   <strong>five Canadian provinces</strong> have joined the OCLC Share Print Initiative.
+				   Those institutions have identified <strong>7.6 million distinct editions</strong> for long-term retention, representing 
+				   <strong>19.7 million print holdings</strong> across North America. Share print initiatives are also starting to take hold
+				   across the world, with programs in the United Kingdom and Australia.
+				</p>
 			</div>
 			
 			<div class='container map'>
@@ -44,11 +50,10 @@
 					<p class="group-legend__hint">Click on a Library Group Name to zoom in on that group, or the <strong>Overview</strong> button to see all groups.</p>
 					<div id="group-legend-elements"></div>
 				</fieldset>
-				<div class='descriptive-text-container' style="display:none;">
+				<div class='descriptive-text-container'>
 					<div class='descriptive-text'>
-						<h4 id='location-title'></h4>
-						<p id='location-description'></p>
-						<small>Text credit: <a target='_blank' href='#'>a.fenix</a></small>
+						<h2 class="h3" id='location-title'></h4>
+						<p id='location-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore, enim itaque commodi tempora odio fugiat natus accusantium exercitationem rerum vitae quae tenetur mollitia amet nisi id. Eos, ipsum, culpa!</p>
 					</div>
 				</div>
 			</div>
@@ -57,21 +62,26 @@
 		<div class="totals">
 			<div class="container container--measure">
 				<div class="totals-wrap">
-					<div class="total-container"> 
-						<p>Shared Print Programs</p>
-						<h2 class='holdings-header'>11</h2>
+					<div class="totals-container">
+						<h2 class='holdings-number'>11</h2> 
+						<div class="totals-container__desc">
+							<h3>Member Libraries</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
+						</div>
 					</div>
-					<div class="total-container">
-						<p>Participating Institutions</p>
-						<h2 class='holdings-header'>143</h2>
+					<div class="totals-container"> 
+						<h2 class='holdings-number'>143</h2>
+						<div class="totals-container__desc">
+							<h3>Participating Groups</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
+						</div>
 					</div>
-					<div class="total-container"> 
-						<p>Total title-holdings retained</p>
-						<h2 class='holdings-header'>19.7M</h2>
-					</div>
-					<div class="total-container">
-						<p>Distinct holdings retained</p>
-						<h2 class='holdings-header'>7.6M</h2>	
+					<div class="totals-container"> 
+						<h2 class='holdings-number'>7.6M</h2>	
+						<div class="totals-container__desc">
+							<h3>Distinct title holdings</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
+						</div>
 					</div>
 				</div>
 			</div>				
@@ -79,36 +89,111 @@
 		
 
 		<div class="container container--measure search">
-			<h4 class="h4 search__title">Search for Retained Titles</h3>
-			<div class="search__input-group">
+			<h2 class="h3">Search for Retained Titles</h3>
+			<form class="search__input-group">
 				<input type="text" class="search__input" id="searchInput"  placeholder="Search for keyword in title...">
-				<button class="button search__button" onclick="searchSolrTitles()" type="button">Search</span></button>
+				<button class="button search__button" onclick="searchSolrTitles()" type="button">Search</button>
+			</form>
+			<ul class="search__results" id="solr_results">
+				<li class="search__item">
+					<div class="search__item__desc">
+						<strong class="search__author">Henley, Patricia. </strong>
+						<em class="search__title">The Hummingbird House. </em> 
+						<span class="search__edition">3rd ed., </span>
+						<span class="search__publisher">MacMurray, </span>
+						<span class="search__date">1999. </span>
+						<ul class="search__groups">
+							<li class="search__groups__item east">EAST <span class="numeral">10</span></li>
+							<li class="search__groups__item wrlc">WRLC <span class="numeral">3</span></li>
+						</ul>
+					</div>
+					<a href="#" class="search__item__link"><img src="resources/WorldCat_Logo_V_Color.png" alt="WorldCat_Logo_V_Color" width="48"></a>
+				</li>
+				<li class="search__item">
+					<div class="search__item__desc">
+						<strong class="search__author">Henley, Patricia. </strong>
+						<em class="search__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur non assumenda, necessitatibus repellat. Repellat quas cumque iure aperiam qui incidunt accusantium ex, voluptatem deserunt delectus omnis doloremque optio earum. </em> 
+						<span class="search__edition">3rd ed., </span>
+						<span class="search__publisher">MacMurray, </span>
+						<span class="search__date">1999. </span>
+						<ul class="search__groups">
+							<li class="search__groups__item east">EAST <span class="numeral">10</span></li>
+							<li class="search__groups__item wrlc">WRLC <span class="numeral">3</span></li>
+						</ul>
+					</div>
+					<a href="#" class="search__item__link"><img src="resources/WorldCat_Logo_V_Color.png" alt="WorldCat_Logo_V_Color" width="48"></a>
+				</li>
+				<li class="search__item">
+					<div class="search__item__desc">
+						<strong class="search__author">Henley, Patricia. </strong>
+						<em class="search__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur non assumenda, necessitatibus repellat. Repellat quas cumque iure aperiam qui incidunt accusantium ex, voluptatem deserunt delectus omnis doloremque optio earum. </em> 
+						<span class="search__edition">3rd ed., </span>
+						<span class="search__publisher">MacMurray, </span>
+						<span class="search__date">1999. </span>
+						<ul class="search__groups">
+							<li class="search__groups__item east">EAST <span class="numeral">10</span></li>
+							<li class="search__groups__item wrlc">WRLC <span class="numeral">3</span></li>
+						</ul>
+					</div>
+					<a href="#" class="search__item__link"><img src="resources/WorldCat_Logo_V_Color.png" alt="WorldCat_Logo_V_Color" width="48"></a>
+				</li>
+			</ul>
+		</div>
+		
+
+		<div class="video">			
+			<div class="container container--measure video-wrap">
+				<div class='embed-container'>
+					<iframe src='https://www.youtube.com/embed//WZUpZ0mBw7Q?rel=0&amp;controls=0&amp;showinfo=0?ecver=2' frameborder='0' allowfullscreen></iframe>
+				</div>
 			</div>
-			<table class="table search__table">
-				<thead>
-					<tr>
-						<th class="table__title">Title</th>
-						<th class="table__publisher">Publisher</th>
-						<th class="table__pub-date">Pub Date</th>
-					</tr>
-				</thead>
-				<tbody id="solr_results">
-					<tr>
-						<td class="table__title">Gnomes &amp; occasions / poems by Howard Nemerov.<br />
-							<ul class="search__groups">
-								<li class="search__groups__item east">EAST <span class="numeral">10</span></li>
-								<li class="search__groups__item wrlc">WRLC <span class="numeral">3</span></li>
-							</ul>
-						</td>
-						<td class="table__publisher">Nemerov, Howard, author.</td>
-						<td class="table__pub-date">1973</td>
-					</tr>
-				</tbody>
-			</table>
+		</div>
+
+		<div class="container container--measure">
+			<h4 class="h4">Acknowledgements</h4>
+			<div class="website-credits">
+				<div class="credits-column">
+					<div class="credit-div">
+						<h6 class="credit">Author</h6>
+						Rick Lugg
+					</div>
+
+					<div class="credit-div">
+						<h6 class="credit">Data &amp; Analysis</h6>
+						Andy Breeding
+					</div>
+
+					<div class="credit-div">
+
+
+					</div>
+				</div>
+				<div class="credits-column">
+					<div class="credit-div">
+						<h6 class="credit">Director &amp; Producer</h6>
+						Nathan Bell, <a href="http://argenticsoftware.com">Argentic</a>
+					</div>
+
+					<div class="credit-div">
+						<h6 class="credit">Programming &amp; Map</h6>
+						Alister Fenix, Argentic
+					</div>
+
+					<div class="credit-div">
+						<h6 class="credit">Design &amp; CSS</h6>
+						Abby Larsen, Argentic
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container container--measure copyright-notice">
+			<h6 class="h6">Article &copy; 2017 OCLC <a href="http://www.oclc.org">http://www.oclc.org</a></h6>
+			<h6 class="h6">Website and design &copy; 2017 Argentic <a href="http://www.argenticsoftware.com/">http://www.argenticsoftware.com</a></h6>
 		</div>
 
 		<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
 	  	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	  	<script src="../resources/shared-print-collection.js" type="text/javascript"></script>
+	  	<script src="resources/shared-print-collection.js" type="text/javascript"></script>
 	</body>
 </html>
