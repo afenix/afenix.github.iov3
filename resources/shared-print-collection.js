@@ -423,7 +423,7 @@ function searchSolrTitles() {
         var dataLength = Object.keys(finalParsedData).length;
         var row = "";
         for (var key in finalParsedData) {
-            row+="<tr><td>"+ finalParsedData[key].title + ", " + finalParsedData[key].edition + "</td><td>" + finalParsedData[key].author + "</td><td>" + finalParsedData[key].pub_year + "</td><td>" + finalParsedData[key].opac_url + "</td><td>";
+            row+="<tr><td>"+ finalParsedData[key].title + ", " + finalParsedData[key].edition + "</td><td>" + finalParsedData[key].author + "</td><td>" + finalParsedData[key].pub_year + "</td><td>" + finalParsedData[key].opac_url + "</td><td>" ;
         };
         $("#solr_results").html(row);    
       });
