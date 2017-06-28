@@ -244,10 +244,10 @@ map.on('mouseenter', 'shared_collection', function(e) {
     // Populate the popup and set its coordinates
     // based on the feature found.
     popup.setLngLat(feature.geometry.coordinates)
-         .setHTML('<div id="popup" class="popup" style="z-index: 10;"> <h5 style="text-align:center"> ' + feature.properties['group'] + ' Group</h5><h5 style="margin-left:15px;"><strong>' + feature.properties['inst_name'] + '</strong></h5>' +
-	              '<ul class="list">' +
-	              '<li class="list-total-retentions"> Total titles retained: ' + feature.properties['total_count_string'] + ' </li>' +
-	              '<li class="list-distinct-retentions"> Total unique titles retained: ' + feature.properties['unique_count_string'] + " </li>" + '</ul> </div>')
+         .setHTML('<div id="popup" class="popup" style="z-index: 10;"> <h3 style="text-align:center;padding:0px 0px"> ' + feature.properties['group'] + ' Group</h3><h4 style="margin:0px 10px"><strong>' + feature.properties['inst_name'] + '</strong></h4>' +
+	              '<ul>' +
+	              '<li class="popup-list" style="padding:0px 10px 0px 15px;;"> Total titles retained: ' + feature.properties['total_count_string'] + ' </li>' +
+	              '<li class="popup-list" style="padding:0px 10px 0px 15px;"> Total unique titles retained: ' + feature.properties['unique_count_string'] + " </li></ul> </div>")
         .addTo(map);
 });
 
