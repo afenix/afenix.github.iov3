@@ -15,8 +15,8 @@ var description = document.getElementById('location-description');
 
 var libraries = [{
  	"id": "12",
-    "title": "",
-    "description": "",
+    "title": "Shared Print Overview",
+    "description": "Models and retention criteria vary according to local and regional priorities, but most of the committed titles are secured under formal Memoranda of Understanding (MOU) for 15 years, often with review every five years. In some respects, these are grass-roots activities, designed to address local needs, but it seems clear that these programs can contribute significantly to a federated national or international solution, such as that envisioned by the MLA’s Working Group on The Future of the Print Record.",
     "camera": {
         center: [-100.722656, 42.793385],
         zoom: 3,
