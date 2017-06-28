@@ -391,12 +391,11 @@ function searchSolrTitles() {
     var cleanUserInput = rawUserInput.split(' ').join(' AND ');
     $([185,191,258,300,302,323]).each(function() {
       var groupID = this;
-      $.getJSON("http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {  
-        var Parent = document.getElementById('solr_result');
+      $.getJSON("http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {
         var row = "";
         for (var i = 0; i < result.response.docs.length; i++) {
             var parsedData = parseTitleResults(result,groupID);
-            row+="<tr><td>"+ result.response.docs[i].title + "</td><td>" + result.response.docs[i].author + "</td><td>" + result.response.docs[i].pub_year + "</td></tr>";
+            row+="<tr><td class='table__title'>"+ result.response.docs[i].title + "</td><td class='table__publisher'>" + result.response.docs[i].publisher + "</td><td class='table__pub-date'>" + result.response.docs[i].pub_year + "</td></tr>";
         };
         $("#solr_results").html(row);    
       });

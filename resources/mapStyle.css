@@ -93,6 +93,9 @@ body {
 	--gamma:		1.953rem;
 	--delta:		1.25rem;
 	--epsilon:	.8rem;
+	--zeta:		.64rem; /* more for special instance reference than actual use! */
+	--eta:		.41rem; /* more for special instance reference than actual use! */
+	--theta:		.328rem; /* more for special instance reference than actual use! */
 }
  
 html {
@@ -118,24 +121,39 @@ h1, h2, h3, h4, h5 {
 	font-weight: 100;
 	font-size: var(--alpha);
 	letter-spacing: -.03em;
+	line-height: 1.1;
+}
+
+.h1__subhead {
+	color: rgb(var(--green));
+	font-size: .328em;
+	font-weight: 400;
+	display: block;
+	margin-top: 1.5rem;
+	letter-spacing: -.01em;
+	max-width: 55rem;
+	line-height: 1.2;
 }
 
 .h2 {
 	color: rgba(var(--dark), .7);
-	font-weight: 600;
+	font-weight: 200;
 	font-size: var(--beta);
+	line-height: 1.1;
 }
 
 .h3 {
 	color: rgba(var(--dark), .7);
-	font-weight: 600;
+	font-weight: 200;
 	font-size: var(--gamma);
+	line-height: 1.1;
 }
 
 .h4 {
 	color: rgba(var(--dark), .7);
 	font-weight: 600;
 	font-size: var(--delta);
+	line-height: 1.1;
 }
 
 .h5 {
@@ -144,6 +162,7 @@ h1, h2, h3, h4, h5 {
 	text-transform: uppercase;
 	letter-spacing: .02em;
 	font-weight: 700;
+	line-height: 1.1;
 }
 
 .intro-text-container {
@@ -161,6 +180,20 @@ p:last-child {
 strong {
 	font-weight: 700;
 	color: rgba(var(--dark), .7);
+}
+
+em {
+	font-style: italic;
+}
+
+ul, li {
+	list-style: none;
+	padding:0;
+	margin: 0;
+}
+
+a {
+	color: rgb(var(--green));
 }
  
  /*----------------------------------------------------------------------------
@@ -191,8 +224,8 @@ strong {
 
 .main__header {
 	text-align:center;
-	padding: 20vh 0;
-	background: rgba(var(--dark), .1);
+	padding: 9rem 0;
+	background: rgba(var(--dark), .05);
 }
 
 .main__header__title {
@@ -354,44 +387,42 @@ h6.group_count {
  *---------------------------------------------------------------------------*/
  
 .totals {
-	text-align:center;
-	background: rgba(var(--dark), .1);
+	background: rgba(var(--dark), .05);
 }
 
 .totals-wrap {
 	margin: 0 -.5rem;
 	padding: 6rem 0;
+}
+
+.totals-container {
+	margin: 0;
+	padding: 2rem 3rem 2rem 0;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.total-container {
-	margin: .5rem;
-	padding: 1rem;
-	background: rgba(var(--green), .75);
-	flex: 1 0 6rem;
-    text-align: center;
+.totals-container__desc {
+	box-sizing: border-box;
+	border-left: 1px solid rgba(var(--dark), .2);
+	padding: 2rem 0 2rem 3rem;
+	flex: 1 0 61.8%;
 }
 
-.total-container h2 {
+.totals-container__desc h3 {
+	margin:0;
+	font-weight: 200;
+    font-size: var(--gamma);
+}
+
+.holdings-number { 
+	box-sizing: border-box;
     text-transform: uppercase;
-    letter-spacing: .1em;
+    letter-spacing: -.05em;
     font-weight: 100;
-    font-size: var(--beta);
-}
-
-.total-container p {
-    color:#FFFFFF;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 10px 0px 3px 0px;
-    letter-spacing: .05em;
-}
-
-.holdings-header { 
-  padding:0px;
-  margin: 0px 0px 10px 0px;
-  color:#FFFFFF;
+    font-size: var(--alpha);
+	flex: 1 0 38.2%;
+	text-align:center;
 }
  
  /*----------------------------------------------------------------------------
@@ -423,12 +454,48 @@ h6.group_count {
 	background: rgba(var(--dark),.3);
 	color: rgb(var(--light));
  }
+
+/* Begin Search Results Listing */
+
+.search__results {
+	margin-top: 4rem;
+}
+
+.search__item {/* 
+	background: rgba(var(--dark),.05);
+	padding: 1rem; */
+	display: flex;
+	margin-bottom: 2rem;
+}
+
+.search__item__desc {
+	flex: 1 1 auto;
+	padding-right: 2rem;
+}
+
+.search__groups {
+	margin-top: .5rem;
+}
+
+.search__item__link {
+	flex: 0 0 3rem;
+}
+
+.search__link img {
+	width: 3rem;
+	height: auto;
+}
+
+.search__author {
+	font-weight: 600;
+}
+
+/* End Search Results Listing */
  
- /* Begin Search Result Groups */
+/* Begin Search Result Groups */
   
 .search__groups {
 	list-style: none;
-	margin: .5rem 0 0;
 	padding: 0;
 }
  
@@ -479,42 +546,10 @@ h6.group_count {
 .search__groups__item.tug {
 	background-color: #FF7F00;
 }
- 
- /* End Search Result Groups */
 
- /* Begin Credit Styles */
+/* End Search Result Groups */
 
-.website-credits {
-/*	margin: .5rem -.5rem 0;*/
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.credits-column {
-	flex: 1 0 6rem;
-}
-
-.credit-div {
-	margin: 0 0 2rem;
-	padding: 0rem;
-}
-
-h6.credit {
-  font-size: --epsilon;
-  margin: 5px 0px 5px 0px; 
-}
-
- /* End Credit Styles */
-
-
-/* Start Copyright Styles */
-.copyright-notice h6 {
-  margin: .5em 0;
-}
-
- /* End Copyright Styles */
- 
- /* Begin Table Styles */
+/* Begin Table Styles */
  
 table {
 	border-collapse: collapse;
