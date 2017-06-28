@@ -135,6 +135,16 @@ var libraries = [{
     }
 }];
 
+$(window).scroll(function() {
+   var hT = $('.map').offset().top,
+       hH = $('.map').outerHeight(),
+       wH = $(window).height(),
+       wS = $(this).scrollTop();
+   if (wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)) {
+      playback(0);
+    }
+});
+
 function playback(index) {
     // Animate the map position based on camera properties
     map.flyTo({
@@ -148,7 +158,7 @@ function playback(index) {
         // These options control the flight curve, making it move
         // slowly and zoom out almost completely before starting
         // to pan.
-        speed: 0.2, // make the flying slow
+        speed: 0.5, // make the flying slow
         curve: 1, // change the speed at which it zooms out
 
         // This can be any easing function: it takes a number between
@@ -203,12 +213,13 @@ description.textContent = libraries[libraries.length - 1].description;
             },
             'circle-opacity' : 0.55
           },
-    }); playback(0);
+    }); 
 });
 
 // add nav features to the map
 map.addControl(new mapboxgl.NavigationControl({position: 'top-left'}));
 
+// disable map scrolling (i.e. zoom in/out on scroll)
 map.scrollZoom.disable();
 
 // Create a popup object, but don't add it to the map yet.
@@ -307,6 +318,7 @@ var group_info = [{
     }
 ];
 
+// Iteratively create the group buttons 
 $.each(group_info, function(key, obj) {
 	var group_div = document.createElement('div');
     $(group_div).addClass('group_div');
