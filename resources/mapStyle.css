@@ -557,40 +557,58 @@ h6.group_count {
 
 .search__groups__item .numeral {
 	color: rgb(var(--light));
+	padding-left:2px;
 }
 
 .search__groups__item.east {
 	background-color: #FB9A99;
+	margin-right: 5px;
 }
 
 .search__groups__item.wrlc {
 	background-color: #6A3D9A;
+	margin-right: 5px;
 }
 
 .search__groups__item.mi-spi {
 	background-color: #FF4847;
+	margin-right: 5px;
 }
 
 .search__groups__item.viva {
 	background-color: #CAB2D6;
+	margin-right: 5px;
 }
 
 .search__groups__item.ci-cci {
 	background-color: #6A3D9A;
+	margin-right: 5px;
 }
 
 .search__groups__item.ali {
 	background-color: #A6CEE3;
+	margin-right: 5px;
 }
 
 .search__groups__item.coppul {
 	background-color: #33A02C;
+	margin-right: 5px;
 }
 
 .search__groups__item.tug {
 	background-color: #FF7F00;
+	margin-right: 5px;
 }
 
+.search__groups__item.scelc {
+	background-color: #036564;
+	margin-right: 5px;
+}
+
+.search__groups__item.mms {
+	background-color: #666666;
+	margin-right: 5px;
+}
 /* End Search Result Groups */
 
 /* Begin Table Styles */

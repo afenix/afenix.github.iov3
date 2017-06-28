@@ -418,7 +418,41 @@ function searchSolrTitles() {
         var finalParsedData = parseTitleResults(result,groupID, parsedData);
         var row = "";
         for (var key in finalParsedData) {
-            row+="<tr><td>"+ finalParsedData[key].title + ", " + finalParsedData[key].edition + "</td><td>" + finalParsedData[key].author + "</td><td>" + finalParsedData[key].pub_year + "</td><td>" + finalParsedData[key].opac_url + "</td><td>" ;
+            var groupArray = finalParsedData[key].groups;
+            var groupLength = finalParsedData[key].groups.length;
+            row+="<li class='search__item'><div class='search__item__desc'><strong class='search__author'>"+ finalParsedData[key].author + 
+            "</strong>, <em class='search__title'>" + finalParsedData[key].title + "</em><span class='search__edition'>" + finalParsedData[key].edition + 
+            "</span><span class='search__publisher'>" + finalParsedData[key].publisher + "</span><span class='search__date'>" + 
+            finalParsedData[key].pub_year + "</span><ul class='search__groups'>"; 
+            for (var i = 0; i < finalParsedData[key].groups.length; i++) {
+                if (finalParsedData[key].groups[i] == "EAST") {
+                    var east = "<li class='search__groups__item east'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>";  
+                    row+= east;
+                };
+                if (finalParsedData[key].groups[i] == "MI-SPI") {
+                    var mispi = "<li class='search__groups__item mi-spi'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>"; 
+                    row+= mispi;
+                }; 
+                if (finalParsedData[key].groups[i] == "COPPUL") {
+                    var coppul = "<li class='search__groups__item coppul'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>";
+                    row+= coppul;  
+                };
+                if (finalParsedData[key].groups[i] == "ALI") {
+                    var ali = "<li class='search__groups__item ali'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>";
+                    row+= ali;
+                };
+                if (finalParsedData[key].groups[i] == "SCELC") {
+                    var scelc = "<li class='search__groups__item scelc'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>"; 
+                    row+= scelc; 
+                }; 
+                if (finalParsedData[key].groups[i] == "MMS") {
+                    var mms = "<li class='search__groups__item mms'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>"; 
+                    row+= mms;
+                };
+            }; 
+
+            row+= "</ul></div><a href='" + finalParsedData[key].opac_url + 
+            "' class='search__item__link'><img src='resources/WorldCat_Logo_V_Color.png' alt='WorldCat_Logo_V_Color' width='48'></a></li>" ;
         };
         $("#solr_results").html(row);    
       });
