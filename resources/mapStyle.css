@@ -107,7 +107,7 @@ html {
 }
 
 body {
-	line-height: 1.4;
+	line-height: 1.5;
 	background: rgb(var(--light));
 	color: rgb(var(--text));
 }
@@ -332,7 +332,7 @@ a {
  *---------------------------------------------------------------------------*/
 
 .group-legend {
-	margin-top: -6rem;
+	margin: -6rem 0 3rem;
 	padding:0;
 	border: none;
 }
@@ -356,12 +356,24 @@ a {
 }
 
 .group_div {
+	box-sizing: border-box;
 	font-size: var(--delta);
 	cursor: pointer;
 	margin: .5rem;
 	padding: 1rem;
 	background: rgba(var(--dark), .05);
-	flex: 1 0 6rem;
+	flex: 1 0 7rem;
+	border: 4px solid transparent;
+}
+
+.group_div:first-of-type {
+	border: 4px solid  rgba(var(--dark), .05);
+	background: rgb(var(--light));
+}
+
+.group_div.selected {
+	border: 4px solid  rgba(var(--dark), .05);
+	background: rgb(var(--light));
 }
 
 .group-legend button {
