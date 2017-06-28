@@ -135,13 +135,15 @@ var libraries = [{
     }
 }];
 
-$(window).scroll(function() {
+
+$(document).on('scroll.stopEvent', function() {
    var hT = $('.map').offset().top,
        hH = $('.map').outerHeight(),
        wH = $(window).height(),
        wS = $(this).scrollTop();
    if (wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)) {
-      playback(0);
+        $(document).off('scroll.stopEvent');
+        playback(0);
     }
 });
 
@@ -403,7 +405,6 @@ function parseTitleResults(data, groupID,parsedData) {
             parsedData[worldcat_oclc_nbr]["groups"].push(groupName);
         }
     };
-
     return parsedData;
 }
 
