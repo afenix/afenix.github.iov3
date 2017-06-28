@@ -135,39 +135,27 @@ var libraries = [{
     }
 }];
 
-// Data points for onLoad map animation
-var onLoadFlyIn = [{
-    "id": "1",
-    "title": "starting-point",
-    "camera": {
-        center: [-91.230469, 34.510218],
-        zoom: 1.75,
-        bearing: 5,
-        pitch: 45
-     }
-   },{
- 	"id": "2",
-    "title": "ending-point",
-    "camera": {
+function playback(index) {
+    // Animate the map position based on camera properties
+    map.flyTo({
+        // These options control the ending camera position: centered at
+        // the target, at zoom level 9, and north up.
         center: [-100.722656, 42.793385],
         zoom: 3,
         bearing: 0,
-        pitch: 0
-    }
- }];
+        pitch: 0,
 
+        // These options control the flight curve, making it move
+        // slowly and zoom out almost completely before starting
+        // to pan.
+        speed: 0.2, // make the flying slow
+        curve: 1, // change the speed at which it zooms out
 
-function playback(index) {
-    // Animate the map position based on camera properties
-    map.flyTo(onLoadFlyIn[index].camera);
-
-    map.once('moveend', function() {
-        // Duration the slide is on screen after interaction
-        window.setTimeout(function() {
-            // Increment index
-            index = (index + 1 === libraries.length) ? 0 : index + 1;
-            playback(index);
-        }, 300); // After callback, show the location for 5 seconds.
+        // This can be any easing function: it takes a number between
+        // 0 and 1 and returns another number between 0 and 1.
+        easing: function (t) {
+            return t;
+        }
     });
 }
 
