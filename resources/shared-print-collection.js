@@ -338,10 +338,6 @@ $.each(group_info, function(key, obj) {
 	});
 
     group_div.addEventListener('click', function() {
-    	// $('html,body').animate({
-     //    	scrollTop: $(".intro-text-container").position().top},
-     //    	'slow');
-
         if (libraries[key].title != "") {
 	        $('.descriptive-text-container').animate({
 	        }, 750, function() {
