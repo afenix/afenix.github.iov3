@@ -4,10 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	  	<title>North American Shared Print Collection</title>
-		<!-- Typekit - Update with Argentic Typekit ID -->
-		<script src="https://use.typekit.net/cre5hwe.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
-		
+		<!-- Note: Fonts from Fonts.com -->		
 	  	<link rel="stylesheet" type="text/css" href="../resources/mapStyle.css">
 	  	<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />		  
 		<!--[if lt IE 9]>
@@ -22,7 +19,7 @@
 		
 		<section class="main">
 			<header class="main__header">
-				<h1 class='main__header__title'>North American Shared Retention Commitments</h1>
+				<h1 class='h1 main__header__title'>North American Shared Retention Commitments</h1>
 			</header>		
 			<div class="container container--measure intro-text-container" id="intro">
 				<p>Eleven Group Projects now exist in North America with membership of over 145 academic institutions spanning fourteen U.S. states and five Canadian provinces.</p>
@@ -30,21 +27,21 @@
 			titles retained being distinct editions.</p>
 			</div>
 			
-			<div class='container map-wrap'>
-				<div class='titles-legend'>
-					<h5>Titles Retained</h5>
+			<div class='container map'>
+				<div class='map__legend'>
+					<h5 class="h5 map__legend__header">Titles Retained</h5>
 					<div><span class='circle1'></span><= 20k</div>   
 					<div><span class='circle2'></span></div>
 					<div><span class='circle3'></span></div>
 					<div><span class='circle4'></span></div>
 					<div class='align-us'><span class='circle5'></span> > 500k</div>
 				</div>
-				<div class="map" id="map"></div>
+				<div class="map__wrap" id="map"></div>
 			</div>
 			
 			<div class="container container--measure">
 				<fieldset class="group-legend">
-					<p class="group-legend__intro">Click on a Library Group Name to zoom in on that group, or the “Overview” button to see all groups.</p>
+					<p class="group-legend__hint">Click on a Library Group Name to zoom in on that group, or the <strong>Overview</strong> button to see all groups.</p>
 					<div id="group-legend-elements"></div>
 				</fieldset>
 				<div class='descriptive-text-container' style="display:none;">
@@ -81,51 +78,33 @@
 		</div>
 		
 
-		<div class="container container--measure search-wrap">	
-
-			<div class="col-md-10">
-				<h3 id="table-title">Search for Retained Titles</h3>
+		<div class="container container--measure search">
+			<h4 class="h4 search__title">Search for Retained Titles</h3>
+			<div class="search__input-group">
+				<input type="text" class="search__input" id="searchInput"  placeholder="Search for keyword in title...">
+				<button class="button search__button" onclick="searchSolrTitles()" type="button">Search</span></button>
 			</div>
-			<div class="row">
-				<div class="col-lg-6">
-				    <div class="input-group">
-				      <input type="text" class="form-control" id="searchInput"  placeholder="Search for keyword in title...">
-				      <span class="input-group-btn">
-				        <button class="btn btn-secondary" onclick="searchSolrTitles()" type="button"> <span class="glyphicon glyphicon-search"></span></button>
-				      </span>
-				    </div>
-				 </div>
-			</div>
-		</div>
-		
-
-		<div class="col-md-12 table-titles"> 
-		  <div class="table-responsive">          
-			  <table class="table">
-			    <thead>
-			      <tr>
-			        <th>Title</th>
-			        <th>Publisher</th>
-			        <th>Publication Date</th>
-			        <th>Url</th>
-			      </tr>
-			    </thead>
-			 	<tbody id="solr_results">
-			         <tr>
-                        <td class="table__title">Gnomes &amp; occasions / poems by Howard Nemerov.<br />
-                            <ul class="search__groups">
-                                <li class="search__groups__item">EAST: 10</li>
-                                <li class="search__groups__item">WRLC: 3</li>
-                            </ul>
-                        </td>
-                        <td class="table__publisher">Nemerov, Howard, author.</td>
-                        <td class="table__pub-date">1973</td>
-                        <td class="table__opac-url">http://library.catalog.gvsu.edu/record=b1052536</td>
-
-                    </tr>
-                </tbody>
-			  </table>
-		  </div>
+			<table class="table search__table">
+				<thead>
+					<tr>
+						<th class="table__title">Title</th>
+						<th class="table__publisher">Publisher</th>
+						<th class="table__pub-date">Pub Date</th>
+					</tr>
+				</thead>
+				<tbody id="solr_results">
+					<tr>
+						<td class="table__title">Gnomes &amp; occasions / poems by Howard Nemerov.<br />
+							<ul class="search__groups">
+								<li class="search__groups__item east">EAST <span class="numeral">10</span></li>
+								<li class="search__groups__item wrlc">WRLC <span class="numeral">3</span></li>
+							</ul>
+						</td>
+						<td class="table__publisher">Nemerov, Howard, author.</td>
+						<td class="table__pub-date">1973</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
 		<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>

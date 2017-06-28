@@ -335,7 +335,6 @@ $.each(group_info, function(key, obj) {
     	} else {
 	    	group_button.style.backgroundColor = value;
     	}
-	    group_div.style.color = '#666666';
 	});
 
     group_div.addEventListener('click', function() {

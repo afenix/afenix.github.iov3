@@ -1,3 +1,4 @@
+@import url('vendor/fontsdotcom/fonts.css');
 @import url('vendor/normalize.css');
 
 /*----------------------------------------------------------------------------
@@ -13,23 +14,27 @@
  * Notable exceptions are Opera Mini and IE 11 which lack support utterly, and 
  * Edge 15 which does not support CSS variables in animations or pseudo-elements.
  * Should this project go into production, a CSS post-processor could be used in 
- * the future to provide support for older and/or less-capable browsers.
+ * the future to provide support for older and/or less-capable browsers or you 
+ * *could* just replace the variables with their values.
  *
  * - Abby
  *
  *---------------------------------------------------------------------------*/
  
+ /* Color variables pulled from WorldCat Logo. */
+ 
  :root {
+	 --brand: 	44,150,62; /* same as green */
 	 --green: 	44,150,62;
 	 --blue: 	0,141,207;
 	 --purple: 	96,72,148;
 	 --pink: 	188,14,131;
 	 --orange: 	245,127,41;
 	 --dark:		0,0,0;
+	 --text:		44,44,44;
 	 --light:	255,255,255;
+	 --font-family: "Avenir Next W01", sans-serif;
  }
- 
-
 
 /*----------------------------------------------------------------------------
  *
@@ -53,8 +58,9 @@ body {
 
 .container {
 	width: 100%;
-	margin: 6rem 0;
+	margin: 6rem auto;
 }
+
 .container:after {
   content: "";
   display: table;
@@ -67,12 +73,112 @@ body {
 	margin-right: auto;
 }
 
-.container--measure__bleed { // breaks elements out of container--measure, if necessary
-	margin-left: calc(-50vw + 50%);
-	margin-right: calc(-50vw + 50%);
+
+/*----------------------------------------------------------------------------
+ *
+ * TYPOGRAPHY
+ *
+ *---------------------------------------------------------------------------*/
+ 
+ /*
+	 Font sizes based on major third (1.25) http://www.modularscale.com/?1&em&1.25
+	 Font weights include 100, 200, 300, 400, 500, 600, 700
+
+*/
+
+:root {	 
+ 	--base: 		1rem;
+	--alpha:		4.768rem; /* largest */
+	--beta:		3.052rem;
+	--gamma:		1.953rem;
+	--delta:		1.25rem;
+	--epsilon:	.8rem;
+}
+ 
+html {
+	font-size: 100%;
+	font-family: var(--font-family);
+	text-rendering: optimizelegibility; /* Can cause problems in some versions of Android */
+  	-moz-osx-font-smoothing: grayscale;
+  	-webkit-font-smoothing: antialiased;
 }
 
-/* Layout Areas */
+body {
+	line-height: 1.4;
+	background: rgb(var(--light));
+	color: rgb(var(--text));
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
+.h1 {
+	color: rgb(var(--green));
+	font-weight: 100;
+	font-size: var(--alpha);
+	letter-spacing: -.03em;
+}
+
+.h2 {
+	color: rgba(var(--dark), .7);
+	font-weight: 600;
+	font-size: var(--beta);
+}
+
+.h3 {
+	color: rgba(var(--dark), .7);
+	font-weight: 600;
+	font-size: var(--gamma);
+}
+
+.h4 {
+	color: rgba(var(--dark), .7);
+	font-weight: 600;
+	font-size: var(--delta);
+}
+
+.h5 {
+	color: rgba(var(--dark), .7);
+	font-size: var(--base);
+	text-transform: uppercase;
+	letter-spacing: .02em;
+	font-weight: 700;
+}
+
+.intro-text-container {
+	font-size: var(--delta);
+}
+
+p:first-child {
+	margin-top:0;
+}
+
+p:last-child {
+	margin-bottom:0;
+}
+
+strong {
+	font-weight: 700;
+	color: rgba(var(--dark), .7);
+}
+ 
+ /*----------------------------------------------------------------------------
+ *
+ * MISC
+ *
+ *---------------------------------------------------------------------------*/
+ 
+ .button {
+	border: none;
+	-webkit-appearance: none;
+ }
+ 
+ /*----------------------------------------------------------------------------
+ *
+ * MODULE: HEADER
+ *
+ *---------------------------------------------------------------------------*/
 
 .header-brand {
 	padding: 1rem 2rem;
@@ -80,6 +186,7 @@ body {
 
 .header-brand__logo {
 	width: 150px;
+	height: auto;
 }
 
 .main__header {
@@ -88,36 +195,9 @@ body {
 	background: rgba(var(--dark), .1);
 }
 
-
-/*----------------------------------------------------------------------------
- *
- * TYPOGRAPHY
- *
- *---------------------------------------------------------------------------*/
- 
-html {
-	font-size: 100%;
-	font-family: "proxima-nova", sans-serif; // 100 (thin), 300 (light), 400 (normal), and 700 (bold) weights available
-}
-
-body {
-	line-height: 1.4;
-}
-
 .main__header__title {
-	font-weight: 100;
-	font-size: 5rem;
 	max-width: 55rem;
 	margin: auto;
-	color: rgb(var(--green));
-}
-
-.intro-text-container {
-	font-size: 1.25rem;
-}
-
-p:first-child {
-	margin-top:0;
 }
  
  /*----------------------------------------------------------------------------
@@ -126,11 +206,11 @@ p:first-child {
  *
  *---------------------------------------------------------------------------*/
  
-.map-wrap {
+.map {
 	position: relative;
 }
 
-.map { 
+.map__wrap { 
     width: 100vw;
     position: relative;
     margin-left: -50vw;
@@ -140,26 +220,27 @@ p:first-child {
 
 /* Begin Titles Legend */
 
-.titles-legend {
-  background-color: #fff;
-  border-radius: 3px;
-  top: 2rem;
-  left: 2rem;
-  box-shadow: 0 1px 2px rgba(var(--dark), .1);
-  font: 12px/20px;
-  padding: 10px;
-  position: absolute;
-  z-index: 1;
-  text-align: left;
-  overflow: hidden;
-  opacity: 0.9;
+.map__legend {
+	background-color: #fff;
+	border-radius: 3px;
+	top: 2rem;
+	left: 2rem;
+	box-shadow: 0 1px 2px rgba(var(--dark), .1);
+	font: 12px/20px;
+	padding: 10px;
+	position: absolute;
+	z-index: 1;
+	text-align: left;
+	overflow: hidden;
+	opacity: 0.9;
 }
 
-.titles-legend h5 {
-  margin: 0 0 10px;
+.map__legend__header {
+	font-size: var(--epsilon);
+	margin: 0 0 .5em;
 }
 
-.titles-legend div span {
+.map__legend div span {
   border-radius: 50%;
   display: inline-block;
 }
@@ -218,25 +299,34 @@ p:first-child {
  *---------------------------------------------------------------------------*/
 
 .group-legend {
+	margin-top: -6rem;
 	padding:0;
 	border: none;
 }
 
+.group-legend__hint {
+	font-weight: 500;
+	padding: 1rem;
+	margin: 0 calc(-50vw + 50%) 2rem;
+	text-align: center;
+	background: rgba(var(--dark), .15);
+}
+
 .group-legend__intro {
-	font-size: 1.25rem;
+	font-size: var(--delta);
 }
 
 #group-legend-elements {
-	margin: 2rem -.5rem 0;
+	margin: .5rem -.5rem 0;
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .group_div {
-	font-size: 125%;
+	font-size: var(--delta);
 	cursor: pointer;
 	margin: .5rem;
-	padding: 1rem 1rem 0;
+	padding: 1rem;
 	background: rgba(var(--dark), .05);
 	flex: 1 0 6rem;
 }
@@ -246,11 +336,6 @@ p:first-child {
 	-webkit-appearance: none;
 	width: 100%;	
 }
-
-#group-legend-title {
-  color: #666666;
-  padding-bottom: 10px;
-} 
 
 h6.group_count {
   margin: 5px 0px 5px 0px; 
@@ -292,7 +377,7 @@ h6.group_count {
     text-transform: uppercase;
     letter-spacing: .1em;
     font-weight: 100;
-    font-size: 3rem;
+    font-size: var(--beta);
 }
 
 .total-container p {
@@ -311,28 +396,139 @@ h6.group_count {
  
  /*----------------------------------------------------------------------------
  *
+ * MODULE: SEARCH
+ *
+ *---------------------------------------------------------------------------*/
+ 
+ .search__input-group {
+	 display: flex;
+	 margin: 1rem 0 3rem;
+ }
+ 
+ .search__input {
+	flex: 1 1 62.8%;
+	padding: 1rem;
+	font-size: var(--base);
+	background: rgba(var(--dark),.05);
+	border: none;
+ }
+ 
+ .search__button {
+	flex: 1 1 auto;
+	padding: 1rem;
+	font-size: var(--base);
+	text-transform: uppercase;
+	letter-spacing: .01em;
+	font-weight: 700;
+	background: rgba(var(--dark),.3);
+	color: rgb(var(--light));
+ }
+ 
+ /* Begin Search Result Groups */
+  
+.search__groups {
+	list-style: none;
+	margin: .5rem 0 0;
+	padding: 0;
+}
+ 
+.search__groups__item {
+	list-style: none;
+	margin: 0;
+	font-size: var(--epsilon);
+	display: inline-block;
+	background-color: rgba(var(--dark),.3);
+	padding: .25rem .5rem;
+	color: rgba(var(--light), .8);
+	border-radius: .5rem;
+	font-weight: 700;
+}
+
+.search__groups__item .numeral {
+	color: rgb(var(--light));
+}
+
+.search__groups__item.east {
+	background-color: #FB9A99;
+}
+
+.search__groups__item.wrlc {
+	background-color: #6A3D9A;
+}
+
+.search__groups__item.mi-spi {
+	background-color: #FF4847;
+}
+
+.search__groups__item.viva {
+	background-color: #CAB2D6;
+}
+
+.search__groups__item.ci-cci {
+	background-color: #6A3D9A;
+}
+
+.search__groups__item.ali {
+	background-color: #A6CEE3;
+}
+
+.search__groups__item.coppul {
+	background-color: #33A02C;
+}
+
+.search__groups__item.tug {
+	background-color: #FF7F00;
+}
+ 
+ /* End Search Result Groups */
+ 
+ /* Begin Table Styles */
+ 
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	text-align: left;
+	line-height: 1.2;
+	padding: 1rem;
+}
+ 
+thead th {
+	font-size: var(--epsilon);
+	text-transform: uppercase;
+	letter-spacing: .01em;
+	font-weight: 700;
+	color: rgba(var(--dark),.7);
+	vertical-align: bottom;
+}
+
+tbody td {
+	background: rgba(var(--dark),.05);
+	vertical-align: top;
+}
+
+.table__title {
+	width: 60%;	
+}
+
+.table__publisher {
+	width: 25%;	
+}
+
+.table__pub-date {
+	width: 15%;	
+	text-align: right;
+}
+ 
+ /* End Table Styles */
+ 
+ /*----------------------------------------------------------------------------
+ *
  *  ORIGINAL STYLES BELOW (ONLY FONTS MODIFIED SO FAR)
  *
  *---------------------------------------------------------------------------*/
-
-
-h2.button-margin {
-    margin: 10px; 
-    text-transform: uppercase;
-    font-weight: 900;
-}
-
-button {
-    margin:0 auto;
-    display:inline-block;
-}
-
-.descriptive-text {
-    font-weight: light;
-    color: #666666;
-    background-color: #fff;
-    font-size: 90%;
-}
 
 h4#location-title {
     margin-top: 10px;
@@ -341,17 +537,7 @@ h4#location-title {
 }
 
 
-// Table & Search Features
-
-.search-box {
-  margin: 35px 0px 15px 15px;
-}
-
-h3#table-title {
-  float:left;
-  font: 18px/20px;
-  color: #666666;
-}
+/* Table & Search Features */
 
 
 #myInput {
@@ -370,103 +556,3 @@ h3#table-title {
     margin-bottom: 12px; /* Add some space below the input */
     display: inline-block;
 }
-
-td {
-    vertical-align:middle;
-    // height:100px;
-    width:100%;
-}
-
-.spacer {
-  margin: 10px 0px 10px 0px;
-
-}
-
-#east {
-  font: 10px/14px;
-  margin: 25px 20px 5px 0px;
-  background-color: #FB9A99;
-  padding: 3px 5px;
-  color: white;
-  width: 10px;
-  height: 5px;
-  border-radius: 5px;
-}
-
-#wrlc {
-  font: 10px/14px;
-  margin: 5px 20px 5px 0px;
-  background-color: #6A3D9A;
-  padding: 3px 5px;
-  color: white;
-  width: 20px;
-  height: 10px;
-  border-radius: 5px;
-}
-
-#mi-spi {
-  font: 10px/14px;
-  margin: 25px 20px 5px 0px;
-  background-color: #FF4847;
-  padding: 3px 5px;
-  color: white;
-  width: 10px;
-  height: 5px;
-  border-radius: 5px;
-}
-
-#viva {
-  font: 10px/14px;
-  margin: 5px 20px 5px 0px;
-  background-color: #CAB2D6;
-  padding: 3px 5px;
-  color: white;
-  width: 20px;
-  height: 10px;
-  border-radius: 5px;
-}
-
-#ci-cci {
-  font: 10px/14px;
-  margin: 25px 20px 5px 0px;
-  background-color: #6A3D9A;
-  padding: 3px 5px;
-  color: white;
-  width: 10px;
-  height: 5px;
-  border-radius: 5px;
-}
-
-#ali {
-  font: 10px/14px;
-  margin: 5px 20px 5px 0px;
-  background-color: #A6CEE3;
-  padding: 3px 5px;
-  color: white;
-  width: 20px;
-  height: 10px;
-  border-radius: 5px;
-}
-
-#coppul {
-  font: 10px/14px;
-  margin: 25px 20px 5px 0px;
-  background-color: #33A02C;
-  padding: 3px 5px;
-  color: white;
-  width: 10px;
-  height: 5px;
-  border-radius: 5px;
-}
-
-#tug {
-  font: 10px/14px;
-  margin: 5px 20px 5px 0px;
-  background-color: #FF7F00;
-  padding: 3px 5px;
-  color: white;
-  width: 20px;
-  height: 10px;
-  border-radius: 5px;
-}
-
