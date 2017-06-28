@@ -634,6 +634,40 @@ tbody td {
 }
  
  /* End Table Styles */
+
+
+ /* Begin Credit Styles */
+
+.website-credits {
+/*      margin: .5rem -.5rem 0;*/
+        display: flex;
+        flex-wrap: wrap;
+}
+
+.credits-column {
+        flex: 1 0 6rem;
+}
+
+.credit-div {
+        margin: 0 0 2rem;
+        padding: 0rem;
+}
+
+h6.credit {
+  font-size: --epsilon;
+  margin: 5px 0px 5px 0px;
+}
+
+ /* End Credit Styles */
+
+
+/* Start Copyright Styles */
+.copyright-notice h6 {
+  margin: .5em 0;
+}
+
+ /* End Copyright Styles */
+
  
  /*----------------------------------------------------------------------------
  *
