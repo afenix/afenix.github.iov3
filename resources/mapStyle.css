@@ -232,7 +232,7 @@ a {
 	text-align:center;
 	padding: 9rem 0;
 	background: rgba(var(--dark), .05);
-	background-image: url('background-2.png');
+	background-image: url('background-2.jpg');
 	border: 1px solid rgba(var(--green), .25);
 	border-width: 1px 0;
 }
