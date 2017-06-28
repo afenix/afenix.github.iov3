@@ -324,18 +324,21 @@ var group_info = [{
 $.each(group_info, function(key, obj) {
 	var group_div = document.createElement('div');
     $(group_div).addClass('group_div');
-    var group_button = document.createElement('button');
-    $(group_button).addClass('btn btn-xs group-buttons');
+    if (key == 0) {
+      $(group_div).addClass('selected');
+    }
+    var group_flair = document.createElement('div');
+    $(group_flair).addClass('flair');
     var group_count = document.createElement('h6');
      $(group_count).addClass('group_count');
 
     $.each(obj, function(key, value) {
     	if (key === 'group_name') {
-	    	$(group_div).text(value);
+	    	$(group_div).html('<span>' + value + '</span>');
     	} else if (key === 'group_count') {
 	    	$(group_count).text(value);
     	} else {
-	    	group_button.style.backgroundColor = value;
+	    	group_flair.style.backgroundColor = value;
     	}
 	});
 
@@ -351,6 +354,9 @@ $.each(group_info, function(key, obj) {
 	            $('.descriptive-text-container').hide();
 	        });
         }
+
+	$('.group_div').removeClass('selected');
+	$(this).addClass('selected');
        
 
         map.flyTo(libraries[key].camera);
@@ -364,7 +370,7 @@ $.each(group_info, function(key, obj) {
     });
     group_legend_elements.appendChild(group_div);
  	group_div.appendChild(group_count);
- 	group_div.appendChild(group_button);
+ 	group_div.appendChild(group_flair);
 });
 
 function parseTitleResults(data, groupID,parsedData) {
