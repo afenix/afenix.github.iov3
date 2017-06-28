@@ -370,7 +370,21 @@ $.each(group_info, function(key, obj) {
  	group_div.appendChild(group_button);
 });
 
-function parseTitleResults(data, groupID,parsedData) { 
+function parseTitleResults(data, groupID,parsedData) {
+    var groupIdMap = {
+        185: 'EAST',
+        191: 'MI-SPI',
+        258: 'COPPUL',
+        300: 'ALI',
+        302: 'SCELC',
+        323: 'MMS'
+    }; 
+    for (key in groupIdMap) {
+        if (key == groupID) {
+            groupName = groupIdMap[key];
+        }
+    }
+
     for (var i = 0; i < data.response.docs.length; i++) {
         var worldcat_oclc_nbr = data.response.docs[i].worldcat_oclc_nbr;
         if (parsedData.hasOwnProperty(worldcat_oclc_nbr)) {
