@@ -369,33 +369,60 @@ $.each(group_info, function(key, obj) {
  	group_div.appendChild(group_button);
 });
 
+function parseTitleResults(data, groupID,parsedData) {
+    var groupIdMap = {
+        185: 'EAST',
+        191: 'MI-SPI',
+        258: 'COPPUL',
+        300: 'ALI',
+        302: 'SCELC',
+        323: 'MMS'
+    }; 
+    for (key in groupIdMap) {
+        if (key == groupID) {
+            groupName = groupIdMap[key];
+        }
+    }
 
-function parseTitleResults(data, groupID) {
-    var parsedData = {};
     for (var i = 0; i < data.response.docs.length; i++) {
         var worldcat_oclc_nbr = data.response.docs[i].worldcat_oclc_nbr;
-        parsedData[worldcat_oclc_nbr] = {};
-        parsedData[worldcat_oclc_nbr]["title"] = data.response.docs[i].title;
-        parsedData[worldcat_oclc_nbr]["author"] = data.response.docs[i].author;
-        parsedData[worldcat_oclc_nbr]["publisher"] = data.response.docs[i].publisher;
-        parsedData[worldcat_oclc_nbr]["pub_year"] = data.response.docs[i].pub_year;
-        parsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;
-        parsedData[worldcat_oclc_nbr]["groups"] = [];
-        parsedData[worldcat_oclc_nbr]["groups"].push(groupID);
+        if (parsedData.hasOwnProperty(worldcat_oclc_nbr)) {
+            if ($.inArray(groupName, parsedData[worldcat_oclc_nbr]["groups"]) === -1) {
+                parsedData[worldcat_oclc_nbr]["groups"].push(groupName);
+            }
+        } else {
+            parsedData[worldcat_oclc_nbr] = {};
+            parsedData[worldcat_oclc_nbr]["title"] = data.response.docs[i].title;
+            parsedData[worldcat_oclc_nbr]["edition"] = data.response.docs[i].edition;
+            parsedData[worldcat_oclc_nbr]["author"] = data.response.docs[i].author;
+            parsedData[worldcat_oclc_nbr]["publisher"] = data.response.docs[i].publisher;
+            parsedData[worldcat_oclc_nbr]["pub_year"] = data.response.docs[i].pub_year;
+            parsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;           
+            if (data.response.docs[i].edition == null) {
+                parsedData[worldcat_oclc_nbr]["edition"] = "";
+            } else {
+                parsedData[worldcat_oclc_nbr]["edition"] = data.response.docs[i].edition;
+            }
+            parsedData[worldcat_oclc_nbr]["groups"] = [];
+            parsedData[worldcat_oclc_nbr]["groups"].push(groupName);
+        }
     };
+
     return parsedData;
 }
 
 function searchSolrTitles() {
+    var parsedData = {};
     var rawUserInput = document.getElementById("searchInput").value;
     var cleanUserInput = rawUserInput.split(' ').join(' AND ');
     $([185,191,258,300,302,323]).each(function() {
-      var groupID = this;
-      $.getJSON("http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {
+      var groupID = this.valueOf();
+      $.getJSON("http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {  
+        var finalParsedData = parseTitleResults(result,groupID, parsedData);
+        var dataLength = Object.keys(finalParsedData).length;
         var row = "";
-        for (var i = 0; i < result.response.docs.length; i++) {
-            var parsedData = parseTitleResults(result,groupID);
-            row+="<tr><td class='table__title'>"+ result.response.docs[i].title + "</td><td class='table__publisher'>" + result.response.docs[i].publisher + "</td><td class='table__pub-date'>" + result.response.docs[i].pub_year + "</td></tr>";
+        for (var key in finalParsedData) {
+            row+="<tr><td>"+ finalParsedData[key].title + ", " + finalParsedData[key].edition + "</td><td>" + finalParsedData[key].author + "</td><td>" + finalParsedData[key].pub_year + "</td><td>" + finalParsedData[key].opac_url + "</td><td>" ;
         };
         $("#solr_results").html(row);    
       });
