@@ -408,7 +408,20 @@ h6.group_count {
   font: 14px/20px;
   color: #666666;
 }
- 
+
+.popup-group-title {
+	text-align:center;
+	padding:0px 0px;
+}
+
+.popup-library-title {
+	padding:0px 10px 0px 15px;
+	margin:0px;
+}
+
+.popup-list {
+	padding:0px 10px 0px 15px;
+}
  /*----------------------------------------------------------------------------
  *
  * MODULE: TOTALS
