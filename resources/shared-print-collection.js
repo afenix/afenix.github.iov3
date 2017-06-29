@@ -172,8 +172,8 @@ function playback(index) {
 }
 
 // Display the last title/description first
-title.textContent = libraries[libraries.length - 1].title;
-description.textContent = libraries[libraries.length - 1].description;
+title.textContent = libraries[0].title;
+description.textContent = libraries[0].description;
 
  map.on('load', function () {
      map.addLayer({
