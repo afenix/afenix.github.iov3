@@ -244,7 +244,7 @@ map.on('mouseenter', 'shared_collection', function(e) {
     // Populate the popup and set its coordinates
     // based on the feature found.
     popup.setLngLat(feature.geometry.coordinates)
-         .setHTML('<div id="popup" class="popup" style="width:230px;"> <h2 class="popup-group-title"> ' + feature.properties['group'] + ' Group</h2><h3 class="popup-library-title"><strong>' + feature.properties['inst_name'] + '</strong></h3>' +
+         .setHTML('<div id="popup" class="popup"> <h2 class="popup-group-title"> ' + feature.properties['group'] + ' Group</h2><h3 class="popup-library-title"><strong>' + feature.properties['inst_name'] + '</strong></h3>' +
 	              '<ul>' +
 	              '<li class="popup-list"> Total titles retained: ' + feature.properties['total_count_string'] + ' </li>' +
 	              '<li class="popup-list"> Total titles uniquely retained: ' + feature.properties['unique_count_string'] + " </li></ul> </div>")
