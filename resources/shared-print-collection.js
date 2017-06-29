@@ -36,7 +36,7 @@ var libraries = [{
   },{
     "id": "10",
     "title": "COPPUL",
-    "description": "Working together, the Council of Prairie and Pacific University Libraries (COPPUL) members leverage their collective expertise, resources, and influence, increasing capacity and infrastructure, to enhance learning, teaching, student experiences, and research amongst their institutions. The consortium is comprised of 22 university libraries located in Manitoba, Saskatchewan, Alberta and British Columbia with a shared print collection of 7,276,328 million title holdings and 3,738,751 million title sets.  Due to their ongoing efforts for collective retention strategies COPPUL has been able to retain a shared print collection of 1,147,232 milliion title-holdings, with 778,071 thousand of those titles retained being distinct editions.",
+    "description": "Working together, the Council of Prairie and Pacific University Libraries (COPPUL) members leverage their collective expertise, resources, and influence, increasing capacity and infrastructure, to enhance learning, teaching, student experiences, and research amongst their institutions. The consortium is comprised of 22 university libraries located in Manitoba, Saskatchewan, Alberta and British Columbia with a shared print collection of 7,276,328 million title holdings and 3,738,751 million title sets.  Due to their ongoing efforts for collective retention strategies COPPUL has been able to retain a shared print collection of 1,147,232 milliion title-holdings, with 778,071 thousand of those titles being uniquely retained by this group. ",
     "camera": {
         center: [-110.039063, 49.999795],
         zoom: 4.5,
@@ -46,7 +46,7 @@ var libraries = [{
  }, {
     "id": "9",
     "title": "CI-CCI",
-    "description": "The formation of the Central Iowa Collaborative Collections Initiative (CI-CCI) was announced in the summer of 2013, with an initial membership of 5 universities in the state.  By working together the CI-CCI group has been able to meet their goals of decreasing the size of local print collections by reducing duplication among the participating libraries and creating and maintaining a distributed, shared collection of these titles to ensure that circulating copies of them are retained within the group. Because of this CI-CCI has been able to retain 152,553 thousand title-holdings, with 741 of those titles retained being distinct editions.",
+    "description": "The formation of the Central Iowa Collaborative Collections Initiative (CI-CCI) was announced in the summer of 2013, with an initial membership of 5 universities in the state.  By working together the CI-CCI group has been able to meet their goals of decreasing the size of local print collections by reducing duplication among the participating libraries and creating and maintaining a distributed, shared collection of these titles to ensure that circulating copies of them are retained within the group. Because of this CI-CCI has been able to retain 152,553 thousand title-holdings, with 741 of those titles being uniquely retained by this group. ",
     "camera": {
         center: [-93.144836, 41.553233],
         zoom: 7.6,
@@ -56,7 +56,7 @@ var libraries = [{
 }, {
     "id": "8",
     "title": "ALI",
-    "description": "The mission of Academic Libraries of Indiana (ALI) is to build and foster community and collaboration among academic libraries in Indiana. ALI is a consortium of 37 participating libraries with a shared print collection of 5,512,435 million title holdings and 2,287,041 million title sets.  Due to their ongoing efforts for a state-wide academic library collaboration, the ALI project has been able to retain a shared print collection of 1,701,374 title-holdings, with 370,490 thousand of those titles retained being distinct editions.", 
+    "description": "The mission of Academic Libraries of Indiana (ALI) is to build and foster community and collaboration among academic libraries in Indiana. ALI is a consortium of 37 participating libraries with a shared print collection of 5,512,435 million title holdings and 2,287,041 million title sets.  Due to their ongoing efforts for a state-wide academic library collaboration, the ALI project has been able to retain a shared print collection of 1,701,374 title-holdings, with 370,490 thousand of those titles being uniquely retained by this group. ", 
     "camera": {
         center: [-86.149292, 39.769360],
         zoom: 5.2,
@@ -66,7 +66,7 @@ var libraries = [{
 }, {
     "id": "7",
     "title": "MI-SPI",
-    "description": "In 2011, the libraries at Michigan's publicly-supported universities sought to devise a collaborative approach to shared print collections among themselves, calling themselves the Michigan Shared Print Initiative (MI-SPI). Participating libraries used services and tools developed by Sustainable Collection Services (SCS) to identify such titles in their respective individual collections, and to compare results across the group. Eleven universities participated in this endeavor across Michigan state, allowing participating members to retain 774,173 thousand title-holdings, with 79,227 thousand of those titles retained being distinct editions.  ",
+    "description": "In 2011, the libraries at Michigan's publicly-supported universities sought to devise a collaborative approach to shared print collections among themselves, calling themselves the Michigan Shared Print Initiative (MI-SPI). Participating libraries used services and tools developed by Sustainable Collection Services (SCS) to identify such titles in their respective individual collections, and to compare results across the group. Eleven universities participated in this endeavor across Michigan state, allowing participating members to retain 774,173 thousand title-holdings, with 79,227 thousand of those titles being uniquely retained by this group.   ",
     "camera": {
         center: [-85.253906, 44.570415],
         zoom: 4.8,
@@ -76,7 +76,7 @@ var libraries = [{
 }, {
     "id": "6",
     "title": "TUG",
-    "description": "The TriUniversity Group of Libraries (TUG) is a unique example of administrative co-operation among the Libraries of three Ontario universities: University of Guelph, Universtiy of Waterloo, and the Wilfred Laurier University.  The TUG libraries have been informally collaborating for nearly thirty years; however more recently, they have enhanced their co-operation with a more formalised agreement to work together to leverage rapidly-advancing technologies for mutual benefit. Because of their shared committment TUG has now been able to retain 340,279 thousand title-holdings, with 20,396 thousand of those titles retained being distinct editions.",
+    "description": "The TriUniversity Group of Libraries (TUG) is a unique example of administrative co-operation among the Libraries of three Ontario universities: University of Guelph, Universtiy of Waterloo, and the Wilfred Laurier University.  The TUG libraries have been informally collaborating for nearly thirty years; however more recently, they have enhanced their co-operation with a more formalised agreement to work together to leverage rapidly-advancing technologies for mutual benefit. Because of their shared committment TUG has now been able to retain 340,279 thousand title-holdings, with 20,396 thousand of those titles being uniquely retained by this group. ",
     "camera": {
         center: [-80.362244, 43.488237],
         zoom: 8.5,
@@ -86,7 +86,7 @@ var libraries = [{
 }, {
     "id": "4",
     "title": "VIVA",
-    "description": "The Virtual Library of Virginia (VIVA) is the consortium of nonprofit academic libraries within the Commonwealth of Virginia. These include six doctoral institutions and two 4-year comprehensive colleges and universities.  Due to their ongoing efforts for participating members to make collaborative decisions VIVA has been able to retain a shared print collection of 3,531,007 title-holdings, with 421,803 thousand of those titles retained being distinct editions.",
+    "description": "The Virtual Library of Virginia (VIVA) is the consortium of nonprofit academic libraries within the Commonwealth of Virginia. These include six doctoral institutions and two 4-year comprehensive colleges and universities.  Due to their ongoing efforts for participating members to make collaborative decisions VIVA has been able to retain a shared print collection of 3,531,007 title-holdings, with 421,803 thousand of those titles being uniquely retained by this group. ",
     "camera": {
         center: [-78.002930, 37.785639],
         zoom: 5.8,
@@ -96,7 +96,7 @@ var libraries = [{
 }, {
     "id": "5",
     "title": "WRLC",
-    "description": "The Washington Research Library Consortium (WRLC) was established as a non-profit corporation in 1987 to support and enhance the library and information services of universities in the Washington, DC metropolitan area. Currently WRLC has 9 partner universities.  Due to their ongoing efforts for participating members to make collaborative decisions WRLC has been able to retain a shared print collection of 2,862,344 title-holdings, with 437,841 thousand of those titles retained being distinct editions.",
+    "description": "The Washington Research Library Consortium (WRLC) was established as a non-profit corporation in 1987 to support and enhance the library and information services of universities in the Washington, DC metropolitan area. Currently WRLC has 9 partner universities.  Due to their ongoing efforts for participating members to make collaborative decisions WRLC has been able to retain a shared print collection of 2,862,344 title-holdings, with 437,841 thousand of those titles being uniquely retained by this group. ",
     "camera": {
         center: [-77.053986, 38.932407],
         zoom: 10,
@@ -116,7 +116,7 @@ var libraries = [{
 }, {
     "id": "1",
     "title": "EAST",
-    "description": "The Eastern Academic Scholars' Trust (EAST) is a shared print initiative involving academic and research libraries in 11 states from Maine to Florida. EAST is focused on retaining unique, scarcely held and frequently used scholarly monographs and serials in support of scholarship, research and teaching. EAST currently has 59 members with a shared print collection of 16,573,071 million title holdings and 4,749,042 million title sets.  Due to their ongoing efforts for participating members to commit to retain agreed upon titles the EAST project has been able to retain a shared print collection of 5,746,636 title-holdings, with 1,760,944 million of those titles retained being distinct editions.",
+    "description": "The Eastern Academic Scholars' Trust (EAST) is a shared print initiative involving academic and research libraries in 11 states from Maine to Florida. EAST is focused on retaining unique, scarcely held and frequently used scholarly monographs and serials in support of scholarship, research and teaching. EAST currently has 59 members with a shared print collection of 16,573,071 million title holdings and 4,749,042 million title sets.  Due to their ongoing efforts for participating members to commit to retain agreed upon titles the EAST project has been able to retain a shared print collection of 5,746,636 title-holdings, with 1,760,944 million of those titles being uniquely retained by this group. ",
     "camera": {
         center: [-73.872070, 41.569738],
         zoom: 4.8,
@@ -126,7 +126,7 @@ var libraries = [{
 }, {
     "id": "2",
     "title": "MSCS",
-    "description": "The Maine Shared Collections Cooperative (MSCC) was founded by eight of Maine’s largest libraries, plus the state’s consortium, Maine InfoNet, together they have implemented a shared approach to the management of print collections in the state. Due to their ongoing efforts for participating members to make collaborative decisions MSCS has been able to retain a shared print collection of 1,408,737 title-holdings, with 302,601 thousand of those titles retained being distinct editions.",
+    "description": "The Maine Shared Collections Cooperative (MSCC) was founded by eight of Maine’s largest libraries, plus the state’s consortium, Maine InfoNet, together they have implemented a shared approach to the management of print collections in the state. Due to their ongoing efforts for participating members to make collaborative decisions MSCS has been able to retain a shared print collection of 1,408,737 title-holdings, with 302,601 thousand of those titles being uniquely retained by this group. ",
     "camera": {
         center: [-69.433594, 44.368778],
         zoom: 6,
@@ -244,10 +244,10 @@ map.on('mouseenter', 'shared_collection', function(e) {
     // Populate the popup and set its coordinates
     // based on the feature found.
     popup.setLngLat(feature.geometry.coordinates)
-         .setHTML('<div id="popup" class="popup" style="z-index: 10;"> <h3 style="text-align:center;padding:0px 0px"> ' + feature.properties['group'] + ' Group</h3><h4 style="margin:0px 10px"><strong>' + feature.properties['inst_name'] + '</strong></h4>' +
+         .setHTML('<div id="popup" class="popup" style="width:230px;"> <h2 style="text-align:center;padding:0px 0px"> ' + feature.properties['group'] + ' Group</h2><h3 style="padding:0px 10px 0px 15px;margin:0px;"><strong>' + feature.properties['inst_name'] + '</strong></h3>' +
 	              '<ul>' +
-	              '<li class="popup-list" style="padding:0px 10px 0px 15px;;"> Total titles retained: ' + feature.properties['total_count_string'] + ' </li>' +
-	              '<li class="popup-list" style="padding:0px 10px 0px 15px;"> Total unique titles retained: ' + feature.properties['unique_count_string'] + " </li></ul> </div>")
+	              '<li class="popup-list" style="padding:0px 10px 0px 15px;"> Total titles retained: ' + feature.properties['total_count_string'] + ' </li>' +
+	              '<li class="popup-list" style="padding:0px 10px 0px 15px;"> Total titles uniquely retained: ' + feature.properties['unique_count_string'] + " </li></ul> </div>")
         .addTo(map);
 });
 
