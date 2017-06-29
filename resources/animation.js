@@ -4,7 +4,6 @@ $(function()
     var targetCount = $(this).html();
 
     $(this).data('increment-to', targetCount);
-    console.log(targetCount);
   });
 
   var scrollTrigger = new ScrollTrigger();
