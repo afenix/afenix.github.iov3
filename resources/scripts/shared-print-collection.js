@@ -381,8 +381,15 @@ $.each(groupInfo, function(key, obj) {
     	}
 	});
 
-        $('#group-twitter').remove();
     $(groupDiv).on("click", function() {
+        if (libraries[key].id == 12) {
+            $('#member-library-label').hide();
+            $('#group-website').hide();
+        } else {
+            $('#member-library-label').show();
+             $('#group-website').show();
+        };
+        
         $('#group-twitter').remove(); // remove the twitter icon from the last click event
         if ($('.member-list').length) { // remove former member lists icon from the last click event
             $('.member-list').remove();
