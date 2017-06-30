@@ -448,15 +448,15 @@ li.popup-list {
 
 .group-description__title {
 	margin: 0;
-	padding: 1rem 2rem 1rem 0;
-	border-right: 1px solid rgba(var(--dark), .2);
+	padding-right: 2rem;
 	display: inline-block;
 	vertical-align: middle;
 }
 
 .group-description__links {
 	margin: 0;
-	padding-left: 2rem;
+	border-left: 1px solid rgba(var(--dark), .2);
+	padding: 1rem 0 1rem 2rem;
 	display: inline-block;
 	vertical-align: middle;
 }
