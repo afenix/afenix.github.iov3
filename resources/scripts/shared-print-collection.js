@@ -52,7 +52,6 @@ var libraries = [{
     "title": "CI-CCI",
     "description": "The formation of the Central Iowa Collaborative Collections Initiative (CI-CCI) was announced in the summer of 2013, with an initial membership of 5 universities in the state.  By working together the CI-CCI group has been able to meet their goals of decreasing the size of local print collections by reducing duplication among the participating libraries and creating and maintaining a distributed, shared collection of these titles to ensure that circulating copies of them are retained within the group. Because of this CI-CCI has been able to retain 152,553 thousand title-holdings, with 741 of those titles being uniquely retained by this group. ",
     "members": ["Central College","Drake University","Grand View","Grinnell College","Simpson College"],
-    "twitter": "",
     "website": "https://ci-cci.org/",
     "camera": {
         center: [-93.144836, 41.553233],
@@ -69,7 +68,6 @@ var libraries = [{
                 "Indiana University School of Medicine","Indiana University Northwest","Indiana University Southeast","Indiana University Purdue University at Indianapolis","Manchester University","Marian University","Oakland City University",
                 "Purdue Calumet","Saint Mary's College","Saint Meinrad Seminary and School of Theology","Saint Joseph's College","Saint Mary-of-the-Woods College","Taylor University","Trine University","University of Indianapolis",
                 "University of Saint Francis","University of Southern Indiana","Valparaiso University","Wabash College"],
-    "twitter": "",
     "website": "http://academiclibrariesofindiana.org/home",
     "camera": {
         center: [-86.149292, 39.769360],
@@ -83,7 +81,6 @@ var libraries = [{
     "description": "In 2011, the libraries at Michigan's publicly-supported universities sought to devise a collaborative approach to shared print collections among themselves, calling themselves the Michigan Shared Print Initiative (MI-SPI). Participating libraries used services and tools developed by Sustainable Collection Services (SCS) to identify such titles in their respective individual collections, and to compare results across the group. Eleven universities participated in this endeavor across Michigan state, allowing participating members to retain 774,173 thousand title-holdings, with 79,227 thousand of those titles being uniquely retained by this group.   ",
     "members": ["Central Michigan University","Eastern Michigan University","Ferris State University","Grand Valley State University","University of Michigan Dearborn","Michigan Technological University","Northern Michigan University",
                 "Oakland University","Saginaw Valley","Wayne State University","Western Michigan University"],
-    "twitter": "",
     "website": "https://www.mcls.org/engagement/mi-spi/",
     "camera": {
         center: [-85.253906, 44.570415],
@@ -96,7 +93,6 @@ var libraries = [{
     "title": "TUG",
     "description": "The TriUniversity Group of Libraries (TUG) is a unique example of administrative co-operation among the Libraries of three Ontario universities: University of Guelph, Universtiy of Waterloo, and the Wilfred Laurier University.  The TUG libraries have been informally collaborating for nearly thirty years; however more recently, they have enhanced their co-operation with a more formalised agreement to work together to leverage rapidly-advancing technologies for mutual benefit. Because of their shared committment TUG has now been able to retain 340,279 thousand title-holdings, with 20,396 thousand of those titles being uniquely retained by this group. ",
     "members": ["University of Guelph","University of Waterloo","Wilfrid Laurier University"],
-    "twitter": "",
     "website": "https://www.tug-libraries.on.ca/",
     "camera": {
         center: [-80.362244, 43.488237],
@@ -109,7 +105,6 @@ var libraries = [{
     "title": "VIVA",
     "description": "The Virtual Library of Virginia (VIVA) is the consortium of nonprofit academic libraries within the Commonwealth of Virginia. These include six doctoral institutions and two 4-year comprehensive colleges and universities.  Due to their ongoing efforts for participating members to make collaborative decisions VIVA has been able to retain a shared print collection of 3,531,007 title-holdings, with 421,803 thousand of those titles being uniquely retained by this group. ",
     "members": ["George Mason University","James Madison University","Old Dominion University","Radford University","University of Virginia","Virginia Commonwealth University","Virginia Tech","William and Mary University"],
-    "twitter": "",
     "website": "http://www.vivalib.org/",
     "camera": {
         center: [-78.002930, 37.785639],
@@ -151,7 +146,6 @@ var libraries = [{
                 "Hampshire College","Lafayette College","Loyola Notre Dame","Middlebury College","Mount Holyoke College","Phillips Exeter Academy","Rochester","Saint Anselm College","Siena College","Skidmore","Smith College",
                 "Swarthmore College","Trinity College","Tufts University","University of Connecticut","UMass Amherst","UMass Boston","UMass Dartmouth","UMass Lowell","University of New Hampshire","Wellesley College","Wesleyan University",
                 "Williams College","Yeshiva University"],
-    "twitter": "",
     "website": "https://eastlibraries.org/",
     "camera": {
         center: [-73.872070, 41.569738],
@@ -292,12 +286,18 @@ map.on('mouseleave', 'shared_collection', function() {
     popup.remove();
 });
 
-// Add a clickable group legend to the map
-var group_legend_elements = document.getElementById('group-legend-elements');
-var group_info = [{
-    	"group_name": "Overview",
 // Add group legend buttons, group name, description, participating members and links   
+var groupLegendElements = document.getElementById('group-legend-elements');
+var groupName = document.getElementById('group-name');
+var groupDescription = document.getElementById('group-description');
+var groupMemberName = document.getElementById('member-name');
+var groupWebsite = document.getElementById('group-website');
+var groupTwitter = document.getElementById('group-twitter');
+
 // Add the Overview title and description on page load
+groupName.textContent = libraries[0].title;
+groupDescription.textContent = libraries[0].description;
+var groupInfo = [{
         "group_color": "#666666",
         "group_count": "19.7M Titles"
     },
@@ -381,12 +381,21 @@ $.each(groupInfo, function(key, obj) {
 	});
 
     groupDiv.addEventListener('click', function() {
-	   $('.group_div').removeClass('selected');
-	   $(this).addClass('selected');
-       
-        map.flyTo(libraries[key].camera);
+        $('#group-twitter').remove();
+        map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
+        
+        $('.group_div').removeClass('selected');
+        $(this).addClass('selected');     
+        
         groupName.textContent = libraries[key].title;
-    	groupDescription.textContent = libraries[key].description; 
+    	groupDescription.textContent = libraries[key].description;
+        $('#group-website').attr("href", libraries[key].website);
+        if (libraries[key].hasOwnProperty('twitter')) {
+            var twitterLink = document.createElement('a');
+            twitterLink.href = libraries[key].twitter;
+            $(twitterLink).addClass( "group-description__twitter").attr('id', 'group-twitter').append('<img src="resources/images/Twitter_Social_Icon_Circle_Color.svg" width="32" height="32" alt="Twitter" title="Twitter Link" />');
+            document.getElementById('group-links').appendChild(twitterLink)
+        }
 
     });
 
