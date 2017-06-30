@@ -383,6 +383,7 @@ $.each(groupInfo, function(key, obj) {
 
         $('#group-twitter').remove();
     $(groupDiv).on("click", function() {
+        $('#group-twitter').remove(); // remove the twitter icon from the last click event
         map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
         
         $('.group_div').removeClass('selected');
