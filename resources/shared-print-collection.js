@@ -420,7 +420,7 @@ function searchSolrTitles() {
     var cleanUserInput = rawUserInput.split(' ').join(' AND ');
     $([185,191,258,300,302,323]).each(function() {
       var groupID = this.valueOf();
-      $.getJSON("http://shared-print.scs.argenticsoftware.com/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {  
+      $.getJSON("http://prodsolrcloud-1947786843.us-east-1.elb.amazonaws.com:8983/solr/groupProject" + groupID + "TitleHoldings/select?q=retention_allocated:true&fq=in_scope:TRUE&fq=title:(" + cleanUserInput + ")&wt=json&json.wrf=?&indent=true", function(result) {  
         var finalParsedData = parseTitleResults(result,groupID, parsedData);
         var row = "";
         for (var key in finalParsedData) {
