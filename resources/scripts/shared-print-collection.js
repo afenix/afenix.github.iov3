@@ -10,9 +10,6 @@ var map = new mapboxgl.Map({
         pitch: 45
 	});
 
-var title = document.getElementById('location-title');
-var description = document.getElementById('location-description');
-
 var libraries = [{
  	"id": "12",
     "title": "Shared Print Overview",
@@ -213,10 +210,7 @@ function playback(index) {
     });
 }
 
-// Display the last title/description first
-title.textContent = libraries[0].title;
-description.textContent = libraries[0].description;
-
+// Add and style vector tiles from mapbox of shared collection data
  map.on('load', function () {
      map.addLayer({
         'id': 'shared_collection',
@@ -302,6 +296,8 @@ map.on('mouseleave', 'shared_collection', function() {
 var group_legend_elements = document.getElementById('group-legend-elements');
 var group_info = [{
     	"group_name": "Overview",
+// Add group legend buttons, group name, description, participating members and links   
+// Add the Overview title and description on page load
         "group_color": "#666666",
         "group_count": "19.7M Titles"
     },
@@ -363,28 +359,27 @@ var group_info = [{
 ];
 
 // Iteratively create the group buttons 
-$.each(group_info, function(key, obj) {
-	var group_div = document.createElement('div');
-    $(group_div).addClass('group_div');
+$.each(groupInfo, function(key, obj) {
+	var groupDiv = document.createElement('div');
+    $(groupDiv).addClass('group_div');
     if (key == 0) {
-      $(group_div).addClass('selected');
+      $(groupDiv).addClass('selected');
     }
-    var group_flair = document.createElement('div');
-    $(group_flair).addClass('flair');
-    var group_count = document.createElement('h6');
-     $(group_count).addClass('group_count');
+    var groupFlair = document.createElement('div');
+    $(groupFlair).addClass('flair');
+    var groupCount = document.createElement('h6');
+     $(groupCount).addClass('group_count');
 
     $.each(obj, function(key, value) {
     	if (key === 'group_name') {
-	    	$(group_div).html('<span>' + value + '</span>');
+	    	$(groupDiv).html('<span>' + value + '</span>');
     	} else if (key === 'group_count') {
-	    	$(group_count).text(value);
+	    	$(groupCount).text(value);
     	} else {
-	    	group_flair.style.backgroundColor = value;
+	    	groupFlair.style.backgroundColor = value;
     	}
 	});
 
-    group_div.addEventListener('click', function() {
         if (libraries[key].title != "") {
 	        $('.descriptive-text-container').animate({
 	        }, 750, function() {
@@ -397,8 +392,9 @@ $.each(group_info, function(key, obj) {
 	        });
         }
 
-	$('.group_div').removeClass('selected');
-	$(this).addClass('selected');
+    groupDiv.addEventListener('click', function() {
+	   $('.group_div').removeClass('selected');
+	   $(this).addClass('selected');
        
 
         map.flyTo(libraries[key].camera);
@@ -409,10 +405,14 @@ $.each(group_info, function(key, obj) {
         	title.textContent = '';
 	    	description.textContent = ''; 	
         }
+        groupName.textContent = libraries[key].title;
+    	groupDescription.textContent = libraries[key].description; 
+
     });
-    group_legend_elements.appendChild(group_div);
- 	group_div.appendChild(group_count);
- 	group_div.appendChild(group_flair);
+
+    groupLegendElements.appendChild(groupDiv);
+ 	groupDiv.appendChild(groupCount);
+ 	groupDiv.appendChild(groupFlair);
 });
 
 function parseTitleResults(data, groupID,parsedData) {
