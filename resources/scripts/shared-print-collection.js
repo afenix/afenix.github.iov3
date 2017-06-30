@@ -384,6 +384,10 @@ $.each(groupInfo, function(key, obj) {
         $('#group-twitter').remove();
     $(groupDiv).on("click", function() {
         $('#group-twitter').remove(); // remove the twitter icon from the last click event
+        if ($('.member-list').length) { // remove former member lists icon from the last click event
+            $('.member-list').remove();
+        };
+
         map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
         
         $('.group_div').removeClass('selected');
@@ -392,21 +396,25 @@ $.each(groupInfo, function(key, obj) {
         groupName.textContent = libraries[key].title;
     	groupDescription.textContent = libraries[key].description;
         $('#group-website').attr("href", libraries[key].website);
+       
         if (libraries[key].hasOwnProperty('twitter')) {
             var twitterLink = document.createElement('a');
             twitterLink.href = libraries[key].twitter;
             $(twitterLink).addClass( "group-description__twitter").attr('id', 'group-twitter').append('<img src="resources/images/Twitter_Social_Icon_Circle_Color.svg" width="28" height="28" alt="Twitter" title="Twitter Link" />');
             document.getElementById('group-links').appendChild(twitterLink);
-        }
-        for(var i = 0; i < libraries[key].members.length; i++){
+        };
+
+        for (var i = 0; i < libraries[key].members.length; i++) {
             var groupMemberList = document.createElement('li');
+            $(groupMemberList).addClass( "member-list");
+            $(groupMemberList).attr('id', 'member-list');
             $(groupMemberList).text(libraries[key].members[i]);
             var groupMemberAnchor = document.createElement('a');
             $(groupMemberList).append(groupMemberAnchor);
             groupMemberAnchor.href = "#";
             $(groupMemberAnchor).addClass("library__website").append('<img src="resources/images/Emoji_u1f310.svg" width="16" height="16" alt="Website" title="Website Link" />');
             document.getElementById('library-list').appendChild(groupMemberList);
-        }
+        };
 
     });
 
