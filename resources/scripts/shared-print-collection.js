@@ -458,7 +458,7 @@ function searchSolrTitles() {
             }; 
 
             row+= "</ul></div><a href='" + finalParsedData[key].opac_url + 
-            "' class='search__item__link'><img src='resources/images/WorldCat_Logo_V_Color.png' alt='WorldCat Logo' width='48'></a></li>" ;
+            "' class='search__item__link' target='_blank' rel='noopener noreferrer'><img src='resources/images/WorldCat_Logo_V_Color.png' alt='WorldCat Logo' width='48'></a></li>" ;
         };
         $("#solr_results").html(row);    
       });
