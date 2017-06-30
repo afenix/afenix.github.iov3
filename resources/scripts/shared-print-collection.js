@@ -298,6 +298,7 @@ var groupTwitter = document.getElementById('group-twitter');
 groupName.textContent = libraries[0].title;
 groupDescription.textContent = libraries[0].description;
 var groupInfo = [{
+        "group_name": "Overview",
         "group_color": "#666666",
         "group_count": "19.7M Titles"
     },
