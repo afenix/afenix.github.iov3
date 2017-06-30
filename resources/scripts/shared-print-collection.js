@@ -380,31 +380,11 @@ $.each(groupInfo, function(key, obj) {
     	}
 	});
 
-        if (libraries[key].title != "") {
-	        $('.descriptive-text-container').animate({
-	        }, 750, function() {
-	            $('.descriptive-text-container').show();
-	        });
-        } else if (libraries[key].title === "") {
-        	$('.descriptive-text-container').animate({
-	        }, 750, function() {
-	            $('.descriptive-text-container').hide();
-	        });
-        }
-
     groupDiv.addEventListener('click', function() {
 	   $('.group_div').removeClass('selected');
 	   $(this).addClass('selected');
        
-
         map.flyTo(libraries[key].camera);
-        if (libraries[key].title != 'Overview') {
-	        title.textContent = libraries[key].title;
-	    	description.textContent = libraries[key].description; 	
-        } else {
-        	title.textContent = '';
-	    	description.textContent = ''; 	
-        }
         groupName.textContent = libraries[key].title;
     	groupDescription.textContent = libraries[key].description; 
 
