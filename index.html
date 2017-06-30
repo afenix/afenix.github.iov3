@@ -17,11 +17,12 @@
 			<img class="header-brand__logo" src="resources/images/WorldCat_Logo.png" alt="WorldCat Logo" width="160" height="30" />
 		</header>
 		
-		<section class="main">
+		<main>
 			<header class="main__header">
 				<h1 class='h1 main__header__title'>North&nbsp;American Shared&nbsp;Print Initiative <span class="h1__subhead animate-dive" data-scroll='toggle(.animate-breach, .animate-dive) once'>Facilitated by Sustainable Collection Services, a part of OCLC</span></h1>
-			</header>		
-			<div class="container container--measure intro-text-container" id="intro">
+			</header>
+				
+			<section class="container container--measure intro-text-container" id="intro">
 				<p style="display:none">In 2012, Sustainable Collection Services and the Michican Shared Print Initiative undertook one of the first shared print monographs projects in the US.</p>
 				<p style="display:none">Since then, ten other groups have quietly continued this important work with the help of SCS (part of OCLC since 2015) and the GreenGlass Model Builder.</p>
 				<p><span style="display:none">The results speak for themselves:</span>
@@ -33,9 +34,9 @@
 				<p>Shared print initiatives facilitated by SCS are also starting to take hold
 				   across the world, with programs underway in the United Kingdom and Australia.
 				</p>
-			</div>
+			</section>
 			
-			<div class='container map'>
+			<section class='container map'>
 				<div class='map__legend'>
 					<h5 class="h5 map__legend__header">Titles Retained</h5>
 					<div><span class='circle1'></span>&lt;= 20k</div>   
@@ -45,25 +46,35 @@
 					<div class='align-us'><span class='circle5'></span> &gt; 500k</div>
 				</div>
 				<div class="map__wrap" id="map"></div>
-			</div>						
-			<div class="container container--measure groups">
+			</section>
+									
+			<section class="container container--measure groups">
 				<fieldset class="group-legend">
 					<p class="group-legend__hint">Click on one of the library groups below to focus in on that group, or on the <strong>Overview</strong> button to see all groups.</p>
 					<div id="group-legend-elements"></div>
 				</fieldset>
 				<div class="group-description">
-					<h2 class="h3 group-description__title" id='location-title'></h2>
-					<h2 class="h3 group-description__title"></h2>
+					<h2 class="h3 group-description__title" id='location-title'></h2><!-- TO DO: Remove when mock is finished -->
+					<div class="group-description__hgroup">
+						<h2 class="h3 group-description__title">XXX</h2>
+						<p class="group-description__links"><a href="#" class="group-description__website"><img src="resources/images/sphere.svg" width="32" height="32" alt="Website" title="Website Link" /></a> <a href="#" class="group-description__twitter"><img src="resources/images/Twitter_Social_Icon_Circle_Color.svg" width="32" height="32" alt="Twitter" title="Twitter Link" /></a></p>
+					</div>
 					<p class="group-description__text" id='location-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore, enim itaque commodi tempora odio fugiat natus accusantium exercitationem rerum vitae quae tenetur mollitia amet nisi id. Eos, ipsum, culpa!</p>
-					<ul class="group-description__list" id="library-list">
-						<li>Library <a href="#">link</a></li>
-						<li>Library <a href="#">link</a></li>
-						<li>Library <a href="#">link</a></li>
-						<li>Library <a href="#">link</a></li>
+					<h3 class="h4">Member Libraries</h3>
+					<ul class="group-description__libraries" id="library-list">
+						<li>Library Name <a href="#" class="library__website"><img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" /></a></li>
+						<li>Library Name <a href="#" class="library__website"><img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" /></a></li>
+						<li>Library Name <a href="#" class="library__website"><img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" /></a></li>
+						<li>Library Name <a href="#" class="library__website"><img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" /></a></li>
+						<li>Library Name <a href="#" class="library__website"><img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" /></a></li>
+						<li>Library Name <a href="#" class="library__website"><img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" /></a></li>
+						<li>Library Name <a href="#" class="library__website"><img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" /></a></li>
+						<li>Library Name <a href="#" class="library__website"><img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" /></a></li>
 					</ul>
 				</div>
-			</div>		
-			<div class="totals">
+			</section>
+					
+			<section class="totals">
 				<div class="container container--measure">
 					<div class="totals-wrap">
 						<div class="totals-container" style="display:none">
@@ -96,9 +107,9 @@
 						</div>
 					</div>
 				</div>				
-			</div>
+			</section>
 	
-			<div class="container container--measure search">
+			<section class="container container--measure search">
 				<h3 class="h3">Search the Shared Print Collection</h3>
 				<p>What kinds of books are being protected by participating libraries? Most shared print intitatives have focused on guaranteeing the protection of rare titles that are held by very few libraries. This strategy helps secure a robust future for titles that might otherwise be at risk of destruction, as well as gives libraries an opportunity to make effective use of their physical space with the knowledge that the scholarly record will be preserved.</p>
 				<p>Below you'll see a sample of books that belong to shared print collection. You can also use the search box to explore other titles in the collection. Below each title is a color-coded list of the shared print programs that have committed to retain that title.</p>
@@ -150,10 +161,10 @@
 						<a href="#" class="search__item__link"><img src="resources/images/WorldCat_Logo_V_Color.png" alt="WorldCat Logo" width="48"></a>
 					</li>
 				</ul>
-			</div>
+			</section>
 			
 	
-			<div class="video">			
+			<section class="video">			
 				<div class="container container--measure video-wrap">
 					<h3 class="h3">Collaborative Decisions, Made Possible with GreenGlass</h3>
 					<p>The GreenGlass software product has facilitated all shared print initiatives since 2015. GreenGlass employs visualizations and modeling tools to allow groups of libraries to reach consensus quickly, make informed decisions, and fairly assign commitments to retain titles amongst the members of the shared print collection.</p>
@@ -162,9 +173,9 @@
 						<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WZUpZ0mBw7Q?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
-			</div>
+			</section>
 	
-			<div class="container container--measure" data-scroll="once">
+			<section class="container container--measure" data-scroll="once">
 				<h4 class="h4">Acknowledgements</h4>
 				<div class="website-credits">
 					<div class="credits-column">
@@ -205,13 +216,13 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 	
-			<div class="container container--measure copyright-notice">
+			<section class="container container--measure copyright-notice">
 				<h6 class="h6">Article text &copy; 2017 OCLC <a href="http://www.oclc.org">http://www.oclc.org</a></h6>
 				<h6 class="h6">Website and design &copy; 2017 Argentic <a href="http://www.argenticsoftware.com/">http://www.argenticsoftware.com</a></h6>
-			</div>
-		</section>
+			</section>
+		</main>
 
 		<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
 	  	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
