@@ -443,6 +443,51 @@ li.popup-list {
 
 /* Begin Group Description */
 
+.group-description__hgroup {
+}
+
+.group-description__title {
+	margin: 0;
+	padding: 1rem 2rem 1rem 0;
+	border-right: 1px solid rgba(var(--dark), .2);
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.group-description__links {
+	margin: 0;
+	padding-left: 2rem;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.group-description__links img {
+	vertical-align: middle;
+}
+
+.group-description__website {
+	opacity: .25;
+}
+
+.group-description__libraries {
+	-moz-column-width: 16em;
+	-moz-columns: 16em;
+	-webkit-columns: 16em;
+	columns: 16em;
+	-moz-column-gap: 2em;
+	-webkit-column-gap: 2em;
+	column-gap: 2em;
+}
+
+.group-description__libraries {
+	white-space: nowrap;
+}
+
+.library__website {
+	opacity: .3;
+	display: inline-block;
+}
+
 /* End Group Description */
 
  /*----------------------------------------------------------------------------
