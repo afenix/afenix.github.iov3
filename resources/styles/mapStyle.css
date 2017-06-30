@@ -486,6 +486,7 @@ li.popup-list {
 .library__website {
 	opacity: .3;
 	display: inline-block;
+	padding-left: .3rem;
 }
 
 /* End Group Description */

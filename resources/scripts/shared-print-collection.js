@@ -395,7 +395,16 @@ $.each(groupInfo, function(key, obj) {
             var twitterLink = document.createElement('a');
             twitterLink.href = libraries[key].twitter;
             $(twitterLink).addClass( "group-description__twitter").attr('id', 'group-twitter').append('<img src="resources/images/Twitter_Social_Icon_Circle_Color.svg" width="32" height="32" alt="Twitter" title="Twitter Link" />');
-            document.getElementById('group-links').appendChild(twitterLink)
+            document.getElementById('group-links').appendChild(twitterLink);
+        }
+        for(var i = 0; i < libraries[key].members.length; i++){
+            var groupMemberList = document.createElement('li');
+            $(groupMemberList).text(libraries[key].members[i]);
+            var groupMemberAnchor = document.createElement('a');
+            $(groupMemberList).append(groupMemberAnchor);
+            groupMemberAnchor.href = "#";
+            $(groupMemberAnchor).addClass("library__website").append('<img src="resources/images/sphere.svg" width="16" height="16" alt="Website" title="Website Link" />');
+            document.getElementById('library-list').appendChild(groupMemberList);
         }
 
     });
