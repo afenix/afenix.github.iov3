@@ -469,6 +469,7 @@ li.popup-list {
 
 .group-description__website {
 	opacity: .4;
+	padding-right: .5rem;
 }
 
 @media (min-width: 55rem) {
