@@ -348,6 +348,9 @@ a {
  *
  *---------------------------------------------------------------------------*/
 
+
+/* Being Group Legend */
+
 .group-legend {
 	margin: -6rem 0 3rem;
 	padding:0;
@@ -371,6 +374,10 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 }
+
+/* End Group Legend */
+
+/* Begin Group/Map Controls */
 
 .group_div {
 	box-sizing: border-box;
@@ -397,6 +404,10 @@ a {
 h6.group_count {
   margin: 5px 0px 5px 0px; 
 }
+
+/* End Group/Map Controls */
+
+/* Begin Map Popup */
 
 .mapboxgl-popup {
   max-width: 400px;
@@ -428,6 +439,11 @@ li.popup-list {
 	padding:0px 10px 0px 20px;
 }
 
+/* End Map Popup */
+
+/* Begin Group Description */
+
+/* End Group Description */
 
  /*----------------------------------------------------------------------------
  *

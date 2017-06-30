@@ -38,177 +38,180 @@
 			<div class='container map'>
 				<div class='map__legend'>
 					<h5 class="h5 map__legend__header">Titles Retained</h5>
-					<div><span class='circle1'></span><= 20k</div>   
+					<div><span class='circle1'></span>&lt;= 20k</div>   
 					<div><span class='circle2'></span></div>
 					<div><span class='circle3'></span></div>
 					<div><span class='circle4'></span></div>
-					<div class='align-us'><span class='circle5'></span> > 500k</div>
+					<div class='align-us'><span class='circle5'></span> &gt; 500k</div>
 				</div>
 				<div class="map__wrap" id="map"></div>
-			</div>
-			
-			<div class="container container--measure">
+			</div>						
+			<div class="container container--measure groups">
 				<fieldset class="group-legend">
 					<p class="group-legend__hint">Click on one of the library groups below to focus in on that group, or on the <strong>Overview</strong> button to see all groups.</p>
 					<div id="group-legend-elements"></div>
 				</fieldset>
-				<div class='descriptive-text-container'>
-					<div class='descriptive-text'>
-						<h2 class="h3" id='location-title'></h4>
-						<p id='location-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore, enim itaque commodi tempora odio fugiat natus accusantium exercitationem rerum vitae quae tenetur mollitia amet nisi id. Eos, ipsum, culpa!</p>
+				<div class="group-description">
+					<h2 class="h3 group-description__title" id='location-title'></h2>
+					<h2 class="h3 group-description__title"></h2>
+					<p class="group-description__text" id='location-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore, enim itaque commodi tempora odio fugiat natus accusantium exercitationem rerum vitae quae tenetur mollitia amet nisi id. Eos, ipsum, culpa!</p>
+					<ul class="group-description__list" id="library-list">
+						<li>Library <a href="#">link</a></li>
+						<li>Library <a href="#">link</a></li>
+						<li>Library <a href="#">link</a></li>
+						<li>Library <a href="#">link</a></li>
+					</ul>
+				</div>
+			</div>		
+			<div class="totals">
+				<div class="container container--measure">
+					<div class="totals-wrap">
+						<div class="totals-container" style="display:none">
+							<h2 class='holdings-number' data-duration='1' data-scroll='toggle(.animateCounterIn, .invisible)'>11</h2> 
+							<div class="totals-container__desc">
+								<h3>Shared Print Groups</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
+							</div>
+						</div>
+						<div class="totals-container"> 
+							<h2 class='holdings-number' data-duration='2' data-scroll='once' data-scroll-showCallback="holdingsNumberInView(1)">143</h2>
+							<div class="totals-container__desc">
+								<h3>Member Libraries</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
+							</div>
+						</div>
+						<div class="totals-container"> 
+							<h2 class='holdings-number' data-duration='2.5' data-suffix='M' data-decimals='1' data-scroll='once' data-scroll-showCallback="holdingsNumberInView(2)">7.6</h2>
+							<div class="totals-container__desc">
+								<h3>Distinct Editions</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
+							</div>
+						</div>
+						<div class="totals-container"> 
+							<h2 class='holdings-number' data-duration='2.5' data-suffix='M' data-decimals='1' data-scroll='once' data-scroll-showCallback="holdingsNumberInView(3)">19.7</h2>
+							<div class="totals-container__desc">
+								<h3>Title Holdings</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+	
+			<div class="container container--measure search">
+				<h3 class="h3">Search the Shared Print Collection</h3>
+				<p>What kinds of books are being protected by participating libraries? Most shared print intitatives have focused on guaranteeing the protection of rare titles that are held by very few libraries. This strategy helps secure a robust future for titles that might otherwise be at risk of destruction, as well as gives libraries an opportunity to make effective use of their physical space with the knowledge that the scholarly record will be preserved.</p>
+				<p>Below you'll see a sample of books that belong to shared print collection. You can also use the search box to explore other titles in the collection. Below each title is a color-coded list of the shared print programs that have committed to retain that title.</p>
+				<form class="search__input-group" onsubmit="searchSolrTitles(); return false;">
+					<input type="text" class="search__input" id="searchInput"  placeholder="Search for keyword in title...">
+					<input type="submit" value="search" class="button search__button" />
+				</form>
+				<ul class="search__results" id="solr_results">
+					<li class="search__item">
+						<div class="search__item__desc">
+							<strong class="search__author">Henley, Patricia. </strong>
+							<em class="search__title">The Hummingbird House. </em> 
+							<span class="search__edition">3rd ed., </span>
+							<span class="search__publisher">MacMurray, </span>
+							<span class="search__date">1999. </span>
+							<ul class="search__groups">
+								<li class="search__groups__item east">EAST <span class="numeral">15yr</span></li>
+							</ul>
+						</div>
+						<a href="#" class="search__item__link"><img src="resources/images/WorldCat_Logo_V_Color.png" alt="WorldCat Logo" width="48"></a>
+					</li>
+					<li class="search__item">
+						<div class="search__item__desc">
+							<strong class="search__author">Henley, Patricia. </strong>
+							<em class="search__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur non assumenda, necessitatibus repellat. Repellat quas cumque iure aperiam qui incidunt accusantium ex, voluptatem deserunt delectus omnis doloremque optio earum. </em> 
+							<span class="search__edition">3rd ed., </span>
+							<span class="search__publisher">MacMurray, </span>
+							<span class="search__date">1999. </span>
+							<ul class="search__groups">
+								<li class="search__groups__item east">EAST <span class="numeral">15yr</span></li>
+								<li class="search__groups__item scelc">SCELC <span class="numeral">15yr</span></li>
+								<li class="search__groups__item ali">ALI<span class="numeral">15yr</span></li>
+							</ul>
+						</div>
+						<a href="#" class="search__item__link"><img src="resources/images/WorldCat_Logo_V_Color.png" alt="WorldCat Logo" width="48"></a>
+					</li>
+					<li class="search__item">
+						<div class="search__item__desc">
+							<strong class="search__author">Henley, Patricia. </strong>
+							<em class="search__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur non assumenda, necessitatibus repellat. Repellat quas cumque iure aperiam qui incidunt accusantium ex, voluptatem deserunt delectus omnis doloremque optio earum. </em> 
+							<span class="search__edition">3rd ed., </span>
+							<span class="search__publisher">MacMurray, </span>
+							<span class="search__date">1999. </span>
+							<ul class="search__groups">
+								<li class="search__groups__item mi-spi">MI-SPI <span class="numeral">15yr</span></li>
+								<li class="search__groups__item coppul">COPPUL<span class="numeral">15yr</span></li>
+							</ul>
+						</div>
+						<a href="#" class="search__item__link"><img src="resources/images/WorldCat_Logo_V_Color.png" alt="WorldCat Logo" width="48"></a>
+					</li>
+				</ul>
+			</div>
+			
+	
+			<div class="video">			
+				<div class="container container--measure video-wrap">
+					<h3 class="h3">Collaborative Decisions, Made Possible with GreenGlass</h3>
+					<p>The GreenGlass software product has facilitated all shared print initiatives since 2015. GreenGlass employs visualizations and modeling tools to allow groups of libraries to reach consensus quickly, make informed decisions, and fairly assign commitments to retain titles amongst the members of the shared print collection.</p>
+					<p>For inquiries into starting or joining a shared print initiative at your library, drop Rick Lugg a line at <a href="mailto:luggr@oclc.org">luggr@oclc.org</a></p>
+					<div class='embed-container'>
+						<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WZUpZ0mBw7Q?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
+			</div>
+	
+			<div class="container container--measure" data-scroll="once">
+				<h4 class="h4">Acknowledgements</h4>
+				<div class="website-credits">
+					<div class="credits-column">
+						<div class="credit-div">
+							<h6 class="credit">Author</h6>
+							Rick Lugg
+						</div>
+	
+						<div class="credit-div">
+							<h6 class="credit">Data &amp; Analysis</h6>
+							Andy Breeding
+						</div>
+	
+						<div class="credit-div">
+	
+	
+						</div>
+					</div>
+					<div class="credits-column">
+						<div class="credit-div">
+							<h6 class="credit">Producer</h6>
+							Nathan Bell, Argentic
+						</div>
+	
+						<div class="credit-div">
+							<h6 class="credit">Programming &amp; Map</h6>
+							Alister Fenix, Argentic
+						</div>
+	
+						<div class="credit-div">
+							<h6 class="credit">Design &amp; CSS</h6>
+							Abby Larsen, Argentic
+						</div>
+	
+						<div class="credit-div">
+							<h6 class="credit">GreenGlass<br/>Product Design and Development</h6>
+							<a href="http://argenticsoftware.com">Argentic</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="container container--measure copyright-notice">
+				<h6 class="h6">Article text &copy; 2017 OCLC <a href="http://www.oclc.org">http://www.oclc.org</a></h6>
+				<h6 class="h6">Website and design &copy; 2017 Argentic <a href="http://www.argenticsoftware.com/">http://www.argenticsoftware.com</a></h6>
 			</div>
 		</section>
-		
-		<div class="totals">
-			<div class="container container--measure">
-				<div class="totals-wrap">
-					<div class="totals-container" style="display:none">
-						<h2 class='holdings-number' data-duration='1' data-scroll='toggle(.animateCounterIn, .invisible)'>11</h2> 
-						<div class="totals-container__desc">
-							<h3>Shared Print Groups</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
-						</div>
-					</div>
-					<div class="totals-container"> 
-						<h2 class='holdings-number' data-duration='2' data-scroll='once' data-scroll-showCallback="holdingsNumberInView(1)">143</h2>
-						<div class="totals-container__desc">
-							<h3>Member Libraries</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
-						</div>
-					</div>
-					<div class="totals-container"> 
-						<h2 class='holdings-number' data-duration='2.5' data-suffix='M' data-decimals='1' data-scroll='once' data-scroll-showCallback="holdingsNumberInView(2)">7.6</h2>
-						<div class="totals-container__desc">
-							<h3>Distinct Editions</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
-						</div>
-					</div>
-					<div class="totals-container"> 
-						<h2 class='holdings-number' data-duration='2.5' data-suffix='M' data-decimals='1' data-scroll='once' data-scroll-showCallback="holdingsNumberInView(3)">19.7</h2>
-						<div class="totals-container__desc">
-							<h3>Title Holdings</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sunt nobis tenetur, quidem nesciunt laborum esse impedit possimus praesentium ipsum officia consequuntur fugit quo sequi delectus assumenda deserunt voluptas odit.</p>
-						</div>
-					</div>
-				</div>
-			</div>				
-		</div>
-
-		<div class="container container--measure search">
-			<h3 class="h3">Search the Shared Print Collection</h3>
-			<p>What kinds of books are being protected by participating libraries? Most shared print intitatives have focused on guaranteeing the protection of rare titles that are held by very few libraries. This strategy helps secure a robust future for titles that might otherwise be at risk of destruction, as well as gives libraries an opportunity to make effective use of their physical space with the knowledge that the scholarly record will be preserved.</p>
-			<p>Below you'll see a sample of books that belong to shared print collection. You can also use the search box to explore other titles in the collection. Below each title is a color-coded list of the shared print programs that have committed to retain that title.</p>
-			<form class="search__input-group" onsubmit="searchSolrTitles(); return false;">
-				<input type="text" class="search__input" id="searchInput"  placeholder="Search for keyword in title...">
-				<input type="submit" value="search" class="button search__button" />
-			</form>
-			<ul class="search__results" id="solr_results">
-				<li class="search__item">
-					<div class="search__item__desc">
-						<strong class="search__author">Henley, Patricia. </strong>
-						<em class="search__title">The Hummingbird House. </em> 
-						<span class="search__edition">3rd ed., </span>
-						<span class="search__publisher">MacMurray, </span>
-						<span class="search__date">1999. </span>
-						<ul class="search__groups">
-							<li class="search__groups__item east">EAST <span class="numeral">15yr</span></li>
-						</ul>
-					</div>
-					<a href="#" class="search__item__link"><img src="resources/images/WorldCat_Logo_V_Color.png" alt="WorldCat Logo" width="48"></a>
-				</li>
-				<li class="search__item">
-					<div class="search__item__desc">
-						<strong class="search__author">Henley, Patricia. </strong>
-						<em class="search__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur non assumenda, necessitatibus repellat. Repellat quas cumque iure aperiam qui incidunt accusantium ex, voluptatem deserunt delectus omnis doloremque optio earum. </em> 
-						<span class="search__edition">3rd ed., </span>
-						<span class="search__publisher">MacMurray, </span>
-						<span class="search__date">1999. </span>
-						<ul class="search__groups">
-							<li class="search__groups__item east">EAST <span class="numeral">15yr</span></li>
-							<li class="search__groups__item scelc">SCELC <span class="numeral">15yr</span></li>
-							<li class="search__groups__item ali">ALI<span class="numeral">15yr</span></li>
-						</ul>
-					</div>
-					<a href="#" class="search__item__link"><img src="resources/images/WorldCat_Logo_V_Color.png" alt="WorldCat Logo" width="48"></a>
-				</li>
-				<li class="search__item">
-					<div class="search__item__desc">
-						<strong class="search__author">Henley, Patricia. </strong>
-						<em class="search__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aspernatur non assumenda, necessitatibus repellat. Repellat quas cumque iure aperiam qui incidunt accusantium ex, voluptatem deserunt delectus omnis doloremque optio earum. </em> 
-						<span class="search__edition">3rd ed., </span>
-						<span class="search__publisher">MacMurray, </span>
-						<span class="search__date">1999. </span>
-						<ul class="search__groups">
-							<li class="search__groups__item mi-spi">MI-SPI <span class="numeral">15yr</span></li>
-							<li class="search__groups__item coppul">COPPUL<span class="numeral">15yr</span></li>
-						</ul>
-					</div>
-					<a href="#" class="search__item__link"><img src="resources/images/WorldCat_Logo_V_Color.png" alt="WorldCat Logo" width="48"></a>
-				</li>
-			</ul>
-		</div>
-		
-
-		<div class="video">			
-			<div class="container container--measure video-wrap">
-				<h3 class="h3">Collaborative Decisions, Made Possible with GreenGlass</h3>
-				<p>The GreenGlass software product has facilitated all shared print initiatives since 2015. GreenGlass employs visualizations and modeling tools to allow groups of libraries to reach consensus quickly, make informed decisions, and fairly assign commitments to retain titles amongst the members of the shared print collection.</p>
-				<p>For inquiries into starting or joining a shared print initiative at your library, drop Rick Lugg a line at <a href="mailto:luggr@oclc.org">luggr@oclc.org</a></p>
-				<div class='embed-container'>
-					<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WZUpZ0mBw7Q?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-
-		<div class="container container--measure" data-scroll="once">
-			<h4 class="h4">Acknowledgements</h4>
-			<div class="website-credits">
-				<div class="credits-column">
-					<div class="credit-div">
-						<h6 class="credit">Author</h6>
-						Rick Lugg
-					</div>
-
-					<div class="credit-div">
-						<h6 class="credit">Data &amp; Analysis</h6>
-						Andy Breeding
-					</div>
-
-					<div class="credit-div">
-
-
-					</div>
-				</div>
-				<div class="credits-column">
-					<div class="credit-div">
-						<h6 class="credit">Producer</h6>
-						Nathan Bell, Argentic
-					</div>
-
-					<div class="credit-div">
-						<h6 class="credit">Programming &amp; Map</h6>
-						Alister Fenix, Argentic
-					</div>
-
-					<div class="credit-div">
-						<h6 class="credit">Design &amp; CSS</h6>
-						Abby Larsen, Argentic
-					</div>
-
-					<div class="credit-div">
-						<h6 class="credit">GreenGlass<br/>Product Design and Development</h6>
-						<a href="http://argenticsoftware.com">Argentic</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container container--measure copyright-notice">
-			<h6 class="h6">Article text &copy; 2017 OCLC <a href="http://www.oclc.org">http://www.oclc.org</a></h6>
-			<h6 class="h6">Website and design &copy; 2017 Argentic <a href="http://www.argenticsoftware.com/">http://www.argenticsoftware.com</a></h6>
-		</div>
 
 		<script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
 	  	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
