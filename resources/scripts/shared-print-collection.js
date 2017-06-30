@@ -381,8 +381,8 @@ $.each(groupInfo, function(key, obj) {
     	}
 	});
 
-    groupDiv.addEventListener('click', function() {
         $('#group-twitter').remove();
+    $(groupDiv).on("click", function() {
         map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
         
         $('.group_div').removeClass('selected');
