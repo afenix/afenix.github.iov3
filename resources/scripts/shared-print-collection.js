@@ -419,7 +419,6 @@ $.each(groupInfo, function(key, obj) {
             var groupMemberAnchor = document.createElement('a');
             $(groupMemberList).append(groupMemberAnchor);
             groupMemberAnchor.href = "#";
-            $(groupMemberAnchor).addClass("library__website").append('<img src="resources/images/Emoji_u1f310.svg" width="16" height="16" alt="Website" title="Website Link" />');
             document.getElementById('library-list').appendChild(groupMemberList);
         };
 
