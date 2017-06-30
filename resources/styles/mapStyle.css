@@ -415,18 +415,28 @@ h6.group_count {
   color: #666666;
 }
 
-.popup-group-title {
+.popup {
+	// TODO: Find a better approach than setting a fixed width to resolve blur issue: 
+	// https://github.com/mapbox/mapbox-gl-js/pull/3258#issuecomment-249975324
+	width:230px;
+}
+
+h2.popup-group-title {
+	font-family: var(--font-family);
 	text-align:center;
-	padding:0px 0px;
+	padding-bottom:0px;
 }
 
-.popup-library-title {
-	padding:0px 10px 0px 15px;
-	margin:0px;
+h3.popup-library-title {
+	font-family: var(--font-family);
+	text-align:center;
+	padding-bottom:0px;
+	margin:0px 0px 5px 0px;
 }
 
-.popup-list {
-	padding:0px 10px 0px 15px;
+li.popup-list {
+	font-family: var(--font-family);
+	padding:0px 10px 0px 20px;
 }
 
 /* End Map Popup */
