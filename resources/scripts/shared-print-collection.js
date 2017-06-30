@@ -23,7 +23,7 @@ var libraries = [{
   },{
     "id": "11",
     "title": "SCELC",
-    "description": "Statewide California Electronic Library Consortium (SCELC) was established in 1986 to develop resource-sharing among the libraries of private academic institutions in Southern California. SCELC brings together independent nonprofit academic and research institutions to foster innovation and collaboration in the acquisition and effective use of library resources and services.  The consortium is comprised of 14 academic and reseaerch libraries located in the state of California with a shared print collection of 4,866,476 million title holdings and 2,628,215 million title sets.  Due to their ongoing efforts for collective retention strategies SCELC has been able to retain a shared print collection of 1,199,038 milliion title-holdings.",
+    "description": "Statewide California Electronic Library Consortium (SCELC) was established in 1986 to develop resource-sharing among the libraries of private academic institutions in Southern California. SCELC brings together independent nonprofit academic and research institutions to foster innovation and collaboration in the acquisition and effective use of library resources and services.  The consortium is comprised of 14 academic and reseaerch libraries located in the state of California with a shared print collection of 4,866,476 million title holdings and 2,628,215 million title sets.  Due to their ongoing efforts for collective retention strategies SCELC has been able to retain a shared print collection of 1,199,670 milliion title-holdings, with 269,902 thousand of those titles being uniquely retained by this group. ",
     "members": ["Azusa Pacific University","California Lutheran University","California Institute of Technology","Claremont Colleges","Holy Names University","Loyola Marymount University","Mount Saint Mary's University","Occidental College",
                 "Pepperdine University","University of Redlands","Saint Mary's College","University of Southern California","University of San Diego","University of San Francisco"],
     "twitter": "https://twitter.com/scelc",
@@ -37,7 +37,7 @@ var libraries = [{
   },{
     "id": "10",
     "title": "COPPUL",
-    "description": "Working together, the Council of Prairie and Pacific University Libraries (COPPUL) members leverage their collective expertise, resources, and influence, increasing capacity and infrastructure, to enhance learning, teaching, student experiences, and research amongst their institutions. The consortium is comprised of 22 university libraries located in Manitoba, Saskatchewan, Alberta and British Columbia with a shared print collection of 7,276,328 million title holdings and 3,738,751 million title sets.  Due to their ongoing efforts for collective retention strategies COPPUL has been able to retain a shared print collection of 1,147,232 milliion title-holdings, with 778,071 thousand of those titles being uniquely retained by this group. ",
+    "description": "Working together, the Council of Prairie and Pacific University Libraries (COPPUL) members leverage their collective expertise, resources, and influence, increasing capacity and infrastructure, to enhance learning, teaching, student experiences, and research amongst their institutions. The consortium is comprised of 22 university libraries located in Manitoba, Saskatchewan, Alberta and British Columbia with a shared print collection of 7,276,328 million title holdings and 3,738,751 million title sets.  Due to their ongoing efforts for collective retention strategies COPPUL has been able to retain a shared print collection of 1,147,232 milliion title-holdings, with 847,918 thousand of those titles being uniquely retained by this group. ",
     "members": ["University of Calgary","University of Lethbridge","University of Manitoba","University of Regina","University of Saskatchewan","Simon Fraser University","Thompson Rivers University","Vancouver Island University","University of Victoria","University of Winnipeg"],
     "twitter": "https://twitter.com/coppul?lang=en",
     "website": "http://www.coppul.ca/",
@@ -50,7 +50,7 @@ var libraries = [{
  }, {
     "id": "9",
     "title": "CI-CCI",
-    "description": "The formation of the Central Iowa Collaborative Collections Initiative (CI-CCI) was announced in the summer of 2013, with an initial membership of 5 universities in the state.  By working together the CI-CCI group has been able to meet their goals of decreasing the size of local print collections by reducing duplication among the participating libraries and creating and maintaining a distributed, shared collection of these titles to ensure that circulating copies of them are retained within the group. Because of this CI-CCI has been able to retain 152,553 thousand title-holdings, with 741 of those titles being uniquely retained by this group. ",
+    "description": "The formation of the Central Iowa Collaborative Collections Initiative (CI-CCI) was announced in the summer of 2013, with an initial membership of 5 universities in the state.  By working together the CI-CCI group has been able to meet their goals of decreasing the size of local print collections by reducing duplication among the participating libraries and creating and maintaining a distributed, shared collection of these titles to ensure that circulating copies of them are retained within the group. Because of this CI-CCI has been able to retain 152,553 thousand title-holdings, with 989 of those titles being uniquely retained by this group. ",
     "members": ["Central College","Drake University","Grand View","Grinnell College","Simpson College"],
     "website": "https://ci-cci.org/",
     "camera": {
@@ -62,7 +62,7 @@ var libraries = [{
 }, {
     "id": "8",
     "title": "ALI",
-    "description": "The mission of Academic Libraries of Indiana (ALI) is to build and foster community and collaboration among academic libraries in Indiana. ALI is a consortium of 37 participating libraries with a shared print collection of 5,512,435 million title holdings and 2,287,041 million title sets.  Due to their ongoing efforts for a state-wide academic library collaboration, the ALI project has been able to retain a shared print collection of 1,701,374 title-holdings, with 370,490 thousand of those titles being uniquely retained by this group. ", 
+    "description": "The mission of Academic Libraries of Indiana (ALI) is to build and foster community and collaboration among academic libraries in Indiana. ALI is a consortium of 37 participating libraries with a shared print collection of 5,512,435 million title holdings and 2,287,041 million title sets.  Due to their ongoing efforts for a state-wide academic library collaboration, the ALI project has been able to retain a shared print collection of 1,701,374 title-holdings, with 475,057 thousand of those titles being uniquely retained by this group. ", 
     "members": ["Anabaptist Mennonite Biblical Seminary (AMBS)", "Ancilla College", "Anderson Univ", "Butler University", "Concordia", "Christian Theological Seminary (CTS)", "DePauw University","Earlham College","Franklin College",
                 "Goshen College","Grace College","Hanover College","Huntington University","Indiana State University","Indiana University - Purdue University Fort Wayne","Indiana University School of Dentistry","Indiana University Kokomo",
                 "Indiana University School of Medicine","Indiana University Northwest","Indiana University Southeast","Indiana University Purdue University at Indianapolis","Manchester University","Marian University","Oakland City University",
@@ -78,7 +78,7 @@ var libraries = [{
 }, {
     "id": "7",
     "title": "MI-SPI",
-    "description": "In 2011, the libraries at Michigan's publicly-supported universities sought to devise a collaborative approach to shared print collections among themselves, calling themselves the Michigan Shared Print Initiative (MI-SPI). Participating libraries used services and tools developed by Sustainable Collection Services (SCS) to identify such titles in their respective individual collections, and to compare results across the group. Eleven universities participated in this endeavor across Michigan state, allowing participating members to retain 774,173 thousand title-holdings, with 79,227 thousand of those titles being uniquely retained by this group.   ",
+    "description": "In 2011, the libraries at Michigan's publicly-supported universities sought to devise a collaborative approach to shared print collections among themselves, calling themselves the Michigan Shared Print Initiative (MI-SPI). Participating libraries used services and tools developed by Sustainable Collection Services (SCS) to identify such titles in their respective individual collections, and to compare results across the group. Eleven universities participated in this endeavor across Michigan state, allowing participating members to retain 774,173 thousand title-holdings, with 81,949 thousand of those titles being uniquely retained by this group.   ",
     "members": ["Central Michigan University","Eastern Michigan University","Ferris State University","Grand Valley State University","University of Michigan Dearborn","Michigan Technological University","Northern Michigan University",
                 "Oakland University","Saginaw Valley","Wayne State University","Western Michigan University"],
     "website": "https://www.mcls.org/engagement/mi-spi/",
@@ -91,7 +91,7 @@ var libraries = [{
 }, {
     "id": "6",
     "title": "TUG",
-    "description": "The TriUniversity Group of Libraries (TUG) is a unique example of administrative co-operation among the Libraries of three Ontario universities: University of Guelph, Universtiy of Waterloo, and the Wilfred Laurier University.  The TUG libraries have been informally collaborating for nearly thirty years; however more recently, they have enhanced their co-operation with a more formalised agreement to work together to leverage rapidly-advancing technologies for mutual benefit. Because of their shared committment TUG has now been able to retain 340,279 thousand title-holdings, with 20,396 thousand of those titles being uniquely retained by this group. ",
+    "description": "The TriUniversity Group of Libraries (TUG) is a unique example of administrative co-operation among the Libraries of three Ontario universities: University of Guelph, Universtiy of Waterloo, and the Wilfred Laurier University.  The TUG libraries have been informally collaborating for nearly thirty years; however more recently, they have enhanced their co-operation with a more formalised agreement to work together to leverage rapidly-advancing technologies for mutual benefit. Because of their shared committment TUG has now been able to retain 340,279 thousand title-holdings, with 20,012 thousand of those titles being uniquely retained by this group. ",
     "members": ["University of Guelph","University of Waterloo","Wilfrid Laurier University"],
     "website": "https://www.tug-libraries.on.ca/",
     "camera": {
@@ -103,7 +103,7 @@ var libraries = [{
 }, {
     "id": "4",
     "title": "VIVA",
-    "description": "The Virtual Library of Virginia (VIVA) is the consortium of nonprofit academic libraries within the Commonwealth of Virginia. These include six doctoral institutions and two 4-year comprehensive colleges and universities.  Due to their ongoing efforts for participating members to make collaborative decisions VIVA has been able to retain a shared print collection of 3,531,007 title-holdings, with 421,803 thousand of those titles being uniquely retained by this group. ",
+    "description": "The Virtual Library of Virginia (VIVA) is the consortium of nonprofit academic libraries within the Commonwealth of Virginia. These include six doctoral institutions and two 4-year comprehensive colleges and universities.  Due to their ongoing efforts for participating members to make collaborative decisions VIVA has been able to retain a shared print collection of 3,531,007 title-holdings, with 591,266 thousand of those titles being uniquely retained by this group. ",
     "members": ["George Mason University","James Madison University","Old Dominion University","Radford University","University of Virginia","Virginia Commonwealth University","Virginia Tech","William and Mary University"],
     "website": "http://www.vivalib.org/",
     "camera": {
@@ -115,7 +115,7 @@ var libraries = [{
 }, {
     "id": "5",
     "title": "WRLC",
-    "description": "The Washington Research Library Consortium (WRLC) was established as a non-profit corporation in 1987 to support and enhance the library and information services of universities in the Washington, DC metropolitan area. Currently WRLC has 9 partner universities.  Due to their ongoing efforts for participating members to make collaborative decisions WRLC has been able to retain a shared print collection of 2,862,344 title-holdings, with 437,841 thousand of those titles being uniquely retained by this group. ",
+    "description": "The Washington Research Library Consortium (WRLC) was established as a non-profit corporation in 1987 to support and enhance the library and information services of universities in the Washington, DC metropolitan area. Currently WRLC has 9 partner universities.  Due to their ongoing efforts for participating members to make collaborative decisions WRLC has been able to retain a shared print collection of 2,862,344 title-holdings, with 467,443 thousand of those titles being uniquely retained by this group. ",
     "members": ["American University","Catholic University","Gallaudet University","Georgetown University","George Washington University","Howard University","Marymount University","University of DC"],
     "twitter": "https://twitter.com/wrlc",
     "website": "http://www.wrlc.org/",
@@ -128,7 +128,7 @@ var libraries = [{
 	}, {
     "id": "3",
     "title": "CNY",
-    "description": "ConnectNY (CNY) is a consortium of 12 independent academic institutions in New York State. The mission of ConnectNY is to share collections, leverage resources, and enhance services through cooperative initiatives and coordinated activities. Due to their ongoing efforts for collaborative retention the CNY project has been able to retain a shared print collection of 852,205 thousand title-holdings to date.",
+    "description": "ConnectNY (CNY) is a consortium of 12 independent academic institutions in New York State. The mission of ConnectNY is to share collections, leverage resources, and enhance services through cooperative initiatives and coordinated activities. Due to their ongoing efforts for collaborative retention the CNY project has been able to retain a shared print collection of 852,205 thousand title-holdings, with 1,183 thousand of those titles being uniquely retained by this group. ",
     "members": ["Adelphi University","Bard College","Canisius College","Cazenovia College","Colgate University","Hamilton College","Le Moyne College","Medaille College","Pace University","Saint Lawrence University","Union College","Vassar College"],
     "twitter": "https://twitter.com/Connect_NY",
     "website": "http://connectny.org/",
@@ -141,7 +141,7 @@ var libraries = [{
 }, {
     "id": "1",
     "title": "EAST",
-    "description": "The Eastern Academic Scholars' Trust (EAST) is a shared print initiative involving academic and research libraries in 11 states from Maine to Florida. EAST is focused on retaining unique, scarcely held and frequently used scholarly monographs and serials in support of scholarship, research and teaching. EAST currently has 59 members with a shared print collection of 16,573,071 million title holdings and 4,749,042 million title sets.  Due to their ongoing efforts for participating members to commit to retain agreed upon titles the EAST project has been able to retain a shared print collection of 5,746,636 title-holdings, with 1,760,944 million of those titles being uniquely retained by this group. ",
+    "description": "The Eastern Academic Scholars' Trust (EAST) is a shared print initiative involving academic and research libraries in 11 states from Maine to Florida. EAST is focused on retaining unique, scarcely held and frequently used scholarly monographs and serials in support of scholarship, research and teaching. EAST currently has 59 members with a shared print collection of 16,573,071 million title holdings and 4,749,042 million title sets.  Due to their ongoing efforts for participating members to commit to retain agreed upon titles the EAST project has been able to retain a shared print collection of 5,746,636 title-holdings, with 1,868,773 million of those titles being uniquely retained by this group. ",
     "members": ["Amherst College","Boston College","Boston University","Brandeis University","Bridgewater","Bryn Mawr College","Colby","Connecticut College","Elms College","Fairfield University","Five Colleges Incorporated",
                 "Hampshire College","Lafayette College","Loyola Notre Dame","Middlebury College","Mount Holyoke College","Phillips Exeter Academy","Rochester","Saint Anselm College","Siena College","Skidmore","Smith College",
                 "Swarthmore College","Trinity College","Tufts University","University of Connecticut","UMass Amherst","UMass Boston","UMass Dartmouth","UMass Lowell","University of New Hampshire","Wellesley College","Wesleyan University",
@@ -156,7 +156,7 @@ var libraries = [{
 }, {
     "id": "2",
     "title": "MSCS",
-    "description": "The Maine Shared Collections Strategy (MSCS) was founded by eight of Maine’s largest libraries, plus the state’s consortium, Maine InfoNet, together they have implemented a shared approach to the management of print collections in the state. Due to their ongoing efforts for participating members to make collaborative decisions MSCS has been able to retain a shared print collection of 1,408,737 title-holdings, with 302,601 thousand of those titles being uniquely retained by this group. ",
+    "description": "The Maine Shared Collections Strategy (MSCS) was founded by eight of Maine’s largest libraries, plus the state’s consortium, Maine InfoNet, together they have implemented a shared approach to the management of print collections in the state. Due to their ongoing efforts for participating members to make collaborative decisions MSCS has been able to retain a shared print collection of 1,408,737 title-holdings, with 260,398 thousand of those titles being uniquely retained by this group. ",
     "members": ["Bangor Public Library","Bates College","Bowdoin College","Colby College","Maine State Library","Portland Public Library","University of Maine Orono","University of Southern Maine"],
     "twitter": "https://twitter.com/MESharedColls",
     "website": "http://www.maineinfonet.org/mscs/about/",
@@ -389,7 +389,7 @@ $.each(groupInfo, function(key, obj) {
             $('#member-library-label').show();
              $('#group-website').show();
         };
-        
+
         $('#group-twitter').remove(); // remove the twitter icon from the last click event
         if ($('.member-list').length) { // remove former member lists icon from the last click event
             $('.member-list').remove();
