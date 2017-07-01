@@ -370,7 +370,7 @@ li.popup-list {
   opacity: .4;
   padding-right: .5rem; }
 
-@media (min-width: 55rem) {
+@media (min-width: 60rem) {
   .group-description__libraries {
     -moz-column-width: 25rem;
     -moz-columns: 25rem;
@@ -434,15 +434,10 @@ li.popup-list {
 
 .totals-container {
   margin: 0;
-  padding: 2rem 3rem 2rem 0;
-  display: flex;
-  flex-wrap: wrap; }
+  padding: 2rem 0; }
 
 .totals-container__desc {
-  box-sizing: border-box;
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 2rem 0 2rem 3rem;
-  flex: 1 0 61.8%; }
+  text-align: center; }
 
 .totals-container__desc h3 {
   margin: 0;
@@ -450,14 +445,29 @@ li.popup-list {
   font-size: 1.953rem; }
 
 .holdings-number {
+  margin: 0 auto .5rem;
   box-sizing: border-box;
   text-transform: uppercase;
   letter-spacing: -.05em;
   font-weight: 100;
   font-size: 4.768rem;
-  flex: 1 0 38.2%;
   text-align: center; }
 
+@media (min-width: 60rem) {
+  .totals-container {
+    display: flex;
+    flex-wrap: wrap; }
+
+  .totals-container__desc {
+    box-sizing: border-box;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 2rem 0 2rem 3rem;
+    text-align: left;
+    flex: 2 0 31rem; }
+
+  .holdings-number {
+    margin: 1em 0;
+    flex: 1 0 19rem; } }
 /*----------------------------------------------------------------------------
 *
 * MODULE: VIDEO
