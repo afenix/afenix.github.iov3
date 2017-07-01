@@ -46,8 +46,6 @@ $theta:		.328rem; /* more for special instance reference than actual use! */
  *
  * LAYOUT
  * 
- * Inspired by: https://cloudfour.com/thinks/breaking-out-with-viewport-units-and-calc/
- * 
  * The “measure” is the length of a line of text. Ideal line length is usually 
  * 45-75 characters. Using BEM naming conventions, .container--measure is a container 
  * which respects the ideal length of a line of text.
