@@ -37,7 +37,7 @@
 			</section>
 			
 			<section class='container map'>
-				<div class='map__legend'>
+				<div class='map__legend' id='map-legend'>
 					<h5 class="h5 map__legend__header">Titles Retained</h5>
 					<div><span class='circle1'></span>&lt;= 20k</div>   
 					<div><span class='circle2'></span></div>
@@ -45,10 +45,12 @@
 					<div><span class='circle4'></span></div>
 					<div class='align-us'><span class='circle5'></span> &gt; 500k</div>
 				</div>
-				<div class="map__wrap" id="map"></div>
+				<div class="map__wrap" id="map">
+					<div id='gl-status-message'></div>
+				</div>
 			</section>
 									
-			<section class="container container--measure groups">
+			<section class="container container--measure groups" id="group-elements">
 				<fieldset class="group-legend">
 					<p class="group-legend__hint">Click on one of the library groups below to focus in on that group, or on the <strong>Overview</strong> button to see all groups.</p>
 					<div id="group-legend-elements"></div>
