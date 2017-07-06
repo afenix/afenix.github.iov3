@@ -434,6 +434,12 @@ li.popup-list {
   box-sizing: border-box;
   border: 1.5px solid rgba($dark, .5); */ }
 
+
+#chart_div { 
+	width: 900px;
+	height: 600px;
+}
+
 /* End Group Description */
 /*----------------------------------------------------------------------------
 *
