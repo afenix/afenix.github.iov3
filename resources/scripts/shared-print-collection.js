@@ -16,16 +16,10 @@ if(mapboxgl.supported() === false) {
 }
 
 function initJS() {
-    var mapLegend = document.getElementById('map-legend'); // hide map elements 
-    var groupElements = document.getElementById('group-elements');
-    if ($(mapLegend).is(":visible") || $(groupElements).is(":visible")) {
-        $(mapLegend).hide();
-        $(groupElements).hide();
-    }; 
-
-
-    var statusEl = document.getElementById('gl-status-message');
-    statusEl.innerHTML = 'The interactive map on this page is disabled because your current browser does not support WebGL graphics. To have full access to the mapping feature please update your browser to a version that supports WebGL (http://caniuse.com/#feat=webgl)';
+    L.mapbox.accessToken = myAccessToken;
+    L.mapbox.map('map', 'alisterfx.a4f587a5', {
+      scrollWheelZoom: false
+    }).setView([ 42.793385,-100.722656], 4);
 }
 
 function loadScript(sScriptSrc, cssSrc, oCallback) {
