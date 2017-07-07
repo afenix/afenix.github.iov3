@@ -18,10 +18,11 @@ if(mapboxgl.supported() === false) {
 function initJS() {
     L.mapbox.accessToken = myAccessToken;
     var map = L.mapbox.map('map', 'alisterfx.a4f587a5', { 
-        scrollWheelZoom: false 
+        scrollWheelZoom: false,
+        zoomControl: true 
     }).setView([42.793385,-100.722656], 4);
-
     map.gridControl.options.follow = true;
+    map.zoomControl.setPosition('topright');
 }
 
 function loadScript(sScriptSrc, cssSrc, oCallback) {
