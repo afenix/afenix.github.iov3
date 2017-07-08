@@ -154,7 +154,7 @@ function initGL() {
                 },
                 'circle-opacity' : 0.55
               },
-        }); 
+        }); addGroupFunctionality(map);
     });
 
     // add nav features to the map
@@ -194,7 +194,11 @@ function initGL() {
         map.getCanvas().style.cursor = '';
         popup.remove();
     });
-  
+}
+
+
+function addGroupFunctionality(map) {
+
     // Add group legend buttons, group name, description, participating members and links   
     var groupLegendElements = document.getElementById('group-legend-elements');
     var groupName = document.getElementById('group-name');
@@ -205,6 +209,7 @@ function initGL() {
 
     // Add the Overview title and description on page load
     groupName.textContent = libraries[0].title;
+console.log('groupName.textContent');console.log(groupName.textContent);
     groupDescription.textContent = libraries[0].description;
     var groupInfo = [{
             "group_name": "Overview",
@@ -212,57 +217,57 @@ function initGL() {
             "group_count": "19.7M Titles"
         },
         {
-         	"group_name": "SCELC",
+            "group_name": "SCELC",
             "group_color": "#036564",
             "group_count": "1.2M"
         },
         {
-         	"group_name": "COPPUL",
+            "group_name": "COPPUL",
             "group_color": "#33A02C",
             "group_count": "1.14M"
         },
         {
-         	"group_name": "CI-CCI",
+            "group_name": "CI-CCI",
             "group_color": "#beea7b",
             "group_count": "153K"
         },
         {
-         	"group_name": "ALI",
+            "group_name": "ALI",
             "group_color": "#FF7F00",
             "group_count": "1.7M"
         },
         {
-         	"group_name": "MI-SPI",
+            "group_name": "MI-SPI",
             "group_color": "#FF4847",
             "group_count": "774K"
         },
         {
-         	"group_name": "TUG",
+            "group_name": "TUG",
             "group_color": "#6A3D9A",
             "group_count": "340K"
         },
         {
-         	"group_name": "VIVA",
+            "group_name": "VIVA",
             "group_color": "#CAB2D6",
             "group_count": "3.5M"
         },
         {
-         	"group_name": "WRLC",
+            "group_name": "WRLC",
             "group_color": "#1F78B4",
             "group_count": "2.9M"
         },
         {
-         	"group_name": "CNY",
+            "group_name": "CNY",
             "group_color": "#A6CEE3",
             "group_count": "850K"
         },
-    	{
-        	"group_name": "EAST",
+        {
+            "group_name": "EAST",
             "group_color": "#FB9A99",
             "group_count": "5.75M"
         },
         {
-        	"group_name": "MSCS",
+            "group_name": "MSCS",
             "group_color": "#FDBF6F",
             "group_count": "1.4M"
         }
@@ -270,7 +275,7 @@ function initGL() {
 
     // Iteratively create the group buttons 
     $.each(groupInfo, function(key, obj) {
-    	var groupDiv = document.createElement('div');
+        var groupDiv = document.createElement('div');
         $(groupDiv).addClass('group_div');
         if (key == 0) {
           $(groupDiv).addClass('selected');
@@ -281,14 +286,14 @@ function initGL() {
          $(groupCount).addClass('group_count');
 
         $.each(obj, function(key, value) {
-        	if (key === 'group_name') {
-    	    	$(groupDiv).html('<span>' + value + '</span>');
-        	} else if (key === 'group_count') {
-    	    	$(groupCount).text(value);
-        	} else {
-    	    	groupFlair.style.backgroundColor = value;
-        	}
-    	});
+            if (key === 'group_name') {
+                $(groupDiv).html('<span>' + value + '</span>');
+            } else if (key === 'group_count') {
+                $(groupCount).text(value);
+            } else {
+                groupFlair.style.backgroundColor = value;
+            }
+        });
 
         $(groupDiv).on("click", function() {
             if (libraries[key].id == 12) {
@@ -310,7 +315,7 @@ function initGL() {
             $(this).addClass('selected');     
             
             groupName.textContent = libraries[key].title;
-        	groupDescription.textContent = libraries[key].description;
+            groupDescription.textContent = libraries[key].description;
             $('#group-website').attr("href", libraries[key].website);
            
             if (libraries[key].hasOwnProperty('twitter')) {
@@ -334,11 +339,10 @@ function initGL() {
         });
 
         groupLegendElements.appendChild(groupDiv);
-     	groupDiv.appendChild(groupCount);
-     	groupDiv.appendChild(groupFlair);
+        groupDiv.appendChild(groupCount);
+        groupDiv.appendChild(groupFlair);
     });
 }
-
 
 
 
