@@ -23,6 +23,7 @@ function initJS() {
     }).setView([42.793385,-100.722656], 4);
     map.gridControl.options.follow = true;
     map.zoomControl.setPosition('topright');
+    addGroupFunctionality(map, 'nonWebGL');
 }
 
 function loadScript(sScriptSrc, cssSrc, oCallback) {
@@ -197,8 +198,7 @@ function initGL() {
 }
 
 
-function addGroupFunctionality(map) {
-
+function addGroupFunctionality(map, browser = 'webGL') {
     // Add group legend buttons, group name, description, participating members and links   
     var groupLegendElements = document.getElementById('group-legend-elements');
     var groupName = document.getElementById('group-name');
@@ -209,7 +209,6 @@ function addGroupFunctionality(map) {
 
     // Add the Overview title and description on page load
     groupName.textContent = libraries[0].title;
-console.log('groupName.textContent');console.log(groupName.textContent);
     groupDescription.textContent = libraries[0].description;
     var groupInfo = [{
             "group_name": "Overview",
@@ -309,7 +308,11 @@ console.log('groupName.textContent');console.log(groupName.textContent);
                 $('.member-list').remove();
             };
 
-            map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
+            if (browser == 'webGL') {
+                map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
+            } else {
+                map.setView(libraries[key].latLongJS, libraries[key].zoomJS, {animate: true, duration: .1, easeLinearity: .1});
+            }
             
             $('.group_div').removeClass('selected');
             $(this).addClass('selected');     
@@ -449,7 +452,9 @@ var libraries = [{
             zoom: 3,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [42.793385,-100.722656],
+        "zoomJS": 4
       },{
         "id": "11",
         "title": "SCELC",
@@ -463,7 +468,9 @@ var libraries = [{
             zoom: 4.8,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [35.5, -119.597168],
+        "zoomJS": 6
       },{
         "id": "10",
         "title": "COPPUL",
@@ -476,7 +483,9 @@ var libraries = [{
             zoom: 4.5,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [49.999795, -110.0390638],
+        "zoomJS": 5
      }, {
         "id": "9",
         "title": "CI-CCI",
@@ -488,7 +497,9 @@ var libraries = [{
             zoom: 7.6,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [41.553233, -93.144836],
+        "zoomJS": 8
     }, {
         "id": "8",
         "title": "ALI",
@@ -504,7 +515,9 @@ var libraries = [{
             zoom: 5.2,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [39.769360, -85],
+        "zoomJS": 6
     }, {
         "id": "7",
         "title": "MI-SPI",
@@ -517,7 +530,9 @@ var libraries = [{
             zoom: 4.8,
             bearing: 0,
             pitch: 0
-        } 
+        },
+        "latLongJS": [44.78, -85.253906],
+        "zoomJS": 6
     }, {
         "id": "6",
         "title": "TUG",
@@ -529,7 +544,9 @@ var libraries = [{
             zoom: 8.5,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [43.488237, -80.362244],
+        "zoomJS": 10
     }, {
         "id": "4",
         "title": "VIVA",
@@ -541,7 +558,9 @@ var libraries = [{
             zoom: 5.8,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [37.785639, -78.002930],
+        "zoomJS": 7
     }, {
         "id": "5",
         "title": "WRLC",
@@ -554,7 +573,9 @@ var libraries = [{
             zoom: 10,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [38.932407, -77.053986],
+        "zoomJS": 11
         }, {
         "id": "3",
         "title": "CNY",
@@ -567,7 +588,9 @@ var libraries = [{
             zoom: 5.2,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [42.613244, -75.498047],
+        "zoomJS": 6
     }, {
         "id": "1",
         "title": "EAST",
@@ -582,7 +605,9 @@ var libraries = [{
             zoom: 4.8,
             bearing: 0,
             pitch: 0
-        } 
+        },
+        "latLongJS": [41.569738, -73],
+        "zoomJS": 6
     }, {
         "id": "2",
         "title": "MSCS",
@@ -595,7 +620,9 @@ var libraries = [{
             zoom: 6,
             bearing: 0,
             pitch: 0
-        }
+        },
+        "latLongJS": [44.368778, -69.433594],
+        "zoomJS": 7
     }];
 
 
