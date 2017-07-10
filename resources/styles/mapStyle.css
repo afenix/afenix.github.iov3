@@ -419,6 +419,13 @@ li.popup-list {
   border: 1.5px solid rgba($dark, .5); */ }
 
 /* End Group Description */
+/* Begin Group Chart */
+#chart_div {   
+  padding: 1rem 2rem 1rem 0; 
+  width: 100%; 
+  min-height: 35rem;
+} 
+/* End Group Chart */
 /*----------------------------------------------------------------------------
 *
 * MODULE: TOTALS

@@ -632,6 +632,11 @@ google.charts.load('current', {'packages':['corechart']});
 // Set a callback to run when the Google Visualization API is loaded.
 google.charts.setOnLoadCallback(drawChart);
 
+// Make the chart responsive on browser resize
+$(window).resize(function(){
+  drawChart();
+});
+
 // Callback that creates and populates a data table,
 // instantiates the pie chart, passes in the data and
 // draws it.
