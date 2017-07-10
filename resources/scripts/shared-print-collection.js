@@ -77,8 +77,6 @@ function initGL() {
     	});
 
     
-
-
     $(document).on('scroll.stopEvent', function() {
        var hT = $('.map').offset().top,
            hH = $('.map').outerHeight(),
@@ -346,8 +344,6 @@ function addGroupFunctionality(map, browser = 'webGL') {
         groupDiv.appendChild(groupFlair);
     });
 }
-
-
 
 function parseTitleResults(data, groupID,parsedData) {
     var groupIdMap = {
