@@ -297,10 +297,10 @@ function addGroupFunctionality(map, browser = 'webGL') {
         $(groupDiv).on("click", function() {
             if (libraries[key].id == 12) {
                 $('#member-library-label').hide();
-                $('#group-website').hide();
+                $('#group-links').hide();
             } else {
                 $('#member-library-label').show();
-                 $('#group-website').show();
+                 $('#group-links').show();
             };
 
             $('#group-twitter').remove(); // remove the twitter icon from the last click event
