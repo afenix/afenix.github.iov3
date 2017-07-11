@@ -153,7 +153,7 @@ function initGL() {
                 },
                 'circle-opacity' : 0.55
               },
-        }); addGroupFunctionality(map);
+        }); addGroupFunctionality(map, 'webGL');
     });
 
     // add nav features to the map
@@ -196,7 +196,7 @@ function initGL() {
 }
 
 
-function addGroupFunctionality(map, browser = 'webGL') {
+function addGroupFunctionality(map, browser) {
     // Add group legend buttons, group name, description, participating members and links   
     var groupLegendElements = document.getElementById('group-legend-elements');
     var groupName = document.getElementById('group-name');
