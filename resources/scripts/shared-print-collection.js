@@ -1,7 +1,7 @@
 // mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpc3RlcmZ4IiwiYSI6ImNpcW80cnExOTAxZW9meW5uamNhdDIwcXcifQ.X8cJ7YP65MrR3bBq4a1rmQ';
 var myAccessToken = "pk.eyJ1IjoiYWxpc3RlcmZ4IiwiYSI6ImNpcW80cnExOTAxZW9meW5uamNhdDIwcXcifQ.X8cJ7YP65MrR3bBq4a1rmQ";
 
-if(mapboxgl.supported() === false) {
+if(!mapboxgl.supported()) {
     var JsUrl = 'http://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js',
         cssUrl = 'http://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css';
 
