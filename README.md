@@ -1,15 +1,27 @@
 # North American Shared Print Retention Story Map website
 
-## Dependencies
+This site takes advantage of some of the latest CSS syntax. To support less capable browsers, this forward-looking CSS is made backwards-compatible (within reason) using the post-processor [PostCSS](http://postcss.org) and the [cssnext](http://cssnext.io/) plugin.
 
-### Sass
+## Install post-processing tools
 
-This site uses Sass in a very basic way primarily for pre-processing css variables. More about Sass variables here: http://sass-lang.com/guide
+If you haven’t already, [install node.js and npm](https://docs.npmjs.com/getting-started/installing-node). Run the following command in your terminal from the root directory of this project.
 
-Sass compiles the source .scss file (/resources/styles/source/mapStyle.scss) and outputs it to css (/resources/styles/mapStyle.css).
+`npm install`
 
-To use Sass, you will need to either download an app or install Sass from the command line. If you already have ruby installed, I recommend using the command line. More about both options are here: http://sass-lang.com/install
+## Edit the css
 
-If you go the command line route, you need only navigate to the root of this project then run `sass --watch resources/styles/source:resources/styles` at the prompt. (The left side of the `:` is the location of the scss source directory. The right side of the `:` is the location of compiled css.)
+Make all css edits in `/resources/styles/source/mapStyle_next.css`. 
+
+## Run the post-processor
+
+To monitor and apply changes to `mapStyle_next.css` automatically to `mapStyle.css`, run the following command in your terminal. 
+
+`postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css --watch`
+
+## Adjust browser support
+
+Backwards compatibility settings are set explicitly in the `.browserlistrc` file.
+
+
 
 
