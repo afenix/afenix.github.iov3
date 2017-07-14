@@ -18,8 +18,7 @@
 --orange: 	245,127,41; /* rgb(245,127,41); #F57F29; */
 --text:		27,42,57; /* rgb(27,42,57);	 #1B2A39; */
 --light:		255,255,255; /* rgb(255,255,255); #ffffff; */
---dark:		0,0,0; /* rgb(0,0,0); #000000; */
---brand: 	var(--green);
+--dark:		0,0,0; /* rgb(0,0,0); #000000; */ /* Gray() function used when opacities would otherwise be used for lighter shades of dark http://dev.w3.org/csswg/css-color/#grays */
 
 }
  
@@ -136,28 +135,28 @@ h1, h2, h3, h4, h5 {
 }
 
 .h2 {
-	color: rgba(var(--dark), .7);
+	color: gray(30%);
 	font-weight: 200;
 	font-size: var(--beta);
 	line-height: 1.1;
 }
 
 .h3 {
-	color: rgba(var(--dark), .7);
+	color: gray(30%);
 	font-weight: 200;
 	font-size: var(--gamma);
 	line-height: 1.1;
 }
 
 .h4 {
-	color: rgba(var(--dark), .7);
+	color: gray(30%);
 	font-weight: 600;
 	font-size: var(--delta);
 	line-height: 1.1;
 }
 
 .h5 {
-	color: rgba(var(--dark), .7);
+	color: gray(30%);
 	font-size: var(--base);
 	text-transform: uppercase;
 	letter-spacing: .02em;
@@ -179,7 +178,7 @@ h1, h2, h3, h4, h5 {
   width: 80%;
   text-align: center;
   font-size: 1.5em;
-  text-shadow: 0px 0px 3px rgba(255,255,255,0.5);
+  text-shadow: 0px 0px 3px rgba(var(--light), 0.5);
   font-family: sans-serif;
   font-weight: bold;
   z-index: 99;
@@ -200,7 +199,7 @@ p:last-child {
 
 strong {
 	font-weight: 700;
-	color: rgba(var(--dark), .7);
+	color: gray(30%);
 }
 
 em {
@@ -246,7 +245,7 @@ a {
 .main__header {
 	text-align:center;
 	padding: 9rem 1rem;
-	background: rgba(var(--dark), .05);
+	background: gray(95%);
 	background-image: url('../images/background-2.jpg');
 	border: 1px solid rgba(var(--green), .25);
 	border-width: 1px 0;
@@ -290,7 +289,7 @@ a {
 	border-radius: 3px;
 	top: 2rem;
 	left: 2rem;
-	box-shadow: 0 1px 2px rgba(var(--dark), .1);
+	box-shadow: 0 1px 2px rgba(var(--dark), 10%);
 	font: 12px/20px;
 	padding: 10px;
 	position: absolute;
@@ -377,7 +376,7 @@ a {
 	padding: 1rem;
 	margin: 0 calc(-50vw + 50%) 2rem;
 	text-align: center;
-	background: rgba(var(--dark), .15);
+	background: gray(85%);
 }
 
 .group-legend__intro {
@@ -399,13 +398,13 @@ a {
 	cursor: pointer;
 	margin: .5rem;
 	padding: 1rem;
-	background: rgba(var(--dark), .05);
+	background: gray(095%);
 	flex: 1 0 5rem;
 	border: 4px solid transparent;
 }
 
 .group_div.selected {
-	border: 4px solid  rgba(var(--dark), .05); 
+	border: 4px solid  gray(95%); 
 	background: rgba(var(--light), 1);
 }
 
@@ -469,7 +468,7 @@ li.popup-list {
 
 .group-description__links {
 	margin: 0;
-	border-left: 1px solid rgba(var(--dark), .2);
+	border-left: 1px solid gray(80%);
 	padding: 1rem 0 1rem 2rem;
 	display: inline-block;
 	vertical-align: middle;
@@ -512,7 +511,7 @@ li.popup-list {
 	font-weight: 600;
 	margin-left: .5rem;
 	overflow: hidden;
-	text-shadow: 0px 0px .5rem rgba(var(--dark), .5);
+	text-shadow: 0px 0px .5rem rgba(var(--dark), 50%);
 	opacity: .4;
 }
 
@@ -525,7 +524,7 @@ li.popup-list {
 	width: 75%;
 	border-radius: 50%;
 	box-sizing: border-box;
-	border: 1.5px solid rgba(var(--dark), .5); */
+	border: 1.5px solid gray(50%); */
 }
 
 .library__website:after {
@@ -537,7 +536,7 @@ li.popup-list {
 	width: 25%;
 	border-radius: 50%;
 	box-sizing: border-box;
-	border: 1.5px solid rgba(var(--dark), .5); */
+	border: 1.5px solid gray(50%); */
 }
 
 /* Begin Group Chart */
@@ -557,7 +556,7 @@ li.popup-list {
  *---------------------------------------------------------------------------*/
  
 .totals {
-	background: rgba(var(--dark), .05);
+	background: gray(95%);
 }
 
 .totals-wrap {
@@ -597,7 +596,7 @@ li.popup-list {
 	}
 	.totals-container__desc {
 		box-sizing: border-box;
-		border-left: 1px solid rgba(var(--dark), .2);	
+		border-left: 1px solid gray(80%);	
 		padding: 2rem 0 2rem 3rem;	
 		text-align: left;
 		flex: 2 0 31rem;
@@ -615,7 +614,7 @@ li.popup-list {
  *---------------------------------------------------------------------------*/
  
 .video {
-	background: rgba(var(--dark), .2);
+	background: gray(80%);
 }
 
 .video-wrap {
@@ -656,7 +655,7 @@ li.popup-list {
 	flex: 1 1 62.8%;
 	padding: 1rem;
 	font-size: var(--base);
-	background: rgba(var(--dark), .05);
+	background: gray(95%);
 	border: none;
  }
  
@@ -667,7 +666,7 @@ li.popup-list {
 	text-transform: uppercase;
 	letter-spacing: .01em;
 	font-weight: 700;
-	background: rgba(var(--dark), .3);
+	background: gray(70%);
 	color: rgba(var(--light), 1);
  }
 
@@ -678,7 +677,7 @@ li.popup-list {
 }
 
 .search__item {/* 
-	background: rgba(var(--dark), .05);
+	background: gray(95%);
 	padding: 1rem; */
 	display: flex;
 	margin-bottom: 2rem;
@@ -720,7 +719,7 @@ li.popup-list {
 	margin: 0;
 	font-size: var(--epsilon);
 	display: inline-block;
-	background-color: rgba(var(--dark), .3);
+	background-color: gray(70%);
 	padding: .25rem .5rem;
 	color: rgba(var(--light), .8);
 	border-radius: .5rem;
@@ -801,12 +800,12 @@ thead th {
 	text-transform: uppercase;
 	letter-spacing: .01em;
 	font-weight: 700;
-	color: rgba(var(--dark), .7);
+	color: gray(30%);
 	vertical-align: bottom;
 }
 
 tbody td {
-	background: rgba(var(--dark), .05);
+	background: gray(95%);
 	vertical-align: top;
 }
 
@@ -890,7 +889,7 @@ h6.credit {
 .group_div:hover {
   transition: background-color .5s ease, border-color .15s ease;
   background-color: #fff;
-  border-color: rgba(var(--dark), .05);
+  border-color: gray(95%);
 }
 
 .group_div .flair {
