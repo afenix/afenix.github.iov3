@@ -1,0 +1,8 @@
+# Browsers that we support
+# This file used by postcss-cssnext when outputting backwards compatible css
+
+> 1%
+Last 2 versions
+IE 8 # sorry
+IE 9 # sorry
+IE 10 # sorry
