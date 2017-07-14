@@ -4,3 +4,4 @@
 /resources/data/Shared_Print_Retentions_by_Group_and_Institution_Revised_June_2017_AAFv2.csv
 /resources/.DS_Store
 *.scssc
+/node_modules/*
