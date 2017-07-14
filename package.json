@@ -1,0 +1,24 @@
+{
+  "name": "sharedprintmap",
+  "version": "1.0.0",
+  "description": "## Dependencies",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afenix/SharedPrintMap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afenix/SharedPrintMap/issues"
+  },
+  "homepage": "https://github.com/afenix/SharedPrintMap#readme",
+  "dependencies": {
+    "postcss": "^6.0.6",
+    "postcss-cli": "^4.1.0",
+    "postcss-cssnext": "^3.0.2"
+  }
+}
