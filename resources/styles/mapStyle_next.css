@@ -415,8 +415,8 @@ h6.group_count {
 }
 
 .popup {
-	// TODO: Find a better approach than setting a fixed width to resolve blur issue: 
-	// https://github.com/mapbox/mapbox-gl-js/pull/3258#issuecomment-249975324
+	/* TODO: Find a better approach than setting a fixed width to resolve blur issue */ 
+	/* https://github.com/mapbox/mapbox-gl-js/pull/3258#issuecomment-249975324 */
 	width:230px;
 }
 
