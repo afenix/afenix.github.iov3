@@ -1,7 +1,7 @@
 {
-  "name": "shared-print-map",
+  "name": "shared-print-hub",
   "version": "1.0.0",
-  "description": "## Dependencies",
+  "description": "## North American Shared Print Retention Story Map website",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
