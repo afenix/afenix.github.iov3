@@ -10,6 +10,17 @@ If you haven’t already, [install node.js and npm](https://docs.npmjs.com/getti
 
 `npm install`
 
+### Install global packages
+
+`npm install --g postcss`
+
+`npm install --g postcss-cli`
+
+`npm install --g caniuse-lite`
+
+`npm install --g postcss-cssnext`
+
+
 ### Edit the css
 
 Make all css edits in `/resources/styles/source/mapStyle_next.css`. 
