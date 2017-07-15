@@ -1,21 +1,21 @@
 {
-  "name": "sharedprintmap",
+  "name": "shared-print-hub",
   "version": "1.0.0",
-  "description": "## Dependencies",
+  "description": "## North American Shared Print Retention Story Map website",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afenix/SharedPrintMap.git"
+    "url": "git+https://github.com/argenticdev/shared-print-hub.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/afenix/SharedPrintMap/issues"
+    "url": "https://github.com/argenticdev/shared-print-hub/issues"
   },
-  "homepage": "https://github.com/afenix/SharedPrintMap#readme",
+  "homepage": "https://github.com/argenticdev/shared-print-hub#readme",
   "dependencies": {
     "postcss": "^6.0.6",
     "postcss-cli": "^4.1.0",
