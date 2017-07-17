@@ -1,24 +1,38 @@
 {
   "name": "shared-print-hub",
   "version": "1.0.0",
-  "description": "## North American Shared Print Retention Story Map website",
+  "description": "## North American Shared Print Retention Hub website",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently -k \"npm run dev-server\" \"npm run postCssWatch -s\"",
+    "lintJS": "echo '=> linting' && jshint resources/scripts/shared-print-collection.js -s",
+    "minifyJS": "echo '=> minify JavaScript' && uglifyjs resources/scripts/shared-print-collection.js --output resources/scripts/shared-print-collection.min.js",
+    "postCssWatch": "echo '=> postcss is now watching for changes to resources/styles/source/mapStyle_next.css' && $(npm bin)/postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css --watch",
+    "postProcessorCss" : "echo '=> postcss is now updating all css changes from /mapStyle_next.css to /mapStyle.css' && $(npm bin)/postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css",
+    "build": "echo '=> building minified JavaScript and post-processing CSS' && npm run minifyJS -s && npm run postProcessorCss -s",
+    "watch": "watch 'npm run minifyJS && npm run postCssWatch' resources/scripts/ resources/styles/",
+    "dev-server": "lite-server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/argenticdev/shared-print-hub.git"
   },
-  "author": "",
+  "author": "Alister A. Fenix",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/argenticdev/shared-print-hub/issues"
   },
   "homepage": "https://github.com/argenticdev/shared-print-hub#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "caniuse-lite": "^1.0.30000701",
+    "concurrently": "^3.5.0",
+    "jshint": "^2.9.5",
+    "lite-server": "^2.3.0",
     "postcss": "^6.0.6",
     "postcss-cli": "^4.1.0",
-    "postcss-cssnext": "^3.0.2"
+    "postcss-cssnext": "^3.0.2",
+    "uglify-js": "^3.0.25",
+    "watch": "^1.0.2"
   }
 }
