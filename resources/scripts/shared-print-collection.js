@@ -56,7 +56,7 @@ function loadScript(sScriptSrc, cssSrc, oCallback) {
         if (this.readyState === 'complete') {
             runCallback();
         }
-    }
+    };
     oScript.src = sScriptSrc;
     oHead.appendChild(oScript);
 }
@@ -181,10 +181,10 @@ function initGL() {
         // Populate the popup and set its coordinates
         // based on the feature found.
         popup.setLngLat(feature.geometry.coordinates)
-             .setHTML('<div id="popup" class="popup"> <h2 class="popup-group-title"> ' + feature.properties['group'] + ' Group</h2><h3 class="popup-library-title"><strong>' + feature.properties['inst_name'] + '</strong></h3>' +
+             .setHTML('<div id="popup" class="popup"> <h2 class="popup-group-title"> ' + feature.properties.group + ' Group</h2><h3 class="popup-library-title"><strong>' + feature.properties.inst_name + '</strong></h3>' +
     	              '<ul>' +
-    	              '<li class="popup-list"> Total titles retained: ' + feature.properties['total_count_string'] + ' </li>' +
-    	              '<li class="popup-list"> Total titles uniquely retained: ' + feature.properties['unique_count_string'] + " </li></ul> </div>")
+    	              '<li class="popup-list"> Total titles retained: ' + feature.properties.total_count_string + ' </li>' +
+    	              '<li class="popup-list"> Total titles uniquely retained: ' + feature.properties.unique_count_string + " </li></ul> </div>")
             .addTo(map);
     });
 
@@ -298,12 +298,12 @@ function addGroupFunctionality(map, browser) {
             } else {
                 $('#member-library-label').show();
                  $('#group-links').show();
-            };
+            }
 
             $('#group-twitter').remove(); // remove the twitter icon from the last click event
             if ($('.member-list').length) { // remove former member lists icon from the last click event
                 $('.member-list').remove();
-            };
+            }
 
             if (browser == 'webGL') {
                 map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
@@ -323,7 +323,7 @@ function addGroupFunctionality(map, browser) {
                 twitterLink.href = libraries[key].twitter;
                 $(twitterLink).addClass( "group-description__twitter").attr('id', 'group-twitter').attr('target','_blank').attr('rel','noopener noreferrer').append('<img src="resources/images/Twitter_Social_Icon_Circle_Color.svg" width="28" height="28" alt="Twitter" title="Twitter Link" />');
                 document.getElementById('group-links').appendChild(twitterLink);
-            };
+            }
 
             for (var i = 0; i < libraries[key].members.length; i++) {
                 var groupMemberList = document.createElement('li');
@@ -334,7 +334,7 @@ function addGroupFunctionality(map, browser) {
                 $(groupMemberList).append(groupMemberAnchor);
                 groupMemberAnchor.href = "#";
                 document.getElementById('library-list').appendChild(groupMemberList);
-            };
+            }
 
         });
 
@@ -353,7 +353,8 @@ function parseTitleResults(data, groupID,parsedData) {
         302: 'SCELC',
         323: 'MMS'
     }; 
-    for (key in groupIdMap) {
+
+    for (var key in groupIdMap) {
         if (key == groupID) {
             groupName = groupIdMap[key];
         }
@@ -362,26 +363,26 @@ function parseTitleResults(data, groupID,parsedData) {
     for (var i = 0; i < data.response.docs.length; i++) {
         var worldcat_oclc_nbr = data.response.docs[i].worldcat_oclc_nbr;
         if (parsedData.hasOwnProperty(worldcat_oclc_nbr)) {
-            if ($.inArray(groupName, parsedData[worldcat_oclc_nbr]["groups"]) === -1) {
-                parsedData[worldcat_oclc_nbr]["groups"].push(groupName);
+            if ($.inArray(groupName, parsedData[worldcat_oclc_nbr].groups) === -1) {
+                parsedData[worldcat_oclc_nbr].groups.push(groupName);
             }
         } else {
             parsedData[worldcat_oclc_nbr] = {};
-            parsedData[worldcat_oclc_nbr]["title"] = data.response.docs[i].title;
-            parsedData[worldcat_oclc_nbr]["edition"] = data.response.docs[i].edition;
-            parsedData[worldcat_oclc_nbr]["author"] = data.response.docs[i].author;
-            parsedData[worldcat_oclc_nbr]["publisher"] = data.response.docs[i].publisher;
-            parsedData[worldcat_oclc_nbr]["pub_year"] = data.response.docs[i].pub_year;
-            parsedData[worldcat_oclc_nbr]["opac_url"] = data.response.docs[i].opac_url;        
+            parsedData[worldcat_oclc_nbr].title = data.response.docs[i].title;
+            parsedData[worldcat_oclc_nbr].edition = data.response.docs[i].edition;
+            parsedData[worldcat_oclc_nbr].author = data.response.docs[i].author;
+            parsedData[worldcat_oclc_nbr].publisher = data.response.docs[i].publisher;
+            parsedData[worldcat_oclc_nbr].pub_year = data.response.docs[i].pub_year;
+            parsedData[worldcat_oclc_nbr].opac_url = data.response.docs[i].opac_url;        
             if (data.response.docs[i].edition == null) {
-                parsedData[worldcat_oclc_nbr]["edition"] = "";
+                parsedData[worldcat_oclc_nbr].edition = "";
             } else {
-                parsedData[worldcat_oclc_nbr]["edition"] = data.response.docs[i].edition;
+                parsedData[worldcat_oclc_nbr].edition = data.response.docs[i].edition;
             }
-            parsedData[worldcat_oclc_nbr]["groups"] = [];
-            parsedData[worldcat_oclc_nbr]["groups"].push(groupName);
+            parsedData[worldcat_oclc_nbr].groups = [];
+            parsedData[worldcat_oclc_nbr].groups.push(groupName);
         }
-    };
+    }
     return parsedData;
 }
 
@@ -405,34 +406,34 @@ function searchSolrTitles() {
             finalParsedData[key].pub_year + "</span><ul class='search__groups'>"; 
             for (var i = 0; i < finalParsedData[key].groups.length; i++) {
                 if (finalParsedData[key].groups[i] == "EAST") {
-                    var east = "<li class='search__groups__item east'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>";  
+                    var east = "<li class='search__groups__item east'>" + finalParsedData[key].groups[i] + "<span class='numeral'>15yr</span></li>";  
                     row+= east;
-                };
+                }
                 if (finalParsedData[key].groups[i] == "MI-SPI") {
-                    var mispi = "<li class='search__groups__item mi-spi'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>"; 
+                    var mispi = "<li class='search__groups__item mi-spi'>" + finalParsedData[key].groups[i] + "<span class='numeral'>15yr</span></li>"; 
                     row+= mispi;
-                }; 
+                } 
                 if (finalParsedData[key].groups[i] == "COPPUL") {
-                    var coppul = "<li class='search__groups__item coppul'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>";
+                    var coppul = "<li class='search__groups__item coppul'>" + finalParsedData[key].groups[i] + "<span class='numeral'>15yr</span></li>";
                     row+= coppul;  
-                };
+                }
                 if (finalParsedData[key].groups[i] == "ALI") {
-                    var ali = "<li class='search__groups__item ali'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>";
+                    var ali = "<li class='search__groups__item ali'>" + finalParsedData[key].groups[i] + "<span class='numeral'>15yr</span></li>";
                     row+= ali;
-                };
+                }
                 if (finalParsedData[key].groups[i] == "SCELC") {
-                    var scelc = "<li class='search__groups__item scelc'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>"; 
+                    var scelc = "<li class='search__groups__item scelc'>" + finalParsedData[key].groups[i] + "<span class='numeral'>15yr</span></li>"; 
                     row+= scelc; 
-                }; 
+                } 
                 if (finalParsedData[key].groups[i] == "MMS") {
-                    var mms = "<li class='search__groups__item mms'>" + finalParsedData[key]['groups'][i] + "<span class='numeral'>15yr</span></li>"; 
+                    var mms = "<li class='search__groups__item mms'>" + finalParsedData[key].groups[i] + "<span class='numeral'>15yr</span></li>"; 
                     row+= mms;
-                };
-            }; 
+                }
+            } 
 
             row+= "</ul></div><a href='" + worldCatUrl + 
             "' class='search__item__link' target='_blank' rel='noopener noreferrer'><img src='resources/images/WorldCat_Logo_V_Color.png' alt='WorldCat Logo' width='48'></a></li>" ;
-        };
+        }
         $("#solr_results").html(row);    
       });
     });
