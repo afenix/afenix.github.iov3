@@ -308,7 +308,7 @@ function addGroupFunctionality(map, browser) {
             if (browser == 'webGL') {
                 map.flyTo(libraries[key].camera); // pan/zoom map to the appropriate group
             } else {
-                map.setView(libraries[key].latLongJS, libraries[key].zoomJS, {animate: true, duration: .1, easeLinearity: .1});
+                map.setView(libraries[key].latLongJS, libraries[key].zoomJS, {animate: true, duration: 10, easeLinearity: 10});
             }
             
             $('.group_div').removeClass('selected');
