@@ -41,9 +41,9 @@ To minify JavaScript and ensure that all edits to `/resources/styles/source/mapS
 
 
 ### JavaScipt Linting
-For JS linting to the primary JavaScript file `/resources/scripts/shared-print-collection.js` run the following command in terminal in the root directory of this project:
+For JS linting to the primary JavaScript file `/resources/scripts/*.js` run the following command in terminal in the root directory of this project:
 
-`npm run lintJS`
+`npm run lintJS -s`
 
 
 ### Adjust browser support
