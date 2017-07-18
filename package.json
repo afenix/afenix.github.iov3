@@ -4,14 +4,14 @@
   "description": "## North American Shared Print Retention Hub website",
   "main": "index.html",
   "scripts": {
-    "start": "concurrently -k \"npm run dev-server\" \"npm run postCssWatch -s\"",
-    "lintJS": "echo '=> linting' && jshint resources/scripts/shared-print-collection.js",
+    "start": "concurrently -k \"npm run devServer\" \"npm run postCssWatch -s\"",
+    "lintJS": "echo '=> linting' && jshint resources/scripts/*.js",
     "minifyJS": "echo '=> minify JavaScript' && uglifyjs resources/scripts/shared-print-collection.js --output resources/scripts/shared-print-collection.min.js",
     "postCssWatch": "echo '=> postcss is now watching for changes to resources/styles/source/mapStyle_next.css' && $(npm bin)/postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css --watch",
-    "postProcessorCss" : "echo '=> postcss is now updating all css changes from /mapStyle_next.css to /mapStyle.css' && $(npm bin)/postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css",
+    "postProcessorCss": "echo '=> postcss is now updating all css changes from /mapStyle_next.css to /mapStyle.css' && $(npm bin)/postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css",
     "build": "echo '=> building minified JavaScript and post-processing CSS' && npm run minifyJS -s && npm run postProcessorCss -s",
     "watch": "watch 'npm run minifyJS && npm run postCssWatch' resources/scripts/ resources/styles/",
-    "dev-server": "lite-server"
+    "devServer": "lite-server"
   },
   "repository": {
     "type": "git",
