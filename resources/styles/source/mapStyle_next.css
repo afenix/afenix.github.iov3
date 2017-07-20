@@ -52,6 +52,14 @@
 
 }
 
+/*
+	Breakpoints
+
+*/
+
+@custom-media --bp-small (min-width: 30rem);
+@custom-media --bp-medium (min-width: 60rem);
+
 
 /*----------------------------------------------------------------------------
  *
@@ -73,8 +81,11 @@ body {
 
 .container {
 	width: 100%;
-	margin: 6rem auto;
+	margin: 2rem auto;
 	box-sizing: border-box;
+	@media (--bp-medium) {
+	  margin: 6rem auto;
+	}
 }
 
 .container:after {
@@ -84,10 +95,13 @@ body {
 }
 
 .container--measure {
-	padding: 0 1rem;
+	padding: 0 1.5rem;
 	max-width: 57rem;
 	margin-left: auto;
 	margin-right: auto;
+	@media (--bp-small) {
+	  padding: 0 2rem;
+	}
 }
 
 
@@ -121,6 +135,7 @@ h1, h2, h3, h4, h5 {
 	font-size: var(--alpha);
 	letter-spacing: -.03em;
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .h1__subhead {
@@ -128,7 +143,7 @@ h1, h2, h3, h4, h5 {
 	font-size: .328em;
 	font-weight: 400;
 	display: block;
-	margin-top: 1.5rem;
+	margin: 1.5rem 0 1em;
 	letter-spacing: -.01em;
 	max-width: 55rem;
 	line-height: 1.2;
@@ -139,6 +154,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 200;
 	font-size: var(--beta);
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .h3 {
@@ -146,6 +162,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 200;
 	font-size: var(--gamma);
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .h4 {
@@ -153,6 +170,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 600;
 	font-size: var(--delta);
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .h5 {
@@ -162,11 +180,15 @@ h1, h2, h3, h4, h5 {
 	letter-spacing: .02em;
 	font-weight: 700;
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .intro-text-container {
 	font-size: var(--delta);
-	margin: 5em auto;
+	margin: 2em auto;
+	@media (--bp-medium) {
+	  margin: 5rem auto;
+	}
 }
 
 #gl-status-message {
@@ -366,9 +388,12 @@ a {
 /* Being Group Legend */
 
 .group-legend {
-	margin: -6rem 0 3rem;
+	margin: -2rem 0 2rem;
 	padding:0;
 	border: none;
+	@media (--bp-medium) {
+	  margin: -6rem 0 3rem;
+	}
 }
 
 .group-legend__hint {
@@ -500,7 +525,7 @@ li.popup-list {
   fill: var(--twitter);
 }
 
-@media (min-width: 60rem) {
+@media (--bp-medium) {
 	.group-description__libraries {
 		-moz-column-width: 25rem;
 		-moz-columns: 25rem;
@@ -558,7 +583,7 @@ li.popup-list {
 
 /* Begin Group Chart */
 #chart_div {   
-  padding: 0 2rem 1rem 0; 
+  /* padding: 0 2rem 1rem 0; */ /* Unnecessary padding — legacy CSS? */
   width: 100%; 
   min-height: 35rem;
 } 
@@ -578,16 +603,31 @@ li.popup-list {
 
 .totals-wrap {
 	margin: 0 -.5rem;
-	padding: 6rem 1rem;
+	padding: 2rem 1rem;
+	@media (--bp-medium) {
+	  padding: 6rem 1rem;
+	}
 }
 
 .totals-container {
 	margin: 0;
-	padding: 2rem 0;
+	padding: 1rem 0;
+	@media (--bp-medium) {
+	  padding: 2rem 0;
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .totals-container__desc {
 	text-align: center;
+	@media (--bp-medium) {
+		box-sizing: border-box;
+		border-left: 1px solid gray(80%);	
+		padding: 2rem 0 2rem 3rem;	
+		text-align: left;
+		flex: 2 0 31rem;	  
+	}
 }
 
 .totals-container__desc h3 {
@@ -599,28 +639,14 @@ li.popup-list {
 .holdings-number { 
 	margin:0 auto .5rem;
 	box-sizing: border-box;
-    text-transform: uppercase;
-    letter-spacing: -.05em;
-    font-weight: 100;
-    font-size: var(--alpha);
+  text-transform: uppercase;
+  letter-spacing: -.05em;
+  font-weight: 100;
+  font-size: var(--alpha);
 	text-align:center;
-}
-
-@media (min-width: 60rem) {
-	.totals-container {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.totals-container__desc {
-		box-sizing: border-box;
-		border-left: 1px solid gray(80%);	
-		padding: 2rem 0 2rem 3rem;	
-		text-align: left;
-		flex: 2 0 31rem;
-	}
-	.holdings-number {
+	@media (--bp-medium) {
 		margin: 1em 0;
-		flex: 1 0 19rem;
+		flex: 1 0 19rem; 
 	}
 }
  
@@ -635,7 +661,10 @@ li.popup-list {
 }
 
 .video-wrap {
-	padding: 6rem 1rem;
+	padding: 2rem 1rem;
+	@media (--bp-medium) {
+	  padding: 6rem 1rem;
+	}
 }
 
 .embed-container { 
@@ -644,7 +673,14 @@ li.popup-list {
 	height: 0; 
 	overflow: hidden; 
 	max-width: 100%; 
-	margin: 3rem 0;
+	margin: 2rem 0;
+	@media (--bp-medium) {
+	  margin: 3rem 0;
+	}
+}
+
+.embed-container:last-child {
+  margin-bottom: 0;
 }
 
 .embed-container iframe, 
