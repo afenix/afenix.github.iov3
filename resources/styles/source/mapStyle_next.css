@@ -19,7 +19,7 @@
 --text:		27,42,57; /* rgb(27,42,57);	 #1B2A39; */
 --light:		255,255,255; /* rgb(255,255,255); #ffffff; */
 --dark:		0,0,0; /* rgb(0,0,0); #000000; */ /* Gray() function used when opacities would otherwise be used for lighter shades of dark http://dev.w3.org/csswg/css-color/#grays */
-
+--twitter: #1DA1F2;
 }
  
 /* Font family from Fonts.com */
@@ -472,15 +472,32 @@ li.popup-list {
 	padding: 1rem 0 1rem 2rem;
 	display: inline-block;
 	vertical-align: middle;
+	line-height: 1;
 }
 
-.group-description__links img {
-	vertical-align: middle;
+.group-description__links > a {
+	padding-right: .75rem;
 }
 
-.group-description__website {
-	opacity: .4;
-	padding-right: .5rem;
+.icon {  
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  vertical-align: bottom;
+}
+
+.icon-external-link {
+  fill: gray(65%);
+  margin-top: .25rem;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.icon-twitter {
+  fill: var(--twitter);
 }
 
 @media (min-width: 60rem) {

@@ -321,7 +321,7 @@ function addGroupFunctionality(map, browser) {
             if (libraries[key].hasOwnProperty('twitter')) {
                 var twitterLink = document.createElement('a');
                 twitterLink.href = libraries[key].twitter;
-                $(twitterLink).addClass( "group-description__twitter").attr('id', 'group-twitter').attr('target','_blank').attr('rel','noopener noreferrer').append('<img src="resources/images/Twitter_Social_Icon_Circle_Color.svg" width="28" height="28" alt="Twitter" title="Twitter Link" />');
+                $(twitterLink).addClass( "group-description__twitter").attr('id', 'group-twitter').attr('target','_blank').attr('rel','noopener noreferrer').append('<svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>');
                 document.getElementById('group-links').appendChild(twitterLink);
             }
 
