@@ -19,7 +19,7 @@
 --text:		27,42,57; /* rgb(27,42,57);	 #1B2A39; */
 --light:		255,255,255; /* rgb(255,255,255); #ffffff; */
 --dark:		0,0,0; /* rgb(0,0,0); #000000; */ /* Gray() function used when opacities would otherwise be used for lighter shades of dark http://dev.w3.org/csswg/css-color/#grays */
-
+--twitter: #1DA1F2;
 }
  
 /* Font family from Fonts.com */
@@ -42,7 +42,9 @@
 
 --base: 		1rem;
 --alpha:		4.768rem; /* largest */
+--alpha-minor:		4rem;
 --beta:		3.052rem;
+--beta-minor:		2.5rem;
 --gamma:		1.953rem;
 --delta:		1.25rem;
 --epsilon:	.8rem;
@@ -51,6 +53,14 @@
 --theta:		.328rem; /* more for special instance reference than actual use! */
 
 }
+
+/*
+	Breakpoints
+
+*/
+
+@custom-media --bp-small (min-width: 30rem);
+@custom-media --bp-medium (min-width: 60rem);
 
 
 /*----------------------------------------------------------------------------
@@ -73,8 +83,11 @@ body {
 
 .container {
 	width: 100%;
-	margin: 6rem auto;
+	margin: 2rem auto;
 	box-sizing: border-box;
+	@media (--bp-medium) {
+	  margin: 6rem auto;
+	}
 }
 
 .container:after {
@@ -84,10 +97,13 @@ body {
 }
 
 .container--measure {
-	padding: 0 1rem;
+	padding: 0 1.5rem;
 	max-width: 57rem;
 	margin-left: auto;
 	margin-right: auto;
+	@media (--bp-small) {
+	  padding: 0 2rem;
+	}
 }
 
 
@@ -117,21 +133,35 @@ h1, h2, h3, h4, h5 {
 
 .h1 {
 	color: rgba(var(--green), 1);
-	font-weight: 100;
-	font-size: var(--alpha);
+	font-weight: 200;
+	font-size: var(--beta-minor);
 	letter-spacing: -.03em;
 	line-height: 1.1;
+	margin: 0 0 1em;
+	@media (--bp-small) {
+	  font-size: var(--alpha-minor);
+    	font-weight: 100;
+	}
+	@media (--bp-medium) {
+	  font-size: var(--alpha);
+	}
 }
 
 .h1__subhead {
 	color: rgba(var(--green), 1);
-	font-size: .328em;
+	font-size: .5em;
 	font-weight: 400;
 	display: block;
-	margin-top: 1.5rem;
+	margin: 1.5rem 0 1em;
 	letter-spacing: -.01em;
 	max-width: 55rem;
-	line-height: 1.2;
+	line-height: 1.3;
+	@media (--bp-small) {
+	  font-size: .4em;
+	}
+	@media (--bp-medium) {
+	  font-size: .328em;
+	}
 }
 
 .h2 {
@@ -139,6 +169,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 200;
 	font-size: var(--beta);
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .h3 {
@@ -146,6 +177,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 200;
 	font-size: var(--gamma);
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .h4 {
@@ -153,6 +185,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 600;
 	font-size: var(--delta);
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .h5 {
@@ -162,11 +195,15 @@ h1, h2, h3, h4, h5 {
 	letter-spacing: .02em;
 	font-weight: 700;
 	line-height: 1.1;
+	margin: 0 0 1em;
 }
 
 .intro-text-container {
 	font-size: var(--delta);
-	margin: 5em auto;
+	margin: 2em auto;
+	@media (--bp-medium) {
+	  margin: 5rem auto;
+	}
 }
 
 #gl-status-message {
@@ -234,12 +271,16 @@ a {
  *---------------------------------------------------------------------------*/
 
 .header-brand {
-	padding: 1rem 2rem;
+	padding: 1rem 1.5rem;
+	@media (--bp-small) {
+	  padding: 1rem 2rem;
+	}
 }
 
 .header-brand__logo {
 	width: 150px;
 	height: auto;
+	display: block;
 }
 
 .main__header {
@@ -252,6 +293,7 @@ a {
 }
 
 .main__header__title {
+  width: 100%;
 	max-width: 55rem;
 	margin: auto;
 }
@@ -366,9 +408,12 @@ a {
 /* Being Group Legend */
 
 .group-legend {
-	margin: -6rem 0 3rem;
+	margin: -2rem 0 2rem;
 	padding:0;
 	border: none;
+	@media (--bp-medium) {
+	  margin: -6rem 0 3rem;
+	}
 }
 
 .group-legend__hint {
@@ -472,18 +517,35 @@ li.popup-list {
 	padding: 1rem 0 1rem 2rem;
 	display: inline-block;
 	vertical-align: middle;
+	line-height: 1;
 }
 
-.group-description__links img {
-	vertical-align: middle;
+.group-description__links > a {
+	padding-right: .75rem;
 }
 
-.group-description__website {
-	opacity: .4;
-	padding-right: .5rem;
+.icon {  
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  vertical-align: bottom;
 }
 
-@media (min-width: 60rem) {
+.icon-external-link {
+  fill: gray(65%);
+  margin-top: .25rem;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.icon-twitter {
+  fill: var(--twitter);
+}
+
+@media (--bp-medium) {
 	.group-description__libraries {
 		-moz-column-width: 25rem;
 		-moz-columns: 25rem;
@@ -541,7 +603,7 @@ li.popup-list {
 
 /* Begin Group Chart */
 #chart_div {   
-  padding: 0 2rem 1rem 0; 
+  /* padding: 0 2rem 1rem 0; */ /* Unnecessary padding — legacy CSS? */
   width: 100%; 
   min-height: 35rem;
 } 
@@ -561,16 +623,31 @@ li.popup-list {
 
 .totals-wrap {
 	margin: 0 -.5rem;
-	padding: 6rem 1rem;
+	padding: 2rem 1rem;
+	@media (--bp-medium) {
+	  padding: 6rem 1rem;
+	}
 }
 
 .totals-container {
 	margin: 0;
-	padding: 2rem 0;
+	padding: 1rem 0;
+	@media (--bp-medium) {
+	  padding: 2rem 0;
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .totals-container__desc {
 	text-align: center;
+	@media (--bp-medium) {
+		box-sizing: border-box;
+		border-left: 1px solid gray(80%);	
+		padding: 2rem 0 2rem 3rem;	
+		text-align: left;
+		flex: 2 0 31rem;	  
+	}
 }
 
 .totals-container__desc h3 {
@@ -582,28 +659,14 @@ li.popup-list {
 .holdings-number { 
 	margin:0 auto .5rem;
 	box-sizing: border-box;
-    text-transform: uppercase;
-    letter-spacing: -.05em;
-    font-weight: 100;
-    font-size: var(--alpha);
+  text-transform: uppercase;
+  letter-spacing: -.05em;
+  font-weight: 100;
+  font-size: var(--alpha);
 	text-align:center;
-}
-
-@media (min-width: 60rem) {
-	.totals-container {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.totals-container__desc {
-		box-sizing: border-box;
-		border-left: 1px solid gray(80%);	
-		padding: 2rem 0 2rem 3rem;	
-		text-align: left;
-		flex: 2 0 31rem;
-	}
-	.holdings-number {
+	@media (--bp-medium) {
 		margin: 1em 0;
-		flex: 1 0 19rem;
+		flex: 1 0 19rem; 
 	}
 }
  
@@ -618,7 +681,10 @@ li.popup-list {
 }
 
 .video-wrap {
-	padding: 6rem 1rem;
+	padding: 2rem 1rem;
+	@media (--bp-medium) {
+	  padding: 6rem 1rem;
+	}
 }
 
 .embed-container { 
@@ -627,7 +693,14 @@ li.popup-list {
 	height: 0; 
 	overflow: hidden; 
 	max-width: 100%; 
-	margin: 3rem 0;
+	margin: 2rem 0;
+	@media (--bp-medium) {
+	  margin: 3rem 0;
+	}
+}
+
+.embed-container:last-child {
+  margin-bottom: 0;
 }
 
 .embed-container iframe, 
@@ -657,6 +730,8 @@ li.popup-list {
 	font-size: var(--base);
 	background: gray(95%);
 	border: none;
+	border-radius: 0;
+	-webkit-appearance: none;
  }
  
  .search__button {
@@ -668,6 +743,8 @@ li.popup-list {
 	font-weight: 700;
 	background: gray(70%);
 	color: rgba(var(--light), 1);
+	border-radius: 0;
+	-webkit-appearance: none;
  }
 
 /* Begin Search Results Listing */

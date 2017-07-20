@@ -25,11 +25,11 @@
   "homepage": "https://github.com/argenticdev/shared-print-hub#readme",
   "dependencies": {},
   "devDependencies": {
-    "caniuse-lite": "^1.0.30000701",
+    "caniuse-lite": "^1.0.30000703",
     "concurrently": "^3.5.0",
     "jshint": "^2.9.5",
     "lite-server": "^2.3.0",
-    "postcss": "^6.0.6",
+    "postcss": "^6.0.8",
     "postcss-cli": "^4.1.0",
     "postcss-cssnext": "^3.0.2",
     "uglify-js": "^3.0.25",
