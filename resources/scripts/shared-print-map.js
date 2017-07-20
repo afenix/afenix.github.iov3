@@ -2,8 +2,8 @@
 var myAccessToken = "pk.eyJ1IjoiYWxpc3RlcmZ4IiwiYSI6ImNpcW80cnExOTAxZW9meW5uamNhdDIwcXcifQ.X8cJ7YP65MrR3bBq4a1rmQ";
 
 if(!mapboxgl.supported()) {
-    var JsUrl = 'http://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js',
-        cssUrl = 'http://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css';
+    var JsUrl = '//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js',
+        cssUrl = '//api.mapbox.com/mapbox.js/v2.4.0/mapbox.css';
 
     loadScript(JsUrl, cssUrl, initJS);
 
@@ -398,7 +398,7 @@ function searchSolrTitles() {
         for (var key in finalParsedData) {
             var groupArray = finalParsedData[key].groups;
             var groupLength = finalParsedData[key].groups.length;
-            var worldCatUrl = 'http://worldcat.org/oclc/' + key;
+            var worldCatUrl = '//worldcat.org/oclc/' + key;
 
             row+="<li class='search__item'><div class='search__item__desc'><strong class='search__author'>"+ finalParsedData[key].author + 
             "</strong>, <em class='search__title'>" + finalParsedData[key].title + "</em><span class='search__edition'>" + finalParsedData[key].edition + 
@@ -474,7 +474,7 @@ var libraries = [{
         "description": "Working together, the Council of Prairie and Pacific University Libraries (COPPUL) members leverage their collective expertise, resources, and influence, increasing capacity and infrastructure, to enhance learning, teaching, student experiences, and research amongst their institutions. The consortium is comprised of 22 university libraries located in Manitoba, Saskatchewan, Alberta and British Columbia with a shared print collection of 7,276,328 million title holdings and 3,738,751 million title sets.  Due to their ongoing efforts for collective retention strategies COPPUL has been able to retain a shared print collection of 1,147,232 milliion title-holdings, with 847,918 thousand of those titles being uniquely retained by this group. ",
         "members": ["University of Calgary","University of Lethbridge","University of Manitoba","University of Regina","University of Saskatchewan","Simon Fraser University","Thompson Rivers University","Vancouver Island University","University of Victoria","University of Winnipeg"],
         "twitter": "https://twitter.com/coppul?lang=en",
-        "website": "http://www.coppul.ca/",
+        "website": "//www.coppul.ca/",
         "camera": {
             center: [-110.039063, 49.999795],
             zoom: 4.5,
@@ -506,7 +506,7 @@ var libraries = [{
                     "Indiana University School of Medicine","Indiana University Northwest","Indiana University Southeast","Indiana University Purdue University at Indianapolis","Manchester University","Marian University","Oakland City University",
                     "Purdue Calumet","Saint Mary's College","Saint Meinrad Seminary and School of Theology","Saint Joseph's College","Saint Mary-of-the-Woods College","Taylor University","Trine University","University of Indianapolis",
                     "University of Saint Francis","University of Southern Indiana","Valparaiso University","Wabash College"],
-        "website": "http://academiclibrariesofindiana.org/home",
+        "website": "//academiclibrariesofindiana.org/home",
         "camera": {
             center: [-86.149292, 39.769360],
             zoom: 5.2,
@@ -549,7 +549,7 @@ var libraries = [{
         "title": "VIVA",
         "description": "The Virtual Library of Virginia (VIVA) is the consortium of nonprofit academic libraries within the Commonwealth of Virginia. These include six doctoral institutions and two 4-year comprehensive colleges and universities.  Due to their ongoing efforts for participating members to make collaborative decisions VIVA has been able to retain a shared print collection of 3,531,007 title-holdings, with 591,266 thousand of those titles being uniquely retained by this group. ",
         "members": ["George Mason University","James Madison University","Old Dominion University","Radford University","University of Virginia","Virginia Commonwealth University","Virginia Tech","William and Mary University"],
-        "website": "http://www.vivalib.org/",
+        "website": "//www.vivalib.org/",
         "camera": {
             center: [-78.002930, 37.785639],
             zoom: 5.8,
@@ -564,7 +564,7 @@ var libraries = [{
         "description": "The Washington Research Library Consortium (WRLC) was established as a non-profit corporation in 1987 to support and enhance the library and information services of universities in the Washington, DC metropolitan area. Currently WRLC has 9 partner universities.  Due to their ongoing efforts for participating members to make collaborative decisions WRLC has been able to retain a shared print collection of 2,862,344 title-holdings, with 467,443 thousand of those titles being uniquely retained by this group. ",
         "members": ["American University","Catholic University","Gallaudet University","Georgetown University","George Washington University","Howard University","Marymount University","University of DC"],
         "twitter": "https://twitter.com/wrlc",
-        "website": "http://www.wrlc.org/",
+        "website": "//www.wrlc.org/",
         "camera": {
             center: [-77.053986, 38.932407],
             zoom: 10,
@@ -579,7 +579,7 @@ var libraries = [{
         "description": "ConnectNY (CNY) is a consortium of 12 independent academic institutions in New York State. The mission of ConnectNY is to share collections, leverage resources, and enhance services through cooperative initiatives and coordinated activities. Due to their ongoing efforts for collaborative retention the CNY project has been able to retain a shared print collection of 852,205 thousand title-holdings, with 1,183 thousand of those titles being uniquely retained by this group. ",
         "members": ["Adelphi University","Bard College","Canisius College","Cazenovia College","Colgate University","Hamilton College","Le Moyne College","Medaille College","Pace University","Saint Lawrence University","Union College","Vassar College"],
         "twitter": "https://twitter.com/Connect_NY",
-        "website": "http://connectny.org/",
+        "website": "//connectny.org/",
         "camera": {
             center: [-75.498047, 42.613244],
             zoom: 5.2,
@@ -611,7 +611,7 @@ var libraries = [{
         "description": "The Maine Shared Collections Strategy (MSCS) was founded by eight of Maine’s largest libraries, plus the state’s consortium, Maine InfoNet, together they have implemented a shared approach to the management of print collections in the state. Due to their ongoing efforts for participating members to make collaborative decisions MSCS has been able to retain a shared print collection of 1,408,737 title-holdings, with 260,398 thousand of those titles being uniquely retained by this group. ",
         "members": ["Bangor Public Library","Bates College","Bowdoin College","Colby College","Maine State Library","Portland Public Library","University of Maine Orono","University of Southern Maine"],
         "twitter": "https://twitter.com/MESharedColls",
-        "website": "http://www.maineinfonet.org/mscs/about/",
+        "website": "//www.maineinfonet.org/mscs/about/",
         "camera": {
             center: [-69.433594, 44.368778],
             zoom: 6,
