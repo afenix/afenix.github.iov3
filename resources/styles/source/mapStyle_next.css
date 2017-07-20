@@ -271,12 +271,16 @@ a {
  *---------------------------------------------------------------------------*/
 
 .header-brand {
-	padding: 1rem 2rem;
+	padding: 1rem 1.5rem;
+	@media (--bp-small) {
+	  padding: 1rem 2rem;
+	}
 }
 
 .header-brand__logo {
 	width: 150px;
 	height: auto;
+	display: block;
 }
 
 .main__header {
