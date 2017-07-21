@@ -36,9 +36,9 @@ As discussed above only make CSS edits to the `/resources/styles/source/*mapStyl
 ### Use the Build tool prior to pushing to production
 To minify JavaScript and ensure that all edits to `/resources/styles/source/mapStyle_next.css` have been post-processed, run the following command in terminal in the root directory of this project:
 
-`npm run build`
+`npm run build -s`
 
-You're terminal window will show you a success message once the build has successfully completed, at which time this project is ready to be `pushed`. Remember, before any `push` to production to ensure that the JavaScript has been minified and the any updates to the CSS `mapStyle_next.css` file are correctly post-processed to the `mapStyle.css`
+Review your terminal for any build output messages.  Once the build is successfully completed this project is ready to be `pushed`. Remember, before you `push` to production ensure that relevent JavaScript files have been minified and the CSS `mapStyle_next.css` file has been post-processed to the `mapStyle.css`.
 
 
 ### JavaScipt Linting
