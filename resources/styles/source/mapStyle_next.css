@@ -40,6 +40,8 @@
 
 :root {
 
+--base-majorly-minor: .75rem;
+--base-minor: .875rem;
 --base: 		1rem;
 --alpha:		4.768rem; /* largest */
 --alpha-minor:		4rem;
@@ -62,7 +64,7 @@
 @custom-media --bp-tiny (min-width: 23.4375rem);
 @custom-media --bp-small (min-width: 30rem);
 @custom-media --bp-medium (min-width: 60rem);
-@custom-media --bp-room-to-move (min-width: 37.5rem) and (min-height: 60rem);
+@custom-media --bp-room-to-view (min-width: 37.5rem) and (min-height: 60rem);
 
 
 /*----------------------------------------------------------------------------
@@ -254,6 +256,11 @@ ul, li {
 a {
 	color: rgba(var(--green), 1);
 }
+
+.smallcaps {
+	text-transform: uppercase;
+	letter-spacing: .02em;
+}
  
  /*----------------------------------------------------------------------------
  *
@@ -416,25 +423,46 @@ a {
  * MODULE: MAP CONTROLS / GROUP LEGEND
  *
  *---------------------------------------------------------------------------*/
+ 
+.container.map {
+  margin-bottom:0;
+}
+ 
+.container.container--measure.groups {
+    margin-top:0;
+}
 
 
-/* Being Group Legend */
+/* Begin Group Legend */
 
 .group-legend {
-	margin: -2rem 0 2rem;
+	margin: 0 -1.5rem 2rem;
 	padding:0;
 	border: none;
-	@media (--bp-medium) {
-	  margin: -6rem 0 3rem;
+	@media (--bp-small) {
+	  margin: 0 -2rem 2rem;
+	}
+	@media (--bp-room-to-move) {
+	  margin: 0 0 3rem;
 	}
 }
 
 .group-legend__hint {
 	font-weight: 500;
-	padding: 1rem;
-	margin: 0 calc(-50vw + 50%) 2rem;
+	padding: .5rem .75rem;
+	margin: 0 auto;
 	text-align: center;
 	background: gray(85%);
+  font-size: var(--base-minor);
+	@media (--bp-room-to-view) {
+    	padding: 1rem;
+  	  font-size: var(--base);
+	  margin-bottom: 2rem;
+	}
+	@media (--bp-medium) {
+  	  margin-left: calc(-50vw + 50%);
+  	  margin-right: calc(-50vw + 50%);
+	}
 }
 
 .group-legend__intro {
@@ -442,97 +470,331 @@ a {
 }
 
 #group-legend-elements {
-	margin: .5rem -.5rem 0;
 	display: flex;
 	flex-wrap: wrap;
+	@media (--bp-medium) {
+  	  margin-left: calc(-50vw + 50%);
+  	  margin-right: calc(-50vw + 50%);
+	}
+	@media (--bp-room-to-view) {
+    	padding: 0 2rem;
+    	margin: 0 -.5rem 0;
+	}
 }
 
 /* End Group Legend */
 
 /* Begin Group/Map Controls */
 
-.group-div {
-	font-size: var(--delta);
+.group-div { /* See specific colors for various groups below */
 	cursor: pointer;
-	margin: .5rem;
-	padding: 1rem 1rem 3rem;
-	background: gray(095%);
-	flex: 1 0 5rem;
-	border: .25rem solid transparent;
+	padding: .35rem .75rem;
+	background-color: gray(95%);
+	flex: 1 0 3rem;
 	position: relative;
+	color: rgba(var(--light), 1);
+	text-align: center;
+	font-weight: 500;
+	white-space: nowrap;
+  line-height: var(--base);
+  font-size: var(--base-minor);
+  	border: .25rem solid transparent;
+	@media (--bp-room-to-view) {
+    	padding: 1rem;
+    	text-align: left;
+    	color: inherit;
+    	border: .25rem solid transparent;
+    	font-size: var(--delta);
+	  padding: 1rem 1rem 3rem;
+    	margin: .5rem;
+    	flex: 1 0 5rem;
+    	font-weight: 400;
+    line-height: 1.5;
+	}
 }
 
-.group-div.selected {
-	border: .25rem solid  gray(95%); 
-	background: rgba(var(--light), 1);
+.group-div.selected { /* See specific colors for various groups below */
+  	color: inherit; 
+  	background: rgba(var(--light), 1);
+	@media (--bp-room-to-view) {
+    	font-weight: 400;
+    	border: .25rem solid gray(95%); 
+    	background: rgba(var(--light), 1);
+  	}
 }
 
 .group-div:hover {
   transition: background-color .5s ease, border-color .15s ease;
-  background-color: #fff;
-  border-color: gray(95%);
+  border-color: rgba(var(--light), .35);
+	@media (--bp-room-to-view) {
+    background-color: #fff;
+    border-color: gray(95%);
+  	}
 }
 
 .group-div::before {
-  position: absolute;
-  display: block;
-  content: " ";
-  left: 1rem;
-  bottom: 1.625rem;
-  right: 1rem;
-  height: .3125rem;
+	@media (--bp-room-to-view) {
+    position: absolute;
+    display: block;
+    content: " ";
+    left: 1rem;
+    bottom: 1.625rem;
+    right: 1rem;
+    height: .3125rem;
+  }
 }
 
-.group-div--Overview::before {
+.group-div--Overview {
   background-color: #666666;
+  font-size: var(--base-majorly-minor);
+	@media (--bp-room-to-view) {
+    font-size: var(--delta);
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */
+  }
 }
 
-.group-div--SCELC::before {
+.group-div--Overview.selected {
+  border-color: #666666;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--Overview::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #666666;
+  }
+}
+
+.group-div--SCELC {
   background-color: #036564;
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
+  }
 }
 
-.group-div--COPPUL::before {
+.group-div--SCELC.selected {
+  border-color: #036564;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--SCELC::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #036564;
+  }
+}
+
+.group-div--COPPUL {
   background-color: #33A02C;
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
+  }
 }
 
-.group-div--CI-CCI::before {
+.group-div--COPPUL.selected {
+  border-color: #33A02C;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--COPPUL::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #33A02C;
+  }
+}
+
+.group-div--CI-CCI {
   background-color: #beea7b;
+  color: rgba(var(--text), 1);
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */
+  }
 }
 
-.group-div--ALI::before {
+.group-div--CI-CCI.selected {
+  border-color: #beea7b;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--CI-CCI::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #beea7b;
+  }
+}
+
+.group-div--ALI {
   background-color: #FF7F00;
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */    
+  }
 }
 
-.group-div--MI-SPI::before {
+.group-div--ALI.selected {
+  border-color: #FF7F00;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--ALI::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #FF7F00;
+  }
+}
+
+.group-div--MI-SPI {
   background-color: #FF4847;
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */   
+  }
 }
 
-.group-div--TUG::before {
+.group-div--MI-SPI.selected {
+  border-color: #FF4847;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--MI-SPI::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #FF4847;
+  }
+}
+
+.group-div--TUG {
   background-color: #6A3D9A;
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  }
 }
 
-.group-div--VIVA::before {
+.group-div--TUG.selected {
+  border-color: #6A3D9A;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--TUG::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #6A3D9A;
+  }
+}
+
+.group-div--VIVA {
   background-color: #CAB2D6;
+  color: rgba(var(--text), 1);
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  }
 }
 
-.group-div--WRLC::before {
+.group-div--VIVA.selected {
+  border-color: #CAB2D6;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--VIVA::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #CAB2D6;
+  }
+}
+
+.group-div--WRLC {
   background-color: #1F78B4;
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  }
 }
 
-.group-div--CNY::before {
+.group-div--WRLC.selected {
+  border-color: #1F78B4;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--WRLC::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #1F78B4;
+  }
+}
+
+.group-div--CNY {
   background-color: #A6CEE3;
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  }
 }
 
-.group-div--EAST::before {
+.group-div--CNY.selected {
+  border-color: #A6CEE3;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--CNY::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #A6CEE3;
+  }
+}
+
+.group-div--EAST {
   background-color: #FB9A99;
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  }
 }
 
-.group-div--MSCS::before {
+.group-div--EAST.selected {
+  border-color: #FB9A99;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--EAST::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #FB9A99;
+  }
+}
+
+.group-div--MSCS {
   background-color: #FDBF6F;
+  color: rgba(var(--text), 1);
+	@media (--bp-room-to-view) {
+	  background-color: gray(95%); /* TO DO - Is this necessary? Or will the media query in the generic .group-div override the mobile-first color? */  
+  }
+}
+
+.group-div--MSCS.selected {
+  border-color: #FDBF6F;
+	@media (--bp-room-to-view) {
+    border-color: gray(95%);
+  }
+}
+
+.group-div--MSCS::before { /* Pseudo-element stripe for larger screens */
+	@media (--bp-room-to-view) {
+    background-color: #FDBF6F;
+  }
 }
 
 h6.group_count {
-  margin: 5px 0px 5px 0px; 
+  display: none;
+  @media (--bp-room-to-view) {
+    display: block;
+    margin: 5px 0px 5px 0px; 
+  }
 }
 
 /* End Group/Map Controls */
