@@ -272,8 +272,8 @@ function addGroupFunctionality(map, browser) {
     // Iteratively create the group buttons 
     $.each(groupInfo, function(key, obj) {
         var groupDiv = document.createElement('div');
-        $(groupDiv).addClass('group_div');
-        $(groupDiv).addClass('group-div__' + obj.group_name);
+        $(groupDiv).addClass('group-div');
+        $(groupDiv).addClass('group-div--' + obj.group_name);
         if (key == 0) {
           $(groupDiv).addClass('selected');
         }
@@ -308,7 +308,7 @@ function addGroupFunctionality(map, browser) {
                 map.setView(libraries[key].latLongJS, libraries[key].zoomJS, {animate: true, duration: 10, easeLinearity: 10});
             }
             
-            $('.group_div').removeClass('selected');
+            $('.group-div').removeClass('selected');
             $(this).addClass('selected');     
             
             groupName.textContent = libraries[key].title;
