@@ -1,4 +1,3 @@
-// mapboxgl.accessToken = 'pk.eyJ1IjoiYWxpc3RlcmZ4IiwiYSI6ImNpcW80cnExOTAxZW9meW5uamNhdDIwcXcifQ.X8cJ7YP65MrR3bBq4a1rmQ';
 var myAccessToken = "pk.eyJ1IjoiYWxpc3RlcmZ4IiwiYSI6ImNpcW80cnExOTAxZW9meW5uamNhdDIwcXcifQ.X8cJ7YP65MrR3bBq4a1rmQ";
 
 if(!mapboxgl.supported()) {
@@ -90,19 +89,12 @@ function initGL() {
     function playback(index) {
         // Animate the map position based on camera properties
         map.flyTo({
-            // These options control the ending camera position: centered at
-            // the target, at zoom level 9, and north up.
             center: [-100.722656, 42.793385],
             zoom: 3,
             bearing: 0,
             pitch: 0,
-
-            // These options control the flight curve, making it move
-            // slowly and zoom out almost completely before starting
-            // to pan.
             speed: 0.5, // make the flying slow
             curve: 1, // change the speed at which it zooms out
-
             // This can be any easing function: it takes a number between
             // 0 and 1 and returns another number between 0 and 1.
             easing: function (t) {
