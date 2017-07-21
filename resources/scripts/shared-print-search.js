@@ -10,7 +10,7 @@ function searchSolrTitles() {
         // var holdingAuthor = (typeof holding.full_author === "undefined") ? "N/A" : holding.full_author;
         if (!holding) continue;
         row +="<li class='search__item'><div class='search__item__desc'><strong class='search__author'>"+ holding.full_author + 
-        "</strong>, <em class='search__title'>" + holding.full_title + 
+        "</strong>, <em class='search__title'>" + holding.full_title + '</em>' +
         "</span><ul class='search__groups'>"; 
 // group_ids: 
 // 1013;"EAST Group - June 2015"
