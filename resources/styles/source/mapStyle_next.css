@@ -62,6 +62,7 @@
 @custom-media --bp-tiny (min-width: 23.4375rem);
 @custom-media --bp-small (min-width: 30rem);
 @custom-media --bp-medium (min-width: 60rem);
+@custom-media --bp-room-to-move (min-width: 37.5rem) and (min-height: 60rem);
 
 
 /*----------------------------------------------------------------------------
