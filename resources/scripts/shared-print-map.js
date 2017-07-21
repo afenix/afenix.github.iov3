@@ -271,13 +271,14 @@ function addGroupFunctionality(map, browser) {
 
     // Iteratively create the group buttons 
     $.each(groupInfo, function(key, obj) {
+console.log('obj[group_name]');console.log(obj['group_name']);
         var groupDiv = document.createElement('div');
         $(groupDiv).addClass('group_div');
         if (key == 0) {
           $(groupDiv).addClass('selected');
         }
         var groupFlair = document.createElement('div');
-        $(groupFlair).addClass('flair');
+        $(groupFlair).addClass('group-div__' + obj['group_name']);
         var groupCount = document.createElement('h6');
          $(groupCount).addClass('group_count');
 
