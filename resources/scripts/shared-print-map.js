@@ -271,14 +271,12 @@ function addGroupFunctionality(map, browser) {
 
     // Iteratively create the group buttons 
     $.each(groupInfo, function(key, obj) {
-console.log('obj[group_name]');console.log(obj['group_name']);
         var groupDiv = document.createElement('div');
         $(groupDiv).addClass('group_div');
+        $(groupDiv).addClass('group-div__' + obj.group_name);
         if (key == 0) {
           $(groupDiv).addClass('selected');
         }
-        var groupFlair = document.createElement('div');
-        $(groupFlair).addClass('group-div__' + obj['group_name']);
         var groupCount = document.createElement('h6');
          $(groupCount).addClass('group_count');
 
@@ -287,8 +285,6 @@ console.log('obj[group_name]');console.log(obj['group_name']);
                 $(groupDiv).html('<span>' + value + '</span>');
             } else if (key === 'group_count') {
                 $(groupCount).text(value);
-            } else {
-                groupFlair.style.backgroundColor = value;
             }
         });
 
@@ -341,7 +337,6 @@ console.log('obj[group_name]');console.log(obj['group_name']);
 
         groupLegendElements.appendChild(groupDiv);
         groupDiv.appendChild(groupCount);
-        groupDiv.appendChild(groupFlair);
     });
 }
 
