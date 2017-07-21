@@ -6,12 +6,11 @@
   "scripts": {
     "start": "concurrently -k \"npm run devServer\" \"npm run postCssWatch -s\"",
     "lintJS": "echo '=> linting' && jshint resources/scripts/*.js",
-    "lintMap": "echo '=> linting' && jshint resources/scripts/shared-print-map.js",
-    "minifyJS": "echo '=> minify JavaScript' && uglifyjs resources/scripts/shared-print-map.js --output resources/scripts/shared-print-map.min.js -s",
+    "minifyMapJS": "echo '=> compressing shared-print-map.js' && uglifyjs resources/scripts/shared-print-map.js --output resources/scripts/shared-print-map.min.js -s",
+    "minifySearchJS": "echo '=> compressing shared-print-search.js' && uglifyjs resources/scripts/shared-print-search.js --output resources/scripts/shared-print-search.min.js -s",
     "postCssWatch": "echo '=> postcss is now watching for changes to resources/styles/source/mapStyle_next.css' && $(npm bin)/postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css --watch",
     "postProcessorCss": "echo '=> postcss is now updating all css changes from /mapStyle_next.css to /mapStyle.css' && $(npm bin)/postcss resources/styles/source/mapStyle_next.css --use postcss-cssnext --output resources/styles/mapStyle.css",
-    "build": "echo '=> building minified JavaScript and post-processing CSS' && npm run minifyJS -s && npm run postProcessorCss -s",
-    "watch": "watch 'npm run minifyJS && npm run postCssWatch' resources/scripts/ resources/styles/",
+    "build": "echo '=> build underway... compressing JavaScript and post-processing CSS' && npm run minifyMapJS -s && npm run minifySearchJS -s && npm run postProcessorCss -s",
     "devServer": "lite-server"
   },
   "repository": {
@@ -33,7 +32,6 @@
     "postcss": "^6.0.8",
     "postcss-cli": "^4.1.0",
     "postcss-cssnext": "^3.0.2",
-    "uglify-js": "^3.0.25",
-    "watch": "^1.0.2"
+    "uglify-js": "^3.0.25"
   }
 }
