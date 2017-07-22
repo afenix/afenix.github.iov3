@@ -74,7 +74,9 @@ function initGL() {
     	    zoom: 1.75, //staring zoom
             bearing: 5,
             pitch: 45
-    	});
+    });
+    if (map.tap) map.tap.disable();
+    if (map.tap) map.dragging.disable();
 
     
     $(document).on('scroll.stopEvent', function() {
