@@ -23,6 +23,8 @@ function initJS() {
     map.gridControl.options.follow = true;
     map.zoomControl.setPosition('topright');
     addGroupFunctionality(map, 'nonWebGL');
+    if (map.tap) map.tap.disable();
+    if (map.tap) map.dragging.disable();
 }
 
 function loadScript(sScriptSrc, cssSrc, oCallback) {
